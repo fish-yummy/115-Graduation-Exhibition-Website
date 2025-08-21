@@ -4,44 +4,42 @@ body{
     margin: 0;
     padding: 0;
 }
-.content{
-    height: 100vh;
-    scroll-snap-align: start;
 
-    border:solid 5px rgb(183, 217, 72);
-    font-size: 25px;
 
-    
-
-}
+/* === 頁面滑動 === */
 .section-scroll-container{
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
-    scroll-behavior: smooth; /* 滑動時有平滑效果 */
+    scroll-behavior: smooth; 
 
 }
-.writting{
+.content{
+    height: 100vh;
+    scroll-snap-align: start;
+    /* scroll-snap-stop: always; */
+
+    border:solid 5px rgb(183, 217, 72);
+    font-size: 25px;
+}
+.writting{  
     width: 90%;
     height: 100vh;
     border:solid 5px rgb(217, 123, 72);
 }
 
-.scroll-bar{
-    /* width: 3%;
-    height: 50%;
-    overflow: hidden;
-    right: 1%;
-    top: 25%;
 
-    
-
+/* === 垂直滾動條 === */
+.scroll-bar-fixed{
     position: fixed;
-     */
+    border:solid 1px rgb(255, 6, 6);
 
-
-
-    /* background: center center / cover no-repeat;  */
+    right: 0.1%;
+    height: 100vh;
+    width: 100vh;
+}
+.scroll-bar{
+  
     overflow: visible; 
     position: absolute; 
     width: 2%; 
@@ -51,7 +49,7 @@ body{
 
     top: 18rem; 
     right: 3.544rem; 
-    /* font-size: 47.8665px; */
+    
 
     border:solid 1px rgb(2, 2, 2);
 }
@@ -81,16 +79,8 @@ body{
     cursor: pointer;
 }
 
-.scroll-bar-fixed{
-    position: fixed;
-    border:solid 1px rgb(255, 6, 6);
 
-    right: 0.1%;
-    height: 100vh;
-    width: 100vh;
-}
-
-::-webkit-scrollbar {
+::-webkit-scrollbar {  /* 預設的滾動條消失 */
   display: none;
 }
 
