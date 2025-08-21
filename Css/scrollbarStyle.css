@@ -1,0 +1,96 @@
+body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    height: 100vh;
+    scroll-snap-align: start;
+
+    border:solid 5px rgb(183, 217, 72);
+    font-size: 25px;
+
+    
+
+}
+.section-scroll-container{
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth; /* 滑動時有平滑效果 */
+
+}
+.writting{
+    width: 90%;
+    height: 100vh;
+    border:solid 5px rgb(217, 123, 72);
+}
+
+.scroll-bar{
+    /* width: 3%;
+    height: 50%;
+    overflow: hidden;
+    right: 1%;
+    top: 25%;
+
+    
+
+    position: fixed;
+     */
+
+
+
+    /* background: center center / cover no-repeat;  */
+    overflow: visible; 
+    position: absolute; 
+    width: 2%; 
+    height: auto; 
+
+    
+
+    top: 18rem; 
+    right: 3.544rem; 
+    /* font-size: 47.8665px; */
+
+    border:solid 1px rgb(2, 2, 2);
+}
+
+.sb-button-container{
+    width: 100%;
+    height: 100%;
+
+    display: relative;
+    justify-content: center; 
+    align-items: center;  
+
+    overflow: visible;
+    border:solid 1px rgb(212, 90, 90);
+
+}
+.sb-button{
+    width: 100%;
+    height: 100%;
+
+    display: relative;
+    justify-content: center; 
+    align-items: center;  
+
+
+    border:solid 1px rgb(94, 90, 212);
+    cursor: pointer;
+}
+
+.scroll-bar-fixed{
+    position: fixed;
+    border:solid 1px rgb(255, 6, 6);
+
+    right: 0.1%;
+    height: 100vh;
+    width: 100vh;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
