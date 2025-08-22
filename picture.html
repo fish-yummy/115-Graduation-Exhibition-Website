@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖片輪播</title>
+    <style>
+        /* --- 基礎與背景設定 --- */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #17202a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* --- 輪播器主容器 --- */
+        .carousel-wrapper {
+            max-width: 900px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* --- 輪播區塊：定義 16:9 比例 --- */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+        }
+
+        /* 內部滑動容器 */
+        .slides-inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500%;
+            height: 100%;
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+
+        /* 每一張幻燈片容器 */
+        .mySlides {
+            width: 20%;
+            flex-shrink: 0;
+            height: 100%;
+        }
+
+        .mySlides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- 左右箭頭 --- */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+            background: transparent;
+            border: none;
+            z-index: 10;
+        }
+
+        .next { right: 0; }
+        .prev { left: 0; }
+
+        .prev svg, .next svg {
+            width: 36px;
+            height: 36px;
+            fill: #ffffff;
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .prev:hover svg, .next:hover svg {
+            opacity: 1;
+        }
+        
+        /* --- 控制項容器 --- */
+        .controls-container {
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* 圓點指示器 */
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: #777;
+            border-radius: 50%;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.2);
+        }
+
+        /* --- 資訊區塊 --- */
+        .info-box {
+            max-width: 90%;
+            margin: 25px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-box h3 {
+            margin-top: 0;
+            color: #f0f0f0;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+            color: #dcdcdc;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* 播放/暫停按鈕 */
+        .play-pause-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            background-color: #4A90E2;
+            color: white;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .play-pause-btn:hover {
+            background-color: #357ABD;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: 100%; max-width: 900px;">
+        <div class="carousel-wrapper">
+            <div class="slideshow-container">
+                <div class="slides-inner">
+                    <!-- 幻燈片 1 -->
+                    <div class="mySlides">
+                        <img src="https://placehold.co/1600x900/4A90E2/FFFFFF?text=Image+1" alt="圖片一">
+                    </div>
+                    <!-- 幻燈片 2 -->
+                    <div class="mySlides">
+                        <img src="https://placehold.co/1600x900/50E3C2/FFFFFF?text=Image+2" alt="圖片二">
+                    </div>
+                    <!-- 幻燈片 3 -->
+                    <div class="mySlides">
+                        <img src="https://placehold.co/1600x900/F5A623/FFFFFF?text=Image+3" alt="圖片三">
+                    </div>
+                    <!-- 幻燈片 4 -->
+                    <div class="mySlides">
+                        <img src="https://placehold.co/1600x900/BD10E0/FFFFFF?text=Image+4" alt="圖片四">
+                    </div>
+                    <!-- 幻燈片 5 -->
+                    <div class="mySlides">
+                        <img src="https://placehold.co/1600x900/D0021B/FFFFFF?text=Image+5" alt="圖片五">
+                    </div>
+                </div>
+
+                <!-- 左右切換按鈕 -->
+                <a class="prev" onclick="plusSlides(-1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                </a>
+                <a class="next" onclick="plusSlides(1)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- 控制項容器 -->
+        <div class="controls-container">
+            <!-- 圓點指示器 -->
+            <div style="margin-bottom: 15px;">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+            </div>
+
+            <!-- 半透明資訊區塊 -->
+            <div class="info-box">
+                <h3>圖片說明</h3>
+                <p>這是一個自動輪播的區塊，兩側有箭頭可以手動控制，也可以點擊圓點快速跳轉，下方有按鈕暫停播放。目前是五張圖片、3秒自動切換。</p>
+            </div>
+
+            <!-- 播放/暫停按鈕 -->
+            <button id="playPauseBtn" class="play-pause-btn">暫停自動播放</button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        let autoPlayTimeout = null;
+        let isPlaying = true;
+
+        const slidesInner = document.querySelector('.slides-inner');
+        const slides = document.getElementsByClassName("mySlides");
+        const dots = document.getElementsByClassName("dot");
+        const playPauseBtn = document.getElementById('playPauseBtn');
+
+        // 初始化輪播
+        showSlides(slideIndex);
+
+        // 主函數：顯示指定的幻燈片
+        function showSlides(n) {
+            if (n > slides.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = slides.length; }
+
+            const offsetPercentage = -(slideIndex - 1) * 100 / slides.length;
+            slidesInner.style.transform = `translateX(${offsetPercentage}%)`;
+
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex - 1].className += " active";
+            
+            clearTimeout(autoPlayTimeout);
+            if (isPlaying) {
+                playPauseBtn.innerHTML = '暫停自動播放'; // *** 修改文字 ***
+                autoPlayTimeout = setTimeout(() => {
+                    plusSlides(1);
+                }, 3000);
+            } else {
+                playPauseBtn.innerHTML = '開始自動播放'; // *** 修改文字 ***
+            }
+        }
+
+        // 控制項：切換上一張/下一張
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // 控制項：點擊圓點跳轉
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // 控制項：播放/暫停按鈕
+        playPauseBtn.addEventListener('click', () => {
+            isPlaying = !isPlaying;
+            if (isPlaying) {
+                plusSlides(1);
+            } else {
+                clearTimeout(autoPlayTimeout);
+                playPauseBtn.innerHTML = '開始自動播放'; // *** 修改文字 ***
+            }
+        });
+    </script>
+
+</body>
+</html>
