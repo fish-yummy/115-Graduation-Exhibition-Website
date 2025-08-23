@@ -1,20 +1,3 @@
-// document.querySelectorAll('.sb-button').forEach(img => {
-//   img.addEventListener('click', () => {
-//     const clickedSrc = img.dataset.alt;
-
-//   
-//     document.querySelectorAll('.sb-button').forEach(otherImg => {
-//       const originalSrc = otherImg.dataset.original || 'Image/scrollBar/circle.png';
-//       otherImg.setAttribute('src', originalSrc);
-//     });
-
-//     
-//     img.setAttribute('src', clickedSrc);
-//   });
-// });
-
-///////////////////////
-
 console.log("載入scrollBar.js ");
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,4 +24,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sections.forEach(section => observer.observe(section));
+});
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const section1 = document.getElementById("section1");
+    const img = document.querySelector(`a.a-toTOp-button img`);
+    if (!section1 || !img) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                img.style.display = "none"; 
+                console.log(`進入 section1`);
+            } else {
+                img.style.display = "block";
+                console.log(`離開 section1`);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    observer.observe(section1);
 });
