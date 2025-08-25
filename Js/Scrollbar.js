@@ -1,6 +1,5 @@
-console.log("載入scrollBar.js ");
 
-document.addEventListener("DOMContentLoaded", () => {
+export function ScrollbarImageChange() {
     const sections = document.querySelectorAll("section");
 
     const observer = new IntersectionObserver((entries) => {
@@ -24,11 +23,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     sections.forEach(section => observer.observe(section));
-});
+}
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
+export function GotoTopButtonFunction(){
     const section1 = document.getElementById("section1");
     const img = document.querySelector(`a.a-toTOp-button img`);
     if (!section1 || !img) return;
@@ -46,4 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, { threshold: 0.6 });
 
     observer.observe(section1);
-});
+}
