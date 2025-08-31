@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>載入中...</title>
+    <link rel="stylesheet" href="loading-page.css">
+</head>
+<body>
+    <div class="loading-container" id="loadingContainer">
+        <!-- 動畫區域 -->
+        <div class="animation-area">
+            <div class="loading-animation" id="loadingAnimation">
+                <!-- 備用動畫 -->
+                <div class="fallback-animation" id="fallbackAnimation" style="display: none;"></div>
+            </div>
+        </div>
+
+
+
+        <!-- 網站相關文字 -->
+        <div class="website-info">
+            <h2>歡迎來到我們的網站</h2>
+            <p id="randomDescription">載入中...</p>
+        </div>
+
+        <!-- 進度條區域 -->
+        <div class="progress-area">
+            <div class="progress-text" id="progressText">載入中... 0%</div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-status" id="progressStatus">正在初始化...</div>
+        </div>
+    </div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+
