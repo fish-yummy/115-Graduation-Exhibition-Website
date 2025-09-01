@@ -1,0 +1,91 @@
+/* --- 基礎設定 --- */
+.picture_component_wrapper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* 讓整個組件在頁面中置中 */
+}
+
+body {
+    /* 如果您希望這個背景套用在整個頁面，可以將這段複製到您的 Main.css 中 */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #2c3e50 0%, #17202a 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* --- 輪播器主容器 --- */
+.picture_carousel-wrapper {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 輪播區塊：定義 16:9 比例 --- */
+.picture_slideshow-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+}
+
+/* 內部滑動容器 */
+.picture_slides-inner {
+    position: absolute; top: 0; left: 0;
+    width: 500%; height: 100%;
+    display: flex;
+    transition: transform 0.7s ease-in-out;
+}
+
+/* 每一張幻燈片容器 */
+.picture_mySlides { width: 20%; flex-shrink: 0; height: 100%; }
+.picture_mySlides img { width: 100%; height: 100%; object-fit: cover; }
+
+/* --- 左右箭頭 --- */
+.picture_prev, .picture_next {
+    cursor: pointer; position: absolute; top: 50%;
+    transform: translateY(-50%); width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    user-select: none; background: transparent; border: none; z-index: 10;
+}
+.picture_next { right: 0; }
+.picture_prev { left: 0; }
+.picture_prev svg, .picture_next svg {
+    width: 36px; height: 36px; fill: #ffffff;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.6));
+    opacity: 0.7; transition: opacity 0.3s ease;
+}
+.picture_prev:hover svg, .picture_next:hover svg { opacity: 1; }
+
+/* --- 控制項容器 --- */
+.picture_controls-container { padding: 20px 0; text-align: center; }
+
+/* 圓點指示器 */
+.picture_dot {
+    cursor: pointer; height: 12px; width: 12px; margin: 0 5px;
+    background-color: #777; border-radius: 50%;
+    display: inline-block; transition: all 0.3s ease;
+}
+.active, .picture_dot:hover { background-color: #f0f0f0; transform: scale(1.2); }
+
+/* --- 資訊區塊 --- */
+.picture_info-box {
+    max-width: 90%; margin: 25px auto; padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); border-radius: 10px;
+    text-align: center; border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.picture_info-box h3 { margin-top: 0; color: #f0f0f0; font-size: 18px; font-weight: 600; }
+.picture_info-box p { margin-bottom: 0; color: #dcdcdc; font-size: 15px; line-height: 1.6; }
+
+/* 播放/暫停按鈕 */
+.picture_play-pause-btn {
+    display: block; margin: 0 auto; padding: 10px 25px;
+    font-size: 16px; cursor: pointer; border: none; border-radius: 25px;
+    background-color: #4A90E2; color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.picture_play-pause-btn:hover { background-color: #357ABD; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
