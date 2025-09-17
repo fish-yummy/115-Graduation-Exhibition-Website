@@ -1,41 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/scrollbarStyle.css">
-    <link rel="stylesheet" href="Css/Main.css">
-    <script type="module" src="Js/Main.js" defer ></script>
-    <title>404 not found</title>
-
+    <link rel="stylesheet" href="Css/scrollbarStyle.css"> <!-- 滾動條樣式 -->
+    <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
+    <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
+    <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
+    
+    <!-- 確保使用 type="module" 來支持模組化 JS -->
+    <script type="module" src="Js/Main.js" defer></script>
+    <title>作品總覽</title>
 </head>
 <body>
-        <div class="section-scroll-container">
-            <section id="section1" class="content ">
-                <div class="writting">
-                    <h1>主頁第一區塊--畢展介紹</h1>
-                    <p>參照figma的設計</p>
-                    <p>左邊畢展介紹，右邊畢展介紹影片</p>
-                   
-                </div>
-            </section>
+    <div class="section-scroll-container">
+        <!-- 第一區塊 (不變) -->            
+        <section id="section1" class="content">
+            <div class="writting">
+                <h1>主頁第一區塊--畢展介紹</h1>
+                <p>參照figma的設計</p>
+                <p>左邊畢展介紹，右邊畢展介紹影片</p>
+            </div>
+        </section>
 
+        <!-- 第二區塊 (已整合選單元件) -->
+        <section id="section2" class="content longContent">
+            <div class="writting">
+                <h1>主頁第二個區塊--各組作品總覽</h1>
+                <p>放各組的作品縮圖，並連結到各組作品詳細頁</p>
+                
+                <!-- 選單元件的觸發區域 -->
+                <div id="menu-app-container">
+                    <div class="menu-selection-screen">
+                        <img src="images/your-cursor-1.gif" class="menu-choice" data-menu-target="menu1" alt="選擇項目1">
+                        <img src="images/your-cursor-2.gif" class="menu-choice" data-menu-target="menu2" alt="選擇項目2">
+                        <img src="images/your-cursor-3.gif" class="menu-choice" data-menu-target="menu3" alt="選擇項目3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 第三區塊 (不變) -->
+        <section id="section3" class="content">
+            <div class="writting">
+                <h1>主頁第三個區塊--交通資訊區</h1>
+                <p>放交通懶人包圖+GOOGLE MAP嵌入</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- 第二區塊點擊後彈出的選單內容 -->
+    <!-- ========================================================== -->
+    <div class="menu-display-overlay">
+        <div class="menu-display-area">
+            <button class="close-button">&times;</button>
             
-            <section id="section2" class="content longContent">
-                <div class="writting">
-                    <h1>主頁第二個區塊--各組作品總覽</h1>
-                    <p>放各組的作品縮圖，並連結到各組作品詳細頁</p>
+            <!-- 第一組選單內容 -->
+            <div id="menu1" class="menu-container">
+                <div class="menu-trigger"><img src="your-cursor-1.gif" alt="Trigger 1"></div>
+                <div class="menu-items">
+                    <div class="item">
+                        <div class="item-title">作品名稱 1A</div>
+                        <a href="GroupPage.html?group=1A" class="item-content nav-link"><p>查看 1A 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 1B</div>
+                        <a href="GroupPage.html?group=1B" class="item-content nav-link"><p>查看 1B 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 1C</div>
+                        <a href="GroupPage.html?group=1C" class="item-content nav-link"><p>查看 1C 詳細內容</p></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 第二組選單內容 (已修改) -->
+            <div id="menu2" class="menu-container">
+                <div class="menu-trigger"><img src="your-cursor-2.gif" alt="Trigger 2"></div>
+                <div class="menu-items">
+                    <div class="item">
+                        <div class="item-title">作品名稱 2A</div>
+                        <a href="GroupPage.html?group=2A" class="item-content nav-link"><p>查看 2A 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 2B</div>
+                        <a href="GroupPage.html?group=2B" class="item-content nav-link"><p>查看 2B 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 2C</div>
+                        <a href="GroupPage.html?group=2C" class="item-content nav-link"><p>查看 2C 詳細內容</p></a>
+                    </div>
+                </div>
+            </div>
 
-                    
-                    
+            <!-- 第三組選單內容 (已修改) -->
+            <div id="menu3" class="menu-container">
+                <div class="menu-trigger"><img src="your-cursor-3.gif" alt="Trigger 3"></div>
+                <div class="menu-items">
+                    <div class="item">
+                        <div class="item-title">作品名稱 3A</div>
+                        <a href="GroupPage.html?group=3A" class="item-content nav-link"><p>查看 3A 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 3B</div>
+                        <a href="GroupPage.html?group=3B" class="item-content nav-link"><p>查看 3B 詳細內容</p></a>
+                    </div>
+                    <div class="item">
+                        <div class="item-title">作品名稱 3C</div>
+                        <a href="GroupPage.html?group=3C" class="item-content nav-link"><p>查看 3C 詳細內容</p></a>
+                    </div>
                 </div>
-            </section>
-            <section id="section3" class="content ">
-                <div class="writting">
-                    <h1> 主頁第三個區塊--交通資訊區</h1>
-                     <p>放交通懶人包圖+GOOGLE MAP嵌入</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================== -->
+    <!-- 全域 Loading 畫面元件 (預設隱藏) -->
+    <!-- ========================================================== -->
+    <div id="loading-overlay">
+        <div class="loading-container" id="loadingContainer">
+            <!-- 動畫區域 -->
+            <div class="animation-area">
+                <div class="loading-animation" id="loadingAnimation">
+                    <!-- 備用動畫 -->
+                    <div class="fallback-animation" id="fallbackAnimation" style="display: none;"></div>
                 </div>
-            </section>
+            </div>
+
+            <!-- 網站相關文字 -->
+            <div class="website-info">
+                <h2 id="loadingTitle">即將前往下一站</h2>
+                <p id="randomDescription">載入中...</p>
+            </div>
+
+            <!-- 進度條區域 -->
+            <div class="progress-area">
+                <div class="progress-text" id="progressText">載入中... 0%</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-status" id="progressStatus">正在初始化...</div>
+            </div>
+        </div>
     </div>
 
 </body>
