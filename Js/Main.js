@@ -6,7 +6,7 @@ import { initializeNavigation } from './navigation.js';
 //只用一個 DOMContentLoaded 事件監聽器
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 啟動您原有的 Scrollbar 功能
+   
     Scrollbar.ScrollbarImageChange();
     Scrollbar.GotoTopButtonFunction();
     
