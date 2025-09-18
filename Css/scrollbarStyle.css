@@ -31,13 +31,13 @@ section {
     padding-top: 1%;
     
 
-    /* border:solid 5px rgb(183, 217, 72); */
+    /* border:solid 5px rgb(72, 72, 217); */
     font-size: 25px;
 }
 .writting{  
     width: 90%;
     height: 100vh;
-    /* border:solid 5px rgb(217, 123, 72); */
+    border:solid 5px rgb(72, 79, 217);
 }
 
 

@@ -7,6 +7,7 @@ body{
     padding: 0;
     
 }
+
 /* === 頁面滑動 === */
 html, body {
     scroll-snap-type: y mandatory;
@@ -19,4 +20,9 @@ section {
    
     scroll-snap-align: start;
      
+}
+h1{
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
 }

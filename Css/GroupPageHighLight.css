@@ -1,0 +1,26 @@
+
+.HighlightBox{
+
+    display: flex;
+    gap: 100px; 
+    margin: 10px;
+    
+    border:solid 10px rgb(183, 217, 72);
+}
+.highlight{
+    flex: 1;
+    border:solid 10px rgb(217, 130, 72);
+
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+.HighlightImage{
+    width: 576px;
+    height: 324px;
+}
+/* .highlight.Image{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+} */
