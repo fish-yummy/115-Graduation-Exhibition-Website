@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="Css/scrollbarStyle.css">
     <link rel="stylesheet" href="Css/Main.css">
     <link rel="stylesheet" href="Css/GroupPageHighLight.css">
+    <link rel="stylesheet" href="./Css/picture.css">
 
     <script type="module" src="Js/Main.js" defer ></script>
+    <script src="./Js/picture_script.js" type="module"></script>
     <title>404 not found</title>
 
 </head>
@@ -85,7 +87,33 @@
             <section id="section3" class="content ">
                 <div class="writting">
                     <h1> 主頁第三個區塊--圖片輪轉區</h1>
-                     <p>放圖片輪轉</p>
+                     <!-- <p>放圖片輪轉</p>-->
+                     <div class="picture_component_wrapper">
+                        <div class="picture_carousel-wrapper">
+                            <div class="picture_slideshow-container">
+                                <div class="picture_slides-inner">
+                                    <!-- 幻燈片內容... -->
+                                    <div class="picture_mySlides"><img src="https://placehold.co/1600x900/4A90E2/FFFFFF?text=Image+1" alt="圖片一"></div>
+                                    <div class="picture_mySlides"><img src="https://placehold.co/1600x900/50E3C2/FFFFFF?text=Image+2" alt="圖片二"></div>
+                                    <div class="picture_mySlides"><img src="https://placehold.co/1600x900/F5A623/FFFFFF?text=Image+3" alt="圖片三"></div>
+                                    <div class="picture_mySlides"><img src="https://placehold.co/1600x900/BD10E0/FFFFFF?text=Image+4" alt="圖片四"></div>
+                                    <div class="picture_mySlides"><img src="https://placehold.co/1600x900/D0021B/FFFFFF?text=Image+5" alt="圖片五"></div>
+                                </div>
+                                <a class="picture_prev"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></a>
+                                <a class="picture_next"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg></a>
+                            </div>
+                                <div class="picture_controls-container">
+                                <div class="picture_dots-container" style="margin-bottom: 15px;">
+                                    <span class="picture_dot"></span><span class="picture_dot"></span><span class="picture_dot"></span><span class="picture_dot"></span><span class="picture_dot"></span>
+                                </div>
+                                <div class="picture_info-box">
+                                    <h3>圖片說明</h3>
+                                    <p>這是一個自動輪播的區塊，兩側有箭頭可以手動控制，也可以點擊圓點快速跳轉，下方有按鈕暫停播放。目前是五張圖片、3秒自動切換。</p>
+                                </div>
+                                <button id="picture_playPauseBtn" class="picture_play-pause-btn">暫停自動播放</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
     </div>

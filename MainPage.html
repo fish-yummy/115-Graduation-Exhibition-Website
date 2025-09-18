@@ -7,10 +7,16 @@
     <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
     <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
     <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
-  
+    <link rel="stylesheet" href="./Css/works_overview.css"> <!-- 作品總覽樣式 -->
+    <!-- 作品總覽字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gen+Jyuu+Gothic:wght@700&display=swap" rel="stylesheet">
+    <!-- 作品總覽字體 -->
     
     <!-- 確保使用 type="module" 來支持模組化 JS -->
     <script type="module" src="Js/Main.js" defer></script>
+    <script src="./Js/works_overview_script.js" type="module"></script>
     <title>404 not found</title>
 </head>
 <body>
@@ -65,15 +71,85 @@
             <div class="writting">
                 <h1>主頁第二個區塊--各組作品總覽</h1>
                 <p>放各組的作品縮圖，並連結到各組作品詳細頁</p>
-                
-                <!-- 選單元件的觸發區域 -->
-                <div id="menu-app-container">
-                    <div class="menu-selection-screen">
-                        <img src="images/your-cursor-1.gif" class="menu-choice" data-menu-target="menu1" alt="選擇項目1">
-                        <img src="images/your-cursor-2.gif" class="menu-choice" data-menu-target="menu2" alt="選擇項目2">
-                        <img src="images/your-cursor-3.gif" class="menu-choice" data-menu-target="menu3" alt="選擇項目3">
+                <div class="works_overview_component_wrapper">
+    
+                    <h2 class="works_overview_main_title">各組作品總覽</h2>
+
+                    <div class="works_overview_grid">
+                        <!-- 總共 14 組作品 -->
+                        <!-- 第 1 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖1.png" class="works_overview_image" alt="作品縮圖 1">
+                            <span class="works_overview_title">提升媒體識讀之學習型遊戲</span>
+                        </a>
+                        <!-- 第 2 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖2.png" class="works_overview_image" alt="作品縮圖 2">
+                            <span class="works_overview_title">移民模擬</span>
+                        </a>
+                        <!-- 第 3 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖3x.png" class="works_overview_image" alt="作品縮圖 3">
+                            <span class="works_overview_title">化學方程式</span>
+                        </a>
+                        <!-- 第 4 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖4.png" class="works_overview_image" alt="作品縮圖 4">
+                            <span class="works_overview_title">蚵計產業</span>
+                        </a>
+                        <!-- 第 5 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖5x.png" class="works_overview_image" alt="作品縮圖 5">
+                            <span class="works_overview_title">Euvuvu</span>
+                        </a>
+                        <!-- 第 6 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖6.png" class="works_overview_image" alt="作品縮圖 6">
+                            <span class="works_overview_title">SAVIOR</span>
+                        </a>
+                        <!-- 第 7 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖7.png" class="works_overview_image" alt="作品縮圖 7">
+                            <span class="works_overview_title">礦石奇旅</span>
+                        </a>
+                        <!-- 第 8 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖8.png" class="works_overview_image" alt="作品縮圖 8">
+                            <span class="works_overview_title">賭”薄”人生</span>
+                        </a>
+                        <!-- 第 9 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖9.png" class="works_overview_image" alt="作品縮圖 9">
+                            <span class="works_overview_title">防詐聖經</span>
+                        </a>
+                        <!-- 第 10 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖10.png" class="works_overview_image" alt="作品縮圖 10">
+                            <span class="works_overview_title">牽線之外</span>
+                        </a>
+                        <!-- 第 11 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖11.png" class="works_overview_image" alt="作品縮圖 11">
+                            <span class="works_overview_title">孤故 Good Story</span>
+                        </a>
+                        <!-- 第 12 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖12.png" class="works_overview_image" alt="作品縮圖 12">
+                            <span class="works_overview_title">喚起 「權」世界</span>
+                        </a>
+                        <!-- 第 13 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖13.png" class="works_overview_image" alt="作品縮圖 13">
+                            <span class="works_overview_title">Arduino互動式物理實驗教學系統</span>
+                        </a>
+                        <!-- 第 14 組 -->
+                        <a href="#" class="works_overview_item">
+                            <img src="./image/作品縮圖/作品縮圖14.png" class="works_overview_image" alt="作品縮圖 14">
+                            <span class="works_overview_title">建構以視覺化為核心之濕地導覽回饋系統</span>
+                        </a>
                     </div>
                 </div>
+                
             </div>
         </section>
 
@@ -82,6 +158,22 @@
             <div class="writting">
                 <h1>主頁第三個區塊--交通資訊區</h1>
                 <p>放交通懶人包圖+GOOGLE MAP嵌入</p>
+            </div>
+        </section>
+
+        <!-- 第四區塊 (不變) -->
+        <section id="section4" class="content">
+            <div class="writting">
+                <h1>詹柏蟲放錯位置的抽屜選單</h1>
+                <p>給你搬來這了</p>
+                <!-- 選單元件的觸發區域 -->
+                <div id="menu-app-container">
+                    <div class="menu-selection-screen">
+                        <img src="images/your-cursor-1.gif" class="menu-choice" data-menu-target="menu1" alt="選擇項目1">
+                        <img src="images/your-cursor-2.gif" class="menu-choice" data-menu-target="menu2" alt="選擇項目2">
+                        <img src="images/your-cursor-3.gif" class="menu-choice" data-menu-target="menu3" alt="選擇項目3">
+                    </div>
+                </div>
             </div>
         </section>
     </div>
