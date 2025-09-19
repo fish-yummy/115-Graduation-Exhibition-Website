@@ -10,6 +10,7 @@
 
     <script type="module" src="Js/Main.js" defer ></script>
     <script src="./Js/picture_script.js" type="module"></script>
+    <script type="module" src="Js/GroupPageUse.js" defer></script>
     <title>404 not found</title>
 
 </head>
@@ -50,14 +51,29 @@
                    
        
             </div>
+            <button id="prev-button">向前</button>
+            <button id="next-button">向後</button>
     </div>
 
 
         <div class="section-scroll-container">
-            <section id="section1" class="content ">
+            <section id="section1" class="content longContent">
                 <div class="writting">
                     <h1>第一區塊--組員+作品介紹</h1>
-                    <p>參照figma的設計</p>
+                    
+                    <div class="Box">
+                        <div class="intro Image">
+                            <img class="IntroImage" id="Intro-Image" src="Image/GroupImage/test/error.jpg" alt="">
+
+                        </div>
+               
+                        <div class="intro Text" id="Intro-Text">
+                            <p>正在載入文字</p>
+                        </div>
+
+                    </div>
+
+                    
           
                    
                 </div>
@@ -67,15 +83,15 @@
             <section id="section2" class="content">
                 <div class="writting">
                     <h1>作品亮點</h1>
-                    <div class="HighlightBox">
+                    <div class="Box">
 
-                        <div class="highlight Text">
-                            <p>放各組的亮點文字</p>
+                        <div class="highlight Text" id="highlight-Text">
+                            <p>正在載入文字</p>
                         </div>
     
                         <div class="highlight Image">
                         
-                            <img class="HighlightImage" src="Image/GroupImage/Euvuvu/亮點介紹配圖.png" alt="">
+                            <img class="HighlightImage" id="Highlight-Image" src="Image/GroupImage/test/error.jpg" alt="">
                           
                         </div>
                     </div>
@@ -84,14 +100,14 @@
                     
                 </div>
             </section>
-            <section id="section3" class="content ">
+            <section id="section3" class="content longContent">
                 <div class="writting">
                     <h1> 主頁第三個區塊--圖片輪轉區</h1>
                      <!-- <p>放圖片輪轉</p>-->
                      <div class="picture_component_wrapper">
                         <div class="picture_carousel-wrapper">
                             <div class="picture_slideshow-container">
-                                <div class="picture_slides-inner">
+                                <div class="picture_slides-inner" id="picture_slides">
                                     <!-- 幻燈片內容... -->
                                     <div class="picture_mySlides"><img src="https://placehold.co/1600x900/4A90E2/FFFFFF?text=Image+1" alt="圖片一"></div>
                                     <div class="picture_mySlides"><img src="https://placehold.co/1600x900/50E3C2/FFFFFF?text=Image+2" alt="圖片二"></div>
