@@ -110,7 +110,10 @@ const works = [
             intro_image: "Image/GroupImage/Euvuvu/作品介紹配圖.png",
             Loop_image: [
                   "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png"
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png"
                   
                 ],
             Menber_image: [
@@ -406,20 +409,21 @@ export function SetGroupPage(workId) {
           document.getElementById("Intro-Image").src = workData.intro_image;
           document.getElementById("Highlight-Image").src = workData.Highlight_image;
 
-          // const imageContainer = document.getElementById("picture_slides");
-          // // imageContainer.innerHTML = ""; 
+          // 底下是輪播圖部份的變更
+          const imageContainer = document.getElementById("picture_slides");
+          imageContainer.innerHTML = ""; 
 
-          // workData.Loop_image.forEach(text => {
-          // const div = document.createElement("div");
-          // div.classList.add("picture_mySlides");
+          workData.Loop_image.forEach((src, index) => {
+          const div = document.createElement("div");
+          div.classList.add("picture_mySlides");
 
-          // const img = document.createElement("img");
-          // img.src = text; // 自訂 img 的 src
-       
+          const img = document.createElement("img");
+          img.src = src; // 自訂 img 的 src
+          img.alt = `圖片${index + 1}`;
     
-          // imageContainer.appendChild(div);
-          // div.appendChild(img);
-          // }); 
+          div.appendChild(img);
+          imageContainer.appendChild(div);
+          }); 
             
     
        
