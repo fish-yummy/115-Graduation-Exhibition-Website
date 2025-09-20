@@ -138,7 +138,240 @@ const works = [
                 "更加了解鄒族文化，並且激發好奇與興趣",
                 "不知不覺對此有印象或是記住了"
                 ],
-            
+
+          },
+          {
+            id: 6,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第6組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第6組",
+                  "",
+                  ""
+                ],
+      
+          },
+          {
+            id: 7,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第7組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第7組",
+                  "",
+                  ""
+                ],
+         
+          },
+          {
+            id: 8,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第8組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第8組",
+                  "",
+                  ""
+                ],
+         
+          },
+          {
+            id: 9,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第9組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第9組",
+                  "",
+                  ""
+                ],
+         
+          },
+          {
+            id: 10,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第10組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第10組",
+                  "",
+                  ""
+                ],
+      
+          },
+          {
+            id: 11,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第11組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第11組",
+                  "",
+                  ""
+                ],
+         
+          },
+          {
+            id: 12,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第12組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第12組",
+                  "",
+                  ""
+                ],
+         
+          },
+          {
+            id: 13,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第13組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第13組",
+                  "",
+                  ""
+                ],
+         
+          },
+           {
+            id: 14,
+            title: "",
+            Highlight_image: "",
+            intro_image: "",
+            Loop_image: [
+                  "",
+                  "",
+                  ""
+                ],
+            Menber_image: [
+                  "",
+                  "",
+                ],  
+            highlight_Desc: [
+                  "第14組",
+                  "",
+                  ""
+                ],
+            Intro_Desc: [
+                  "第14組",
+                  "",
+                  ""
+                ],
          
           }
         ];
