@@ -1,26 +1,32 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Css/scrollbarStyle.css"> <!-- 滾動條樣式 -->
-    <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
-    <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
-    <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
-    <link rel="stylesheet" href="./Css/works_overview.css"> <!-- 作品總覽樣式 -->
-    <!-- 作品總覽字體 -->
+    <link rel="stylesheet" href="Css/scrollbarStyle.css">
+    <link rel="stylesheet" href="Css/Main.css">
+    <link rel="stylesheet" href="Css/Menu.css">
+    <link rel="stylesheet" href="Css/Loading.css">
+    <link rel="stylesheet" href="./Css/works_overview.css">
+    <link rel="stylesheet" href="Css/Background.css"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gen+Jyuu+Gothic:wght@700&display=swap" rel="stylesheet">
-    <!-- 作品總覽字體 -->
     
-    <!-- 確保使用 type="module" 來支持模組化 JS -->
+    <!-- ▼▼▼ 這是本次最重要的修改 ▼▼▼ -->
+    
+    <!-- 1. 首先載入外部函式庫 (tsParticles) -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-slim@2.12.0/tsparticles.slim.bundle.min.js"></script>
+    
+    <!-- 2. 其次載入您所有自己的模組化腳本 -->
+    <!-- Main.js 是主入口，它會自動處理其他模組的載入 -->
     <script type="module" src="Js/Main.js" defer></script>
-    <script src="./Js/works_overview_script.js" type="module"></script>
+    
+    <!-- works_overview_script.js 似乎是一個獨立功能，可以保留，但建議未來整合進 Main.js -->
+    <script src="./Js/works_overview_script.js" type="module"></script> 
+    
     <title>404 not found</title>
 </head>
 <body>
-
+<div id="tsparticles"></div>
     <div class="scroll-bar-fixed">
         <div class="scroll-bar">
             <div class="sb-button-container" >
