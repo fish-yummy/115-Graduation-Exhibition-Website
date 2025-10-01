@@ -168,87 +168,57 @@
         </section>
 
         <!-- 第四區塊 (不變) -->
-        <section id="section4" class="content">
-            <div class="writting">
-                <h1>詹柏蟲放錯位置的抽屜選單</h1>
-                <p>給你搬來這了</p>
-                <!-- 選單元件的觸發區域 -->
-                <div id="menu-app-container">
-                    <div class="menu-selection-screen">
-                        <img src="images/your-cursor-1.gif" class="menu-choice" data-menu-target="menu1" alt="選擇項目1">
-                        <img src="images/your-cursor-2.gif" class="menu-choice" data-menu-target="menu2" alt="選擇項目2">
-                        <img src="images/your-cursor-3.gif" class="menu-choice" data-menu-target="menu3" alt="選擇項目3">
-                    </div>
-                </div>
+        
+ <section id="section4" class="content">
+        <h1>主頁第四個-區塊 不知道放哪</h1>
+    <!-- 總容器，也是滑鼠事件的邊界 -->
+    <div id="menu-app-container">
+        <!-- 背景遮罩層 (預設隱藏) -->
+        <div class="menu-backdrop"></div>
+    
+        <!-- 三個卡片的包裹容器 (預設隱藏) -->
+        <div class="menu-cards-wrapper">
+            <!-- 卡片一 -->
+            <div class="menu-card" id="card-1">
+                <div class="item-title">作品名稱 1A</div>
+                <a href="GroupPage.html?group=1A" class="item-content nav-link">
+                    <img src="images/your-work-image-1.jpg" alt="作品圖片1">
+                    <p>查看 1A</p>
+                </a>
             </div>
-        </section>
-    </div>
-
-    <!-- ========================================================== -->
-    <!-- 第二區塊點擊後彈出的選單內容 -->
-    <!-- ========================================================== -->
-    <div class="menu-display-overlay">
-        <div class="menu-display-area">
-            <button class="close-button">&times;</button>
-            
-            <!-- 第一組選單內容 -->
-            <div id="menu1" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-1.gif" alt="Trigger 1"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 1A</div>
-                        <a href="GroupPage.html?group=1A" class="item-content nav-link"><p>查看 1A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 1B</div>
-                        <a href="GroupPage.html?group=1B" class="item-content nav-link"><p>查看 1B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 1C</div>
-                        <a href="GroupPage.html?group=1C" class="item-content nav-link"><p>查看 1C 詳細內容</p></a>
-                    </div>
-                </div>
+    
+            <!-- 卡片二 -->
+            <div class="menu-card" id="card-2">
+                <div class="item-title">作品名稱 2A</div>
+                <a href="GroupPage.html?group=2A" class="item-content nav-link">
+                    <img src="images/your-work-image-2.jpg" alt="作品圖片2">
+                    <p>查看 2A</p>
+                </a>
             </div>
-            
-            <!-- 第二組選單內容 (已修改) -->
-            <div id="menu2" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-2.gif" alt="Trigger 2"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 2A</div>
-                        <a href="GroupPage.html?group=2A" class="item-content nav-link"><p>查看 2A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 2B</div>
-                        <a href="GroupPage.html?group=2B" class="item-content nav-link"><p>查看 2B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 2C</div>
-                        <a href="GroupPage.html?group=2C" class="item-content nav-link"><p>查看 2C 詳細內容</p></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第三組選單內容 (已修改) -->
-            <div id="menu3" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-3.gif" alt="Trigger 3"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 3A</div>
-                        <a href="GroupPage.html?group=3A" class="item-content nav-link"><p>查看 3A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 3B</div>
-                        <a href="GroupPage.html?group=3B" class="item-content nav-link"><p>查看 3B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 3C</div>
-                        <a href="GroupPage.html?group=3C" class="item-content nav-link"><p>查看 3C 詳細內容</p></a>
-                    </div>
-                </div>
+    
+            <!-- 卡片三 -->
+            <div class="menu-card" id="card-3">
+                 <div class="item-title">作品名稱 3A</div>
+                 <a href="GroupPage.html?group=3A" class="item-content nav-link">
+                     <p>Lorem ipsum dolor sit amet consectetur.</p>
+                 </a>
             </div>
         </div>
+    
+        <!-- 中央觸發 GIF (這個元素將會移動) -->
+        <div class="menu-trigger-center">
+            <img src="images/closing.gif" id="center-trigger-gif" 
+                 data-opening-gif="images/opening.gif" 
+                 data-closing-gif="images/closing.gif" 
+                 alt="開啟選單">
+        </div>
+    
     </div>
+</section>
+    </div>
+
+    </div>
+
 
     <!-- ========================================================== -->
     <!-- 全域 Loading 畫面元件 (預設隱藏) -->
