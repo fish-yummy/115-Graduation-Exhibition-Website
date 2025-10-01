@@ -49,16 +49,25 @@
 
         /* PNG序列動畫 */
         @keyframes frameAnimation {
-            0% { background-image: url('loading-frame-1.png'); }
-            12.5% { background-image: url('loading-frame-2.png'); }
-            25% { background-image: url('loading-frame-3.png'); }
-            37.5% { background-image: url('loading-frame-4.png'); }
-            50% { background-image: url('loading-frame-5.png'); }
-            62.5% { background-image: url('loading-frame-6.png'); }
-            75% { background-image: url('loading-frame-7.png'); }
-            87.5% { background-image: url('loading-frame-8.png'); }
-            100% { background-image: url('loading-frame-1.png'); }
-        }
+    0%    { background-image: url('../images/loading動畫_1.png'); }
+    5.88% { background-image: url('../images/loading動畫_2.png'); }
+    11.76% { background-image: url('../images/loading動畫_3.png'); }
+    17.64% { background-image: url('../images/loading動畫_4.png'); }
+    23.52% { background-image: url('../images/loading動畫_5.png'); }
+    29.40% { background-image: url('../images/loading動畫_6.png'); }
+    35.28% { background-image: url('../images/loading動畫_7.png'); }
+    41.16% { background-image: url('../images/loading動畫_8.png'); }
+    47.04% { background-image: url('../images/loading動畫_9.png'); }
+    52.92% { background-image: url('../images/loading動畫_10.png'); }
+    58.80% { background-image: url('../images/loading動畫_11.png'); }
+    64.68% { background-image: url('../images/loading動畫_12.png'); }
+    70.56% { background-image: url('../images/loading動畫_13.png'); }
+    76.44% { background-image: url('../images/loading動畫_14.png'); }
+    82.32% { background-image: url('../images/loading動畫_15.png'); }
+    88.20% { background-image: url('../images/loading動畫_16.png'); }
+    94.08% { background-image: url('../images/loading動畫_17.png'); }
+    100%  { background-image: url('../images/loading動畫_17.png'); }
+}
 
         /* 載入標籤 */
         .loading-label {

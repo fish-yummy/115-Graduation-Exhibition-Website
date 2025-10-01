@@ -63,14 +63,23 @@ class LoadingPage {
     
     preloadImages() {
         const imageUrls = [
-            "loading-frame-1.png",
-            "loading-frame-2.png",
-            "loading-frame-3.png",
-            "loading-frame-4.png",
-            "loading-frame-5.png",
-            "loading-frame-6.png",
-            "loading-frame-7.png",
-            "loading-frame-8.png"
+            "images/loading動畫_1.png",
+            "images/loading動畫_2.png",
+            "images/loading動畫_3.png",
+            "images/loading動畫_4.png",
+            "images/loading動畫_5.png",
+            "images/loading動畫_6.png",
+            "images/loading動畫_7.png",
+            "images/loading動畫_8.png",
+            "images/loading動畫_9.png",
+            "images/loading動畫_10.png",
+            "images/loading動畫_11.png",
+            "images/loading動畫_12.png",
+            "images/loading動畫_13.png",
+            "images/loading動畫_14.png",
+            "images/loading動畫_15.png",
+            "images/loading動畫_16.png",
+            "images/loading動畫_17.png"
         ];
         
         let loadedCount = 0;
