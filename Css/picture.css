@@ -1,23 +1,20 @@
 /* ================================================== */
-/*         圖片輪播組件樣式表 (最終修正版)            */
+/*         圖片輪播組件樣式表 (全自動版)              */
 /* ================================================== */
 
-/* --- 組件最外層包裹容器 (只負責佈局) --- */
+/* --- 組件最外層包裹容器 (負責佈局) --- */
 .picture_component_wrapper {
     width: 100%;
     max-width: 900px;
     margin: 40px auto;
 }
 
-/* --- 輪播器主容器 (現在是真正的白色卡片) --- */
+/* --- 輪播器主容器 (白色卡片) --- */
 .picture_carousel-wrapper {
     background: #ffffff;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    
-    /* 如果您需要那個藍色框線，請在這裡添加 */
-    /* border: 2px solid blue; */
 }
 
 /* --- 輪播區塊 (定義 16:9 比例) --- */
@@ -27,20 +24,18 @@
     padding-top: 56.25%;
 }
 
-/* 內部滑動容器 */
+/* 內部滑動容器 (寬度由 JS 設定) */
 .picture_slides-inner {
     position: absolute;
     top: 0;
     left: 0;
-    width: 500%;
     height: 100%;
     display: flex;
     transition: transform 0.7s ease-in-out;
 }
 
-/* 每一張幻燈片容器 */
+/* 每一張幻燈片容器 (寬度由 JS 設定) */
 .picture_mySlides {
-    width: 20%;
     flex-shrink: 0;
     height: 100%;
 }
@@ -80,17 +75,16 @@
     opacity: 0.7;
     transition: opacity 0.3s ease;
 }
-
 .picture_prev:hover svg,
 .picture_next:hover svg {
     opacity: 1;
 }
 
-/* --- 控制項容器 (現在位於白色卡片內部) --- */
+/* --- 控制項容器 --- */
 .picture_controls-container {
     padding: 20px;
     text-align: center;
-    background-color: #ffffff; /* 確保背景為白色 */
+    background-color: #ffffff;
 }
 
 /* 圓點指示器容器 */
@@ -109,7 +103,6 @@
     display: inline-block;
     transition: all 0.3s ease;
 }
-
 .active,
 .picture_dot:hover {
     background-color: #717171;
@@ -126,14 +119,12 @@
     text-align: center;
     border: 1px solid #eeeeee;
 }
-
 .picture_info-box h3 {
     margin-top: 0;
     color: #333333;
     font-size: 18px;
     font-weight: 600;
 }
-
 .picture_info-box p {
     margin-bottom: 0;
     color: #555555;
@@ -155,7 +146,6 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
-
 .picture_play-pause-btn:hover {
     background-color: #357ABD;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);

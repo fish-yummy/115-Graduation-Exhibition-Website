@@ -1,19 +1,20 @@
 // Js/picture_carousel.js
-import * as ui from '/Js/picture_ui.js';
+import * as ui from './picture_ui.js';
 
 let slideIndex = 1;
 let autoPlayTimeout = null;
 let isPlaying = true;
+let dots = [];
 
 function showSlides(n) {
     if (n > ui.slides.length) { slideIndex = 1; }
     if (n < 1) { slideIndex = ui.slides.length; }
 
-    const offsetPercentage = -(slideIndex - 1) * 100 / ui.slides.length;
+    const offsetPercentage = -(slideIndex - 1) * (100 / ui.slides.length);
     ui.slidesInner.style.transform = `translateX(${offsetPercentage}%)`;
 
-    ui.dots.forEach(dot => dot.classList.remove('active'));
-    ui.dots[slideIndex - 1].classList.add('active');
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[slideIndex - 1].classList.add('active');
     
     clearTimeout(autoPlayTimeout);
     if (isPlaying) {
@@ -45,5 +46,22 @@ export function togglePlayPause() {
 }
 
 export function init() {
+    const slideCount = ui.slides.length;
+    if (slideCount === 0) return;
+
+    ui.slidesInner.style.width = `${slideCount * 100}%`;
+    Array.from(ui.slides).forEach(slide => {
+        slide.style.width = `${100 / slideCount}%`;
+    });
+
+    ui.dotsContainer.innerHTML = '';
+    for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'picture_dot';
+        dot.addEventListener('click', () => currentSlide(i + 1));
+        ui.dotsContainer.appendChild(dot);
+        dots.push(dot);
+    }
+
     showSlides(slideIndex);
 }

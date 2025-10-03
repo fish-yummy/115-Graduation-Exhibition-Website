@@ -1,0 +1,90 @@
+/* ================================================== */
+/*             交通資訊組件樣式表 (最終靠左版)        */
+/* ================================================== */
+
+/* --- 組件最外層包裹容器 (負責佈局) --- */
+.traffic_info_component_wrapper {
+    /* --- MODIFIED --- 設定寬度為 90% */
+    width: 90%; 
+
+    /* --- MODIFIED --- 移除 max-width，讓寬度完全由百分比控制 */
+    max-width: none; 
+
+    /* --- MODIFIED --- 移除 'auto' 置中，改為靠左對齊 */
+    /* 上下 80px 間距, 右側自動, 左側 0 */
+    margin: 80px auto 80px 0; 
+    
+    padding: 0 40px;   /* 保持左右內邊距，讓內容不會貼邊 */
+}
+
+/* --- 組件主標題 --- */
+.traffic_info_main_title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+/* --- 網格佈局容器 --- */
+.traffic_info_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* --- 左側圖片容器 --- */
+.traffic_info_map-image-container {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- 校內地圖圖片 --- */
+.traffic_info_map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- 右側 Google 地圖容器 --- */
+.traffic_info_google-map-container {
+    width: 100%;
+    height: 100%;
+    min-height: 450px;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Google 地圖 iframe --- */
+.traffic_info_google-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* ================================================== */
+/*                    響應式設計                      */
+/* ================================================== */
+
+@media (max-width: 992px) {
+    .traffic_info_grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .traffic_info_grid {
+        grid-template-columns: 1fr;
+    }
+    .traffic_info_component_wrapper {
+        /* 在手機版上，恢復佔滿寬度 */
+        width: 100%;
+        padding: 0 20px;
+        margin: 50px auto;
+    }
+}
