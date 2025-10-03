@@ -53,15 +53,25 @@ class LoadingController {
     
     preloadImages() {
         const imageUrls = [
-            "images/loading-frame-1.png",
-            "images/loading-frame-2.png",
-            "images/loading-frame-3.png",
-            "images/loading-frame-4.png",
-            "images/loading-frame-5.png",
-            "images/loading-frame-6.png",
-            "images/loading-frame-7.png",
-            "images/loading-frame-8.png"
+            "images/loading動畫_1.png",
+            "images/loading動畫_2.png",
+            "images/loading動畫_3.png",
+            "images/loading動畫_4.png",
+            "images/loading動畫_5.png",
+            "images/loading動畫_6.png",
+            "images/loading動畫_7.png",
+            "images/loading動畫_8.png",
+            "images/loading動畫_9.png",
+            "images/loading動畫_10.png",
+            "images/loading動畫_11.png",
+            "images/loading動畫_12.png",
+            "images/loading動畫_13.png",
+            "images/loading動畫_14.png",
+            "images/loading動畫_15.png",
+            "images/loading動畫_16.png",
+            "images/loading動畫_17.png"
         ];
+        // ▲▲▲ 修改結束 ▲▲▲
         
         let loadedCount = 0;
         const totalImages = imageUrls.length;

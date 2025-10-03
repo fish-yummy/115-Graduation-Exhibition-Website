@@ -1,0 +1,12 @@
+/* Css/Background.css (清理版) */
+
+#tsparticles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* 關鍵：將 z-index 設為負數，讓它永遠在所有內容的最底層 */
+  z-index: -1; 
+}

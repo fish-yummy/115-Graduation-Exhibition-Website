@@ -1,29 +1,37 @@
-/* === 4個頁面都一樣且統一的樣式寫這邊 === */
+/* === Css/Main.css (最終修正版) === */
 
-body{
+/* === 4個頁面都一樣且統一的樣式寫這邊 === */
+body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    
+    /* 為整個頁面設定一個基礎背景色 */
+    background-color: #f0f2f5; 
 }
 
 /* === 頁面滑動 === */
 html, body {
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-  
-
 }
+
+/* ▼▼▼ 這是本次最重要的修改 ▼▼▼ */
+/* 讓包裹所有 section 的容器也變成透明的 */
+.section-scroll-container {
+    background-color: transparent;
+}
+/* ▲▲▲ 修改結束 ▲▲▲ */
+
 section {
     height: 100vh;
-   
     scroll-snap-align: start;
-     
+    /* 讓所有 section 的背景都變成透明，才能看到後面的粒子 */
+    background-color: transparent;
 }
-h1{
+
+h1 {
     display: flex;
     justify-content: center; 
     align-items: center;  
 }
-

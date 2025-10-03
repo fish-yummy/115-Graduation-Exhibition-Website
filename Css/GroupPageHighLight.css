@@ -1,27 +1,55 @@
-
-.HighlightBox{
+p{
+    font-size: 24px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.Box{
 
     display: flex;
-    gap: 100px; 
-    margin: 10px;
+    gap: 1%; 
+    margin: 5%;
     
-    border:solid 10px rgb(183, 217, 72);
+    /* border:solid 10px rgb(183, 217, 72); */
 }
+/* 底下是亮點的 */
 .highlight{
     flex: 1;
-    border:solid 10px rgb(217, 130, 72);
+    /* border:solid 10px rgb(217, 130, 72); */
+    padding: 2%;
 
+    display: relative;
+  
+    
+}
+
+.highlight.Image{
     display: flex;
-    justify-content: center; 
     align-items: center;
+    justify-content: center;
+
 }
 .HighlightImage{
     width: 576px;
     height: 324px;
 }
-/* .highlight.Image{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
-} */
 
+/* 底下是介紹的 */
+
+.intro{
+    flex: 1;
+    /* border:solid 10px rgb(217, 130, 72); */
+    padding: 2%;
+
+    display: relative;
+}
+.intro.Image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.IntroImage{
+    width: 576px;
+    height: 324px;
+}
