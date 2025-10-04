@@ -2,12 +2,15 @@
 
 /* === 4個頁面都一樣且統一的樣式寫這邊 === */
 body {
+    cursor: url("../Image/cursor/666666.png") , auto;
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     /* 為整個頁面設定一個基礎背景色 */
     background-color: #f0f2f5; 
+    
+   
 }
 
 /* === 頁面滑動 === */
@@ -35,3 +38,15 @@ h1 {
     justify-content: center; 
     align-items: center;  
 }
+
+body:active{
+    cursor: url("../Image/cursor/確認2.png") 0 0, auto;
+}
+
+span:hover{
+    cursor: url("../Image/cursor/輸入(小).png") 0 0, auto;
+}
+a:hover{
+    cursor: url("../Image/cursor/點選2.png") 0 0, auto;
+}
+

@@ -433,7 +433,9 @@ export function SetGroupPage(workId) {
 
           workData.highlight_Desc.forEach(text => {
           const p = document.createElement("p");
-          p.textContent = text;
+          const span = document.createElement("span");
+          span.textContent = text;
+          p.appendChild(span);
           descContainer.appendChild(p);
           });  
 
@@ -442,7 +444,9 @@ export function SetGroupPage(workId) {
 
           workData.Intro_Desc.forEach(text => {
           const p = document.createElement("p");
-          p.textContent = text;
+          const span = document.createElement("span");
+          span.textContent = text;
+          p.appendChild(span);
           descContainer2.appendChild(p);
           }); 
           document.getElementById("Group-Title").textContent = workData.title ;
