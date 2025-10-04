@@ -45,16 +45,20 @@ export function togglePlayPause() {
     }
 }
 
+
+let observer = null;
 export function init() {
     const slideCount = ui.slides.length;
     if (slideCount === 0) return;
+
+    dots = [];
+    ui.dotsContainer.innerHTML = '';
 
     ui.slidesInner.style.width = `${slideCount * 100}%`;
     Array.from(ui.slides).forEach(slide => {
         slide.style.width = `${100 / slideCount}%`;
     });
 
-    ui.dotsContainer.innerHTML = '';
     for (let i = 0; i < slideCount; i++) {
         const dot = document.createElement('span');
         dot.className = 'picture_dot';
@@ -63,5 +67,22 @@ export function init() {
         dots.push(dot);
     }
 
+    // ui.dotsContainer.innerHTML = '';
+    // for (let i = 0; i < slideCount; i++) {
+    //     const dot = document.createElement('span');
+    //     dot.className = 'picture_dot';
+    //     dot.addEventListener('click', () => currentSlide(i + 1));
+    //     ui.dotsContainer.appendChild(dot);
+    //     dots.push(dot);
+    // }
+
     showSlides(slideIndex);
+
+    if (!observer) {
+        observer = new MutationObserver(() => {
+            // DOM 有變化時重新初始化
+            init();
+        });
+        observer.observe(ui.slidesInner, { childList: true });
+    }
 }

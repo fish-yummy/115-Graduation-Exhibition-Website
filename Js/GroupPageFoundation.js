@@ -86,9 +86,8 @@ const works = [
             Highlight_image: "",
             intro_image: "",
             Loop_image: [
-                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).png",
-                  "",
-                  ""
+                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).png"
+                  
                 ],
             Menber_image: [
                   "",
@@ -114,9 +113,7 @@ const works = [
             Loop_image: [
                   "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png",
                   "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png"
+                  
                   
                 ],
             Menber_image: [
@@ -280,8 +277,8 @@ const works = [
             intro_image: "Image/GroupImage/10/作品介紹配圖.png",
             Loop_image: [
                   "Image/GroupImage/10/Loop/輪轉圖_1.png",
-                  "Image/GroupImage/10/Loop/輪轉圖_2.png",
-                  ""
+                  "Image/GroupImage/10/Loop/輪轉圖_2.png"
+                  
                 ],
             Menber_image: [
                   "",
