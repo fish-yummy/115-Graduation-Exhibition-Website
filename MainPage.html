@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/scrollbarStyle.css"> <!-- 滾動條樣式 -->
+    <link rel="stylesheet" href="Css/style.css"> <!--banner的css-->>
     <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
     <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
     <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
@@ -13,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gen+Jyuu+Gothic:wght@700&display=swap" rel="stylesheet">
+    
     <!-- 作品總覽字體 -->
     
     <!-- 確保使用 type="module" 來支持模組化 JS -->
@@ -22,7 +24,69 @@
     
 </head>
 <body>
+    <header class="header" id="header">
+   <div class="banner" id="banner">
+        <!-- 左到右排列 -->
+        <img src="banner_image/主視覺標題.png" alt="畢業專題" class="main-title">
+        
+        <a href="#section1" class="nav-item">
+            <img src="banner_image/主頁標.png" alt="首頁" class="nav-icon"><span>首頁</span>
+        </a>
+        <a href="#section2" class="nav-item">
+            <img src="banner_image/選單.png" alt="選單" class="nav-icon"><span>作品總攬(選單)</span>
+        </a>
+        <a href="#section3" class="nav-item">交通資訊</a>
+        <a href="#section4" class="nav-item">關於我們</a>
+        <a href="#" class="nav-item">
+            <img src="banner_image/fb.png" alt="Facebook" class="nav-icon">
+        </a>
+        <a href="#" class="nav-item">
+            <img src="banner_image/ig.png" alt="Instagram" class="nav-icon">
+        </a>
+        
+        <img src="banner_image/系網標.png" alt="系網標" class="dept-logo">
+    </div>
+</header>   
 
+    <script> //ES6 模組在 file:// 協議下會被瀏覽器阻擋。
+  const header = document.getElementById('header');
+const banner = document.getElementById('banner');
+
+let lastScrollY = window.scrollY;
+let isShrunk = false;
+
+window.addEventListener('scroll', function() {
+    const currentScrollY = window.scrollY;
+    const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
+    
+    console.log('方向:', scrollDirection, '位置:', currentScrollY);
+    
+    // 往下滾動時縮小
+    if (scrollDirection === 'down' && currentScrollY > 50 && !isShrunk) {
+        header.classList.add('shrink');
+        banner.classList.add('shrink');
+        isShrunk = true;
+        console.log('往下滾動 - 縮小');
+    }
+    // 往上滾動時恢復
+    else if (scrollDirection === 'up' && isShrunk) {
+        header.classList.remove('shrink');
+        banner.classList.remove('shrink');
+        isShrunk = false;
+        console.log('往上滾動 - 恢復');
+    }
+    // 在頂部時確保恢復
+    else if (currentScrollY <= 10 && isShrunk) {
+        header.classList.remove('shrink');
+        banner.classList.remove('shrink');
+        isShrunk = false;
+        console.log('在頂部 - 恢復');
+    }
+    
+    lastScrollY = currentScrollY;
+    });
+    </script>
+    
 
     <div class="scroll-bar-fixed">
         <div class="scroll-bar">
