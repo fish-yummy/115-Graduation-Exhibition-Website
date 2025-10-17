@@ -2,7 +2,7 @@ import * as Scrollbar from "./Scrollbar.js";
 import { initializeMenu } from './menu.js';
 import { initializeNavigation } from './navigation.js';
 import particleConfig from './particle-config.js'; // 您的檔案名可能是 particle.js
-import { initScrollHandler } from './scripts.js;';
+import { initScrollHandler } from './scripts.js';
 
 // 只使用一個 DOMContentLoaded 事件監聽器
 document.addEventListener('DOMContentLoaded', () => {

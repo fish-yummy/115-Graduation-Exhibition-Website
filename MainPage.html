@@ -59,7 +59,7 @@ window.addEventListener('scroll', function() {
     const currentScrollY = window.scrollY;
     const scrollDirection = currentScrollY > lastScrollY ? 'down' : 'up';
     
-    console.log('方向:', scrollDirection, '位置:', currentScrollY);
+    // console.log('方向:', scrollDirection, '位置:', currentScrollY);
     
     // 往下滾動時縮小
     if (scrollDirection === 'down' && currentScrollY > 50 && !isShrunk) {

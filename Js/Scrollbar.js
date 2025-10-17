@@ -1,29 +1,45 @@
-
 export function ScrollbarImageChange() {
-    const sections = document.querySelectorAll("section");
+    console.log(`觸發 Scrollbar圖片切換`);
 
+    const sections = document.querySelectorAll("section");
+    const headerHeight = 65; // 根據你的 CSS header 高度
+
+    // 取得所有 sb-button img
+    const sbImages = document.querySelectorAll(".sb-button");
+
+    // IntersectionObserver
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             const sectionId = entry.target.getAttribute("id");
-            const img = document.querySelector(`a[href="#${sectionId}"] img`);
-            if (!img) return;
+
+            // 找到對應的 img
+            const img = document.querySelector(`a[href="#${sectionId}"] img.sb-button`);
+            if (!img) return; // 安全檢查
 
             if (entry.isIntersecting) {
-                
-                img.src = img.getAttribute("data-alt");
-                console.log(`進入 ${sectionId}`);
+                // 切換到 data-alt，如果沒有就保留原本 src
+                if (img.dataset.alt) {
+                    img.src = img.dataset.alt;
+                    console.log(`進入 ${sectionId}，切換到 data-alt`);
+                }
             } else {
-               
-                img.src = img.getAttribute("data-original");
-                console.log(`離開 ${sectionId}`);
+                // 離開 section，切換回 data-original
+                if (img.dataset.original) {
+                    img.src = img.dataset.original;
+                    console.log(`離開 ${sectionId}，切換回 data-original`);
+                }
             }
         });
     }, {
-        threshold: 0.6 
+        root: null,
+        rootMargin: `-${headerHeight}px 0px 0px 0px`, // 補償 header
+        threshold: [0.5] // 你原本的 threshold
     });
 
+    // 監測每個 section
     sections.forEach(section => observer.observe(section));
 }
+
 
 
 
