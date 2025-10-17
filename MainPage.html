@@ -134,7 +134,7 @@ window.addEventListener('scroll', function() {
         </section>
 
         <!-- 第二區塊 (已整合選單元件) -->
-        <section id="section2" class="content longContent">
+        <section id="section2" class="content longContent2">
             <div class="writting">
                 <h1>主頁第二個區塊--各組作品總覽</h1>
                 <p>放各組的作品縮圖，並連結到各組作品詳細頁</p>
@@ -253,7 +253,7 @@ window.addEventListener('scroll', function() {
         </section>
 
         <!-- 第四區塊 (不變) -->
-        <section id="section4" class="content">
+        <section id="section4" class="content longContent">
             <div class="writting">
                 <h1>詹柏蟲放錯位置的抽屜選單</h1>
                 <p>給你搬來這了</p>
@@ -266,74 +266,77 @@ window.addEventListener('scroll', function() {
                     </div>
                 </div>
             </div>
+
+             <!-- ========================================================== -->
+            <!-- 第二區塊點擊後彈出的選單內容 -->
+            <!-- ========================================================== -->
+            <div class="menu-display-overlay">
+                <div class="menu-display-area">
+                    <button class="close-button">&times;</button>
+                    
+                    <!-- 第一組選單內容 -->
+                    <div id="menu1" class="menu-container">
+                        <div class="menu-trigger"><img src="your-cursor-1.gif" alt="Trigger 1"></div>
+                        <div class="menu-items">
+                            <div class="item">
+                                <div class="item-title">作品名稱 1A</div>
+                                <a href="GroupPage.html?group=1A" class="item-content nav-link"><p>查看 1A 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 1B</div>
+                                <a href="GroupPage.html?group=1B" class="item-content nav-link"><p>查看 1B 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 1C</div>
+                                <a href="GroupPage.html?group=1C" class="item-content nav-link"><p>查看 1C 詳細內容</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 第二組選單內容 (已修改) -->
+                    <div id="menu2" class="menu-container">
+                        <div class="menu-trigger"><img src="your-cursor-2.gif" alt="Trigger 2"></div>
+                        <div class="menu-items">
+                            <div class="item">
+                                <div class="item-title">作品名稱 2A</div>
+                                <a href="GroupPage.html?group=2A" class="item-content nav-link"><p>查看 2A 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 2B</div>
+                                <a href="GroupPage.html?group=2B" class="item-content nav-link"><p>查看 2B 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 2C</div>
+                                <a href="GroupPage.html?group=2C" class="item-content nav-link"><p>查看 2C 詳細內容</p></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 第三組選單內容 (已修改) -->
+                    <div id="menu3" class="menu-container">
+                        <div class="menu-trigger"><img src="your-cursor-3.gif" alt="Trigger 3"></div>
+                        <div class="menu-items">
+                            <div class="item">
+                                <div class="item-title">作品名稱 3A</div>
+                                <a href="GroupPage.html?group=3A" class="item-content nav-link"><p>查看 3A 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 3B</div>
+                                <a href="GroupPage.html?group=3B" class="item-content nav-link"><p>查看 3B 詳細內容</p></a>
+                            </div>
+                            <div class="item">
+                                <div class="item-title">作品名稱 3C</div>
+                                <a href="GroupPage.html?group=3C" class="item-content nav-link"><p>查看 3C 詳細內容</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </section>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- 第二區塊點擊後彈出的選單內容 -->
-    <!-- ========================================================== -->
-    <div class="menu-display-overlay">
-        <div class="menu-display-area">
-            <button class="close-button">&times;</button>
-            
-            <!-- 第一組選單內容 -->
-            <div id="menu1" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-1.gif" alt="Trigger 1"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 1A</div>
-                        <a href="GroupPage.html?group=1A" class="item-content nav-link"><p>查看 1A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 1B</div>
-                        <a href="GroupPage.html?group=1B" class="item-content nav-link"><p>查看 1B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 1C</div>
-                        <a href="GroupPage.html?group=1C" class="item-content nav-link"><p>查看 1C 詳細內容</p></a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 第二組選單內容 (已修改) -->
-            <div id="menu2" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-2.gif" alt="Trigger 2"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 2A</div>
-                        <a href="GroupPage.html?group=2A" class="item-content nav-link"><p>查看 2A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 2B</div>
-                        <a href="GroupPage.html?group=2B" class="item-content nav-link"><p>查看 2B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 2C</div>
-                        <a href="GroupPage.html?group=2C" class="item-content nav-link"><p>查看 2C 詳細內容</p></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第三組選單內容 (已修改) -->
-            <div id="menu3" class="menu-container">
-                <div class="menu-trigger"><img src="your-cursor-3.gif" alt="Trigger 3"></div>
-                <div class="menu-items">
-                    <div class="item">
-                        <div class="item-title">作品名稱 3A</div>
-                        <a href="GroupPage.html?group=3A" class="item-content nav-link"><p>查看 3A 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 3B</div>
-                        <a href="GroupPage.html?group=3B" class="item-content nav-link"><p>查看 3B 詳細內容</p></a>
-                    </div>
-                    <div class="item">
-                        <div class="item-title">作品名稱 3C</div>
-                        <a href="GroupPage.html?group=3C" class="item-content nav-link"><p>查看 3C 詳細內容</p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
     <!-- ========================================================== -->
     <!-- 全域 Loading 畫面元件 (預設隱藏) -->

@@ -36,6 +36,9 @@ section {
     /* border:solid 5px rgb(72, 72, 217); */
     font-size: 25px;
 }
+.content.longContent2#section2{
+    height: 300vh;
+}
 .writting{  
     width: 100%;
     height: 100vh;

@@ -33,7 +33,7 @@ export function ScrollbarImageChange() {
     }, {
         root: null,
         rootMargin: `-${headerHeight}px 0px 0px 0px`, // 補償 header
-        threshold: [0.5] // 你原本的 threshold
+        threshold: [ 0.25, 0.5, 0.75, 1]// 你原本的 threshold
     });
 
     // 監測每個 section
