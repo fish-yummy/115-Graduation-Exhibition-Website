@@ -1,38 +1,33 @@
 import * as Scrollbar from "./Scrollbar.js";
 import { initializeMenu } from './menu.js';
 import { initializeNavigation } from './navigation.js';
-import particleConfig from './particle-config.js'; // 您的檔案名可能是 particle.js
-import { initScrollHandler } from './scripts.js';
+// ▼▼▼ 假設您的粒子設定檔名現在是 'particle-config.js' ▼▼▼
+import particleConfig from './particle-config.js'; 
+import { initializeModalMenu } from './modal-menu.js';
 
-// 只使用一個 DOMContentLoaded 事件監聽器
+// 2. 在 DOMContentLoaded 事件中，安全地啟動所有功能
 document.addEventListener('DOMContentLoaded', () => {
-    
-    // 啟動您原有的 Scrollbar 功能
-    Scrollbar.ScrollbarImageChange();
-    Scrollbar.GotoTopButtonFunction();
-    
-    // 啟動「點擊選項，彈出選單」的功能
-    initializeMenu();
-    
-    // 啟動「點擊選單內的連結，顯示 Loading 畫面並跳轉」的功能
-    initializeNavigation();
-    
-    //啟動滾動banner
-    initScrollHandler();
+    try {
+        // 依序啟動所有功能
+        initializeModalMenu();
+        
+        // Banner 功能由 HTML 中的 <script> 處理，此處不再需要呼叫
+        
+        Scrollbar.ScrollbarImageChange();
+        Scrollbar.GotoTopButtonFunction();
+        
+        // 現在這個函式將有機會被執行
+        initializeMenu(); 
+        
+        initializeNavigation();
+        
+        if (window.tsParticles) {
+            tsParticles.load('tsparticles', particleConfig);
+        }
 
+        console.log("所有腳本已成功初始化！");
 
-    // ▼▼▼ 新增安全檢查，並啟動粒子背景 ▼▼▼
-    if (window.tsParticles) {
-        tsParticles.load('tsparticles', particleConfig)
-            .then(container => {
-                console.log('tsParticles 容器已成功載入:', container);
-            })
-            .catch(error => {
-                console.error('tsParticles 載入失敗:', error);
-            });
-    } else {
-        console.error('tsParticles 函式庫未找到！請檢查 HTML 中的 <script> 標籤。');
+    } catch (error) {
+        console.error("在初始化腳本時發生錯誤:", error);
     }
-
-    console.log("所有腳本已成功初始化！");
-});
+})

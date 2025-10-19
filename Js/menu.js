@@ -1,72 +1,71 @@
-// Js/menu.js (帶有懸停意圖的最終版)
+// Js/menu.js (兩階段模態 + 內部懸停最終版)
 
 export function initializeMenu() {
-    // 選取所有需要的元素
-    const menuContainer = document.getElementById('menu-app-container'); // 總容器
-    const triggerArea = document.querySelector('.menu-trigger-center'); // 中央 GIF 的觸發區域
-    const triggerGif = document.getElementById('center-trigger-gif');    // GIF 圖片本身
-    const cardsWrapper = document.querySelector('.menu-cards-wrapper'); // 所有卡片的包裹容器
+    // --- 相關元素 ---
+    const modal = document.getElementById('fullscreen-menu-modal');
+    const stage1 = document.getElementById('menu-stage-1');
+    const stage2 = document.getElementById('menu-stage-2');
     
-    // 如果在其他頁面找不到元素，就靜默返回
-    if (!menuContainer || !triggerArea || !triggerGif || !cardsWrapper) {
-        return;
+    // 抽屜自身的觸發器 (左側的 GIF)
+    const drawerTrigger = document.getElementById('vertical-trigger-gif');
+    const menuContainer = document.getElementById('menu-app-container');
+
+    // 如果找不到任何一個關鍵元素，就停止
+    if (!modal || !stage1 || !stage2 || !drawerTrigger || !menuContainer) {
+        return; 
     }
 
-    const openingGif = triggerGif.dataset.openingGif;
-    const closingGif = triggerGif.dataset.closingGif;
-    
-    // 關鍵：用於延遲關閉的計時器變數
-    let closeTimer = null;
+    // --- 核心邏輯：懸停切換階段 ---
+    let switchTimer = null; // 用於延遲切換的計時器
 
-    // --- 定義開啟和關閉的動畫序列 ---
-
-    const openSequence = () => {
-        // 播放「開啟」動畫
-        triggerGif.src = `${openingGif}?t=${new Date().getTime()}`;
-        // 觸發展開卡片和 GIF 上移
-        menuContainer.classList.add('is-active');
-        // 延遲觸發背景變暗
-        setTimeout(() => {
-            menuContainer.classList.add('backdrop-active');
-        }, 200);
-    };
-
-    const closeSequence = () => {
-        // 播放「關閉」動畫
-        triggerGif.src = `${closingGif}?t=${new Date().getTime()}`;
-        // 讓背景先開始變亮
-        menuContainer.classList.remove('backdrop-active');
-        // 延遲觸發卡片收合和 GIF 歸位
-        setTimeout(() => {
-            menuContainer.classList.remove('is-active');
-        }, 200);
-    };
-
-    // --- 綁定事件監聽器 ---
-
-    // 1. 當滑鼠移入【中央 GIF 區域】時
-    triggerArea.addEventListener('mouseenter', () => {
+    // 1. 當滑鼠移入【階段一 (初始GIF)】時
+    stage1.addEventListener('mouseenter', () => {
         // 清除任何可能存在的關閉計時器
-        clearTimeout(closeTimer);
-        // 執行開啟動畫
-        openSequence();
+        clearTimeout(switchTimer);
+        // 立即切換到階段二
+        modal.classList.add('stage-2-active');
     });
 
-    // 2. 當滑鼠移出【中央 GIF 區域】時
-    triggerArea.addEventListener('mouseleave', () => {
+    // 2. 當滑鼠移出【階段二 (抽屜畫面)】時
+    stage2.addEventListener('mouseleave', () => {
         // 啟動一個延遲 300 毫秒的關閉計時器
-        closeTimer = setTimeout(closeSequence, 300);
-    });
-    
-    // 3. 當滑鼠移入【卡片區域】時
-    cardsWrapper.addEventListener('mouseenter', () => {
-        // 清除關閉計時器，防止選單在移動過程中關閉
-        clearTimeout(closeTimer);
+        switchTimer = setTimeout(() => {
+            modal.classList.remove('stage-2-active');
+        }, 300);
     });
 
-    // 4. 當滑鼠移出【卡片區域】時
-    cardsWrapper.addEventListener('mouseleave', () => {
-        // 同樣啟動一個延遲關閉的計時器
-        closeTimer = setTimeout(closeSequence, 300);
+    // 3. 當滑鼠重新移入【階段二】時 (防止在邊緣移動時意外關閉)
+    stage2.addEventListener('mouseenter', () => {
+        clearTimeout(switchTimer);
     });
+
+
+    // --- 抽屜自身的開關邏輯 (保持不變) ---
+    const openingGif = drawerTrigger.dataset.openingGif;
+    const closingGif = drawerTrigger.dataset.closingGif;
+    let areDrawersOpen = false;
+
+    drawerTrigger.addEventListener('click', () => {
+        menuContainer.classList.toggle('active');
+        areDrawersOpen = !areDrawersOpen;
+
+        if (areDrawersOpen) {
+            drawerTrigger.src = `${openingGif}?t=${new Date().getTime()}`;
+        } else {
+            drawerTrigger.src = `${closingGif}?t=${new Date().getTime()}`;
+        }
+    });
+
+    // --- 模態關閉時的重置邏輯 (保持不變) ---
+    const closeBtn = document.getElementById('close-menu-btn');
+    if(closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            setTimeout(() => {
+                modal.classList.remove('stage-2-active');
+                menuContainer.classList.remove('active');
+                if(closingGif) drawerTrigger.src = closingGif;
+                areDrawersOpen = false;
+            }, 500);
+        });
+    }
 }

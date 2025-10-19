@@ -26,28 +26,27 @@
 </head>
 <body>
     <header class="header" id="header">
-   <div class="banner" id="banner">
-        <!-- 左到右排列 -->
-        <img src="banner_image/主視覺標題.png" alt="畢業專題" class="main-title">
-        
-        <a href="#section1" class="nav-item">
-            <img src="banner_image/主頁標.png" alt="首頁" class="nav-icon"><span>首頁</span>
-        </a>
-        <a href="#section2" class="nav-item">
-            <img src="banner_image/選單.png" alt="選單" class="nav-icon"><span>作品總攬(選單)</span>
-        </a>
-        <a href="#section3" class="nav-item">交通資訊</a>
-        <a href="#section4" class="nav-item">關於我們</a>
-        <a href="#" class="nav-item">
-            <img src="banner_image/fb.png" alt="Facebook" class="nav-icon">
-        </a>
-        <a href="#" class="nav-item">
-            <img src="banner_image/ig.png" alt="Instagram" class="nav-icon">
-        </a>
-        
-        <img src="banner_image/系網標.png" alt="系網標" class="dept-logo">
-    </div>
-</header>   
+        <div class="banner" id="banner">
+            <img src="banner_image/主視覺標題.png" alt="畢業專題" class="main-title">
+            <a href="#section1" class="nav-item">
+                <img src="banner_image/主頁標.png" alt="首頁" class="nav-icon"><span>首頁</span>
+            </a>
+            <!-- ▼▼▼ 這是觸發彈出選單的唯一按鈕 ▼▼▼ -->
+            <a href="#" id="open-menu-btn" class="nav-item">
+                <img src="banner_image/選單.png" alt="選單" class="nav-icon"><span>互動選單</span>
+            </a>
+            <a href="#section2" class="nav-item">作品總覽</a>
+            <a href="#section3" class="nav-item">交通資訊</a>
+            <a href="#section4" class="nav-item">關於我們</a>
+            <a href="#" class="nav-item">
+                <img src="banner_image/fb.png" alt="Facebook" class="nav-icon">
+            </a>
+            <a href="#" class="nav-item">
+                <img src="banner_image/ig.png" alt="Instagram" class="nav-icon">
+            </a>
+            <img src="banner_image/系網標.png" alt="系網標" class="dept-logo">
+        </div>
+    </header>   
 
     <script> //ES6 模組在 file:// 協議下會被瀏覽器阻擋。
   const header = document.getElementById('header');
@@ -253,56 +252,58 @@ window.addEventListener('scroll', function() {
             </div>
         </section>
 
-        <!-- 第四區塊 (不變) -->
-         <section id="section4" class="content">
-        <h1>主頁第四個-區塊 不知道放哪</h1>
-    <!-- 總容器，也是滑鼠事件的邊界 -->
-    <div id="menu-app-container">
-        <!-- 背景遮罩層 (預設隱藏) -->
-        <div class="menu-backdrop"></div>
-    
-        <!-- 三個卡片的包裹容器 (預設隱藏) -->
-        <div class="menu-cards-wrapper">
-            <!-- 卡片一 -->
-            <div class="menu-card" id="card-1">
-                <div class="item-title">作品名稱 1A</div>
-                <a href="GroupPage.html?group=1A" class="item-content nav-link">
-                    <img src="images/your-work-image-1.jpg" alt="作品圖片1">
-                    <p>查看 1A</p>
-                </a>
+        <section id="section4" class="content">
+            <div class="writting">
+                <h1>關於我們</h1>
+                <p>這裡是關於我們的內容...</p>
             </div>
-             <!-- 卡片二 -->
-            <div class="menu-card" id="card-2">
-                <div class="item-title">作品名稱 2A</div>
-                <a href="GroupPage.html?group=2A" class="item-content nav-link">
-                    <img src="images/your-work-image-2.jpg" alt="作品圖片2">
-                    <p>查看 2A</p>
-                </a>
-            </div>
-             <!-- 卡片三 -->
-            <div class="menu-card" id="card-3">
-                 <div class="item-title">作品名稱 3A</div>
-                 <a href="GroupPage.html?group=3A" class="item-content nav-link">
-                     <p>Lorem ipsum dolor sit amet consectetur.</p>
-                 </a>
-            </div>
+        </section>
+    </div>
+    <!-- ▲▲▲ .section-scroll-container 在這裡正確地結束了 ▲▲▲ -->
+
+   <div id="fullscreen-menu-modal">
+        <button id="close-menu-btn" class="modal-close-button">&times;</button>
+        
+        <div id="menu-stage-1" class="menu-stage active">
+            <img src="images/opening.gif" id="stage-1-trigger-gif" alt="開啟選單">
         </div>
     
-        <!-- 中央觸發 GIF (這個元素將會移動) -->
-        <div class="menu-trigger-center">
-            <img src="images/closing.gif" id="center-trigger-gif" 
-                 data-opening-gif="images/opening.gif" 
-                 data-closing-gif="images/closing.gif" 
-                 alt="開啟選單">
+        <div id="menu-stage-2" class="menu-stage">
+            <div id="menu-app-container">
+                <div class="menu-trigger-area">
+                    <img src="images/closing.gif" id="vertical-trigger-gif" 
+                         data-opening-gif="images/opening.gif" 
+                         data-closing-gif="images/closing.gif" 
+                         alt="觸發選單">
+                </div>
+                <!-- ▼▼▼ 這是您遺漏的、完整的抽屜結構 ▼▼▼ -->
+                <div class="menu-drawers-wrapper">
+                    <div class="menu-drawer-item">
+                        <div class="item-title">1<br>作品名稱</div>
+                        <div class="item-content">
+                            <img src="images/your-work-image-1.jpg" alt="作品圖片1">
+                            <a href="GroupPage.html?group=1" class="nav-link">查看詳情</a>
+                        </div>
+                    </div>
+                    <div class="menu-drawer-item">
+                        <div class="item-title">2<br>作品名稱</div>
+                        <div class="item-content">
+                            <img src="images/your-work-image-2.jpg" alt="作品圖片2">
+                            <a href="GroupPage.html?group=2" class="nav-link">查看詳情</a>
+                        </div>
+                    </div>
+                    <div class="menu-drawer-item">
+                        <div class="item-title">3</div>
+                        <div class="item-content">
+                            <p>Lorem ipsum dolor sit amet.</p>
+                            <a href="GroupPage.html?group=3" class="nav-link">查看詳情</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ▲▲▲ 抽屜結構結束 ▲▲▲ -->
+            </div>
         </div>
-    
     </div>
-</section>
-    </div>
-
-    </div>
-
-
     <!-- ========================================================== -->
     <!-- 全域 Loading 畫面元件 (預設隱藏) -->
     <!-- ========================================================== -->
