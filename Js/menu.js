@@ -1,70 +1,75 @@
-// Js/menu.js (兩階段模態 + 內部懸停最終版)
+// Js/menu.js (三欄式 + Anime.js 最終版)
 
 export function initializeMenu() {
-    // --- 相關元素 ---
-    const modal = document.getElementById('fullscreen-menu-modal');
-    const stage1 = document.getElementById('menu-stage-1');
-    const stage2 = document.getElementById('menu-stage-2');
-    
-    // 抽屜自身的觸發器 (左側的 GIF)
-    const drawerTrigger = document.getElementById('vertical-trigger-gif');
-    const menuContainer = document.getElementById('menu-app-container');
+    const triggers = document.querySelectorAll('.trigger-item');
+    const titles = document.querySelectorAll('.trigger-title');
+    const cardSets = document.querySelectorAll('.card-set');
 
-    // 如果找不到任何一個關鍵元素，就停止
-    if (!modal || !stage1 || !stage2 || !drawerTrigger || !menuContainer) {
-        return; 
-    }
+    if (triggers.length === 0) return;
 
-    // --- 核心邏輯：懸停切換階段 ---
-    let switchTimer = null; // 用於延遲切換的計時器
+    let currentAnimation = null;
 
-    // 1. 當滑鼠移入【階段一 (初始GIF)】時
-    stage1.addEventListener('mouseenter', () => {
-        // 清除任何可能存在的關閉計時器
-        clearTimeout(switchTimer);
-        // 立即切換到階段二
-        modal.classList.add('stage-2-active');
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const targetId = trigger.dataset.target;
+            const targetSet = document.getElementById(targetId);
+            const triggerIcon = trigger.querySelector('.trigger-icon');
+            
+            if (trigger.classList.contains('is-active')) return;
+
+            // 1. 重置所有元素
+            triggers.forEach(t => t.classList.remove('is-active'));
+            titles.forEach(t => t.classList.remove('is-highlighted'));
+            cardSets.forEach(cs => {
+                cs.classList.remove('is-visible');
+                if (window.anime) anime.set(cs.querySelectorAll('.menu-card'), { opacity: 0 });
+            });
+            triggers.forEach(t => {
+                const icon = t.querySelector('.trigger-icon');
+                if (icon) icon.src = icon.dataset.closingGif;
+            });
+
+            // 2. 激活當前觸發器、高亮標題、播放動畫
+            if (targetSet && window.anime) {
+                // 激活觸發器
+                trigger.classList.add('is-active');
+                triggerIcon.src = `${triggerIcon.dataset.openingGif}?t=${new Date().getTime()}`;
+                
+                // 高亮對應的標題
+                const targetTitle = document.querySelector(`.trigger-title[data-title-for="${targetId}"]`);
+                if (targetTitle) targetTitle.classList.add('is-highlighted');
+                
+                // 顯示卡片組容器
+                targetSet.classList.add('is-visible');
+                
+                // 停止上一個動畫
+                if (currentAnimation) currentAnimation.pause();
+
+                // 使用 Anime.js 播放卡片進場動畫
+                currentAnimation = anime({
+                    targets: targetSet.querySelectorAll('.menu-card'),
+                    translateX: [50, 0], // 從右側滑入
+                    opacity: [0, 1],
+                    easing: 'easeOutExpo',
+                    duration: 800,
+                    delay: anime.stagger(100) // 每個延遲 100ms
+                });
+            }
+        });
     });
 
-    // 2. 當滑鼠移出【階段二 (抽屜畫面)】時
-    stage2.addEventListener('mouseleave', () => {
-        // 啟動一個延遲 300 毫秒的關閉計時器
-        switchTimer = setTimeout(() => {
-            modal.classList.remove('stage-2-active');
-        }, 300);
-    });
-
-    // 3. 當滑鼠重新移入【階段二】時 (防止在邊緣移動時意外關閉)
-    stage2.addEventListener('mouseenter', () => {
-        clearTimeout(switchTimer);
-    });
-
-
-    // --- 抽屜自身的開關邏輯 (保持不變) ---
-    const openingGif = drawerTrigger.dataset.openingGif;
-    const closingGif = drawerTrigger.dataset.closingGif;
-    let areDrawersOpen = false;
-
-    drawerTrigger.addEventListener('click', () => {
-        menuContainer.classList.toggle('active');
-        areDrawersOpen = !areDrawersOpen;
-
-        if (areDrawersOpen) {
-            drawerTrigger.src = `${openingGif}?t=${new Date().getTime()}`;
-        } else {
-            drawerTrigger.src = `${closingGif}?t=${new Date().getTime()}`;
-        }
-    });
-
-    // --- 模態關閉時的重置邏輯 (保持不變) ---
+    // --- 關閉模態時的重置 ---
     const closeBtn = document.getElementById('close-menu-btn');
-    if(closeBtn) {
+    if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             setTimeout(() => {
-                modal.classList.remove('stage-2-active');
-                menuContainer.classList.remove('active');
-                if(closingGif) drawerTrigger.src = closingGif;
-                areDrawersOpen = false;
+                triggers.forEach(t => t.classList.remove('is-active'));
+                titles.forEach(t => t.classList.remove('is-highlighted'));
+                cardSets.forEach(cs => cs.classList.remove('is-visible'));
+                triggers.forEach(t => {
+                    const icon = t.querySelector('.trigger-icon');
+                    if (icon) icon.src = icon.dataset.closingGif;
+                });
             }, 500);
         });
     }
