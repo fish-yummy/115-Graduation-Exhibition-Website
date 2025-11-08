@@ -83,10 +83,12 @@ const works = [
           {
             id: 4,
             title: "蚵計產業",
-            Highlight_image: "",
-            intro_image: "",
+            Highlight_image: "Image/GroupImage/4/蚵的生長圖(介紹).png",
+            intro_image: "Image/GroupImage/4/作品亮點.png",
             Loop_image: [
-                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).png"
+                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).png",
+                  "Image/GroupImage/4/Loop/蚵棚.png",
+                  "Image/GroupImage/4/Loop/電子書章節封面.png"
                   
                 ],
             Menber_image: [
@@ -138,8 +140,8 @@ const works = [
           {
             id: 6,
             title: "SAVIOR",
-            Highlight_image: "",
-            intro_image: "",
+            Highlight_image: "Image/GroupImage/6/作品介紹亮點配圖.png",
+            intro_image: "Image/GroupImage/6/CG. see bully.png",
             Loop_image: [
                   "Image/GroupImage/6/Loop/圖片輪轉用圖1.jpg",
                   "Image/GroupImage/6/Loop/圖片輪轉用圖2.jpg",
@@ -247,12 +249,12 @@ const works = [
           {
             id: 9,
             title: "防詐聖經",
-            Highlight_image: "",
-            intro_image: "",
+            Highlight_image: "Image/GroupImage/9/配圖_暫.png",
+            intro_image: "Image/GroupImage/9/配圖_暫.png",
             Loop_image: [
-                  "",
-                  "",
-                  ""
+                  "Image/GroupImage/9/Loop/輪撥用1.png",
+                  "Image/GroupImage/9/Loop/輪撥用2.png",
+                  "Image/GroupImage/9/Loop/輪撥用3.png"
                 ],
             Menber_image: [
                   "",
@@ -273,11 +275,12 @@ const works = [
           {
             id: 10,
             title: "牽線之外",
-            Highlight_image: "",
+            Highlight_image: "Image/GroupImage/10/作品亮點配圖.png",
             intro_image: "Image/GroupImage/10/作品介紹配圖.png",
             Loop_image: [
                   "Image/GroupImage/10/Loop/輪轉圖_1.png",
-                  "Image/GroupImage/10/Loop/輪轉圖_2.png"
+                  "Image/GroupImage/10/Loop/輪轉圖_2.png",
+                  "Image/GroupImage/10/Loop/輪轉圖_3.png",
                   
                 ],
             Menber_image: [
@@ -367,12 +370,12 @@ const works = [
           {
             id: 13,
             title: "Arduino互動式物理實驗教學系統",
-            Highlight_image: "",
-            intro_image: "",
+            Highlight_image: "Image/GroupImage/13/作品亮點.png",
+            intro_image: "Image/GroupImage/13/作品介紹.png",
             Loop_image: [
-                  "",
-                  "",
-                  ""
+                  "Image/GroupImage/13/Loop/2 (1).png",
+                  "Image/GroupImage/13/Loop/4.png",
+                  "Image/GroupImage/13/Loop/5 (1).png"
                 ],
             Menber_image: [
                   "Image/GroupImage/13/Member/1113834廖宇茹.jpg",
@@ -394,26 +397,28 @@ const works = [
            {
             id: 14,
             title: "建構以視覺化為核心之濕地導覽回饋系統",
-            Highlight_image: "",
-            intro_image: "",
+            Highlight_image: "Image/GroupImage/14/作品亮點配圖.png",
+            intro_image: "Image/GroupImage/14/作品介紹配圖.png",
             Loop_image: [
-                  "",
-                  "",
-                  ""
+                  "Image/GroupImage/14/Loop/圖片輪轉用圖_1.png",
+                  "Image/GroupImage/14/Loop/圖片輪轉用圖_2.png"
+          
                 ],
             Menber_image: [
                   "",
                   "",
                 ],  
             highlight_Desc: [
-                  "第14組",
-                  "",
-                  ""
+                  "本作品整合LINE Bot、Firebase 與地理定位技術，打造免下載、跨裝置、即時互動的導覽體驗。",
+                  "最大亮點在於「自動推播 + 語音導覽 + 答題集點」三合一設計，並能根據答題結果產出互動式學習回饋。",
+                  "內容由濕地研究資料轉化為友善語音，搭配統計圖與遊戲化流程，實現具教育價值的智慧導覽應用。",
+              
                 ],
             Intro_Desc: [
-                  "第14組",
-                  "",
-                  ""
+                  "本系統以嘉義好美里濕地為場域，設計一套結合地理定位打卡、語音導覽、互動答題、知識集點與LINE推播功能的自導覽系統。",
+                  "使用者抵達各站點後，將自動收到語音導覽、統計圖與科普問答，完成答題即可獲得獎勵，促進探索與學習。",
+                  "此系統適用於一般遊客與學校戶外教學，提升濕地教育的趣味性與互動性。"
+                 
                 ],
          
           }
