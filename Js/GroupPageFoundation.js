@@ -140,8 +140,8 @@ const works = [
           {
             id: 6,
             title: "SAVIOR",
-            Highlight_image: "Image/GroupImage/6/作品介紹亮點配圖.png",
-            intro_image: "Image/GroupImage/6/CG. see bully.png",
+            Highlight_image: "Image/GroupImage/6/CG. see bully.png",
+            intro_image: "Image/GroupImage/6/作品介紹亮點配圖.png",
             Loop_image: [
                   "Image/GroupImage/6/Loop/圖片輪轉用圖1.jpg",
                   "Image/GroupImage/6/Loop/圖片輪轉用圖2.jpg",
@@ -454,6 +454,18 @@ export function SetGroupPage(workId) {
           p.appendChild(span);
           descContainer2.appendChild(p);
           }); 
+
+          const memberContainer2 = document.getElementById("Mumber-Image");
+          memberContainer2.innerHTML = ""; // 清空舊內容
+          workData.Menber_image.forEach(img => {
+            const imgElement = document.createElement("img");
+            imgElement.classList.add("MumberImage");
+            imgElement.src = img;
+          
+            memberContainer2.appendChild(imgElement);
+          }); 
+
+
           document.getElementById("Group-Title").textContent = workData.title ;
 
           document.getElementById("Intro-Image").src = workData.intro_image;
@@ -491,19 +503,19 @@ export function loadGroupPage() {
 
     SetGroupPage(workId);
 
-    document.getElementById("prev-button").addEventListener("click", () => {
-        if (workId > 1) {
-            workId--;  // 往數字小
-            SetGroupPage(workId);
-        }
-    });
+    // document.getElementById("prev-button").addEventListener("click", () => {
+    //     if (workId > 1) {
+    //         workId--;  // 往數字小
+    //         SetGroupPage(workId);
+    //     }
+    // });
 
-    document.getElementById("next-button").addEventListener("click", () => {
-        if (workId < works.length) {
-            workId++;  // 往數字大
-            SetGroupPage(workId);
-        }
-    });
+    // document.getElementById("next-button").addEventListener("click", () => {
+    //     if (workId < works.length) {
+    //         workId++;  // 往數字大
+    //         SetGroupPage(workId);
+    //     }
+    // });
 }
 
 
