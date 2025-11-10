@@ -28,14 +28,11 @@ body {
     /* 為整個頁面設定一個基礎背景色 */
     background-color: #f0f2f5; 
     
+    
    
 }
 
-/* === 頁面滑動 === */
-html, body {
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-}
+
 
 /* ▼▼▼ 這是本次最重要的修改 ▼▼▼ */
 /* 讓包裹所有 section 的容器也變成透明的 */
@@ -43,14 +40,37 @@ html, body {
     background-color: transparent;
 }
 /* ▲▲▲ 修改結束 ▲▲▲ */
+@media (min-width: 1024px) {
 
-section {
-    height: 100vh;
-    scroll-snap-align: start;
-    /* 讓所有 section 的背景都變成透明，才能看到後面的粒子 */
-    background-color: transparent;
-    scroll-margin-top: var(--header-height, 80px);
+    /* === 頁面滑動 === */
+    html, body {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+
+    section {
+        height: 100vh;
+        scroll-snap-align: start;
+        /* 讓所有 section 的背景都變成透明，才能看到後面的粒子 */
+        background-color: transparent;
+        scroll-margin-top: var(--header-height, 80px);
+    }
+    
 }
+@media (max-width: 767px) {
+    section {
+        height: auto;
+        /* border:solid 5px rgb(217, 178, 72); */
+       
+    }
+  
+    body{
+        width: 100%;
+        height: auto;   
+        /* border:solid 5px rgb(217, 89, 72); */
+    }
+}
+
 
 :root {
   --header-height: 65px; /* 改成你實際 header 高度 */

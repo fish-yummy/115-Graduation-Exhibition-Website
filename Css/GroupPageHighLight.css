@@ -13,6 +13,29 @@ p{
     /* border:solid 10px rgb(183, 217, 72); */
 }
 
+@media (max-width: 767px) {
+    .Box {
+        display: flex;
+        flex-direction: column;
+        /* border:solid 10px rgb(72, 217, 186); */
+    }
+
+    .intro{
+    
+        /* border:solid 10px rgb(217, 130, 72); */
+        padding: 3%;
+
+        display: relative;
+    }
+    
+    .IntroImage{
+        width: 95%;
+        height: auto;
+    }
+    
+}
+
+
 
 .GroupTitle{
     margin-top: 1%;
