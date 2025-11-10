@@ -98,7 +98,7 @@ class LoadingController {
     updateProgress(targetProgress, status) {
         const currentProgress = this.progress;
         const progressDiff = targetProgress - currentProgress;
-        const animationDuration = 800;
+        const animationDuration = 200;
         const steps = 40;
         const stepSize = progressDiff / steps;
         const stepInterval = animationDuration / steps;
@@ -148,7 +148,7 @@ class LoadingController {
             } else {
                 this.completeLoading();
             }
-        }, 1200);
+        }, 300);
     }
 
     completeLoading() {
@@ -162,9 +162,9 @@ class LoadingController {
                     if (this.resolvePromise) {
                         this.resolvePromise();
                     }
-                }, 500);
-            }, 1000);
-        }, 500);
+                }, 300);
+            }, 500);
+        }, 100);
     }
 }
 

@@ -181,3 +181,127 @@
 .card-set::-webkit-scrollbar {
     width: 12px;
 }
+@media (max-width: 1200px) {
+    #side-menu-container {
+        width: 95%;
+        gap: 20px;
+    }
+    .trigger-title {
+        font-size: 1.5rem;
+    }
+    .cards-display-area {
+        margin-left: -50px;
+    }
+    .menu-card {
+        width: 250px;
+    }
+}
+
+
+
+@media (max-width: 1200px) {
+    #side-menu-container {
+        width: 95%;
+        gap: 20px;
+    }
+    .trigger-title {
+        font-size: 1.5rem;
+    }
+    .cards-display-area {
+        margin-left: -50px;
+    }
+    .menu-card {
+        width: 250px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    
+    /* 1. 【關鍵】讓模態視窗本身變窄，形成卡片效果 */
+    #fullscreen-menu-modal {
+        /* 不再佔滿全螢幕，而是像一個大的彈出卡片 */
+        top: 5vh; /* 距離頂部 5% */
+        left: 5vw; /* 距離左側 5% */
+        width: 90vw; /* 寬度為 90% */
+        height: 90vh; /* 高度為 90% */
+        border-radius: 20px; /* 為整個模態視窗加上圓角 */
+        box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+        overflow: hidden;
+        box-sizing: border-box; /* 確保內部內容不會超出圓角 */
+    }
+
+    /* 2. 【關鍵】主容器現在負責內部佈局和滾動 */
+    #side-menu-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+        width: 100%;
+        padding: 0; /* 移除 padding，由子元素自己控制 */
+        overflow-y: auto; /* 讓整個容器可以滾動 */
+        gap: 0;
+        box-sizing: border-box;
+    }
+
+    /* 3. 【關鍵】觸發器區域有自己的背景和 padding */
+    .triggers-column {
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 20px 15px; /* 給予上下左右內邊距 */
+        width: 100%;
+        flex-shrink: 0;
+        background-color: #34b3a9; /* 確保它有背景色 */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        z-index: 10;
+        position: sticky; /* 讓它在滾動時固定在頂部 */
+        top: 0;
+    }
+    .trigger-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* 4. 隱藏文字標題 */
+    .titles-column {
+        display: none;
+    }
+    
+    /* 5. 【關鍵】卡片顯示區現在是滾動內容的一部分 */
+    .cards-display-area {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin-left: 0;
+        overflow: visible;
+        padding: 20px 15px; /* 給予上下左右內邊距 */
+        background-color: #f0f2f5; /* 給內容區一個淺色背景 */
+    }
+
+    /* 6. 卡片組不再絕對定位 */
+    .card-set {
+        position: relative;
+        display: none;
+        width: 100%;
+        height: auto;
+        overflow-y: visible;
+        padding-right: 0;
+        opacity: 1;
+    }
+    .card-set.is-visible {
+        display: block;
+    }
+
+    /* 7. 卡片樣式調整 */
+    .menu-card {
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0;
+    }
+    
+    /* 8. 移除自訂滾動條，使用瀏覽器預設的 */
+    #side-menu-container::-webkit-scrollbar {
+        display: none; /* 隱藏滾動條，但仍然可以滾動 */
+    }
+}

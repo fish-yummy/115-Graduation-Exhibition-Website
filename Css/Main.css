@@ -1,5 +1,23 @@
 /* === Css/Main.css (最終修正版) === */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* 關鍵：禁止水平滾動 */
+    margin: 0;
+    padding: 0;
+}
 
+/* 2. 為所有元素設定 border-box 模型 */
+/* 這可以從根本上避免 padding 撐開寬度的問題 */
+* {
+    box-sizing: border-box;
+}
+
+/* 3. 確保圖片不會超出其容器的寬度 */
+img {
+    max-width: 100%;
+    height: auto; /* 保持圖片的長寬比 */
+}
 /* === 4個頁面都一樣且統一的樣式寫這邊 === */
 body {
     cursor: url("../Image/cursor/666666.png") , auto;
