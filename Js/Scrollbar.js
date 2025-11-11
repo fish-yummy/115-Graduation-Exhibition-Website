@@ -62,3 +62,12 @@ export function GotoTopButtonFunction(){
 
     observer.observe(section1);
 }
+
+export function GotoTopButtonFunctionAtPhone(){
+    var img = document.querySelector('.toTOp-button'); // 選取圖片元素
+        if (window.scrollY > 100) { // 當頁面滾動超過100px
+            img.style.display = 'block'; // 隱藏圖片
+        } else {
+            img.style.display = 'none'; // 滾動回頂部時顯示圖片
+        }
+}
