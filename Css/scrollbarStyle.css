@@ -81,6 +81,9 @@ section {
         
        
     }
+    .content{
+        position: relative;
+    }
 
 
 }

@@ -72,16 +72,56 @@
         left: 83%;
         width: 19%; 
         height: auto;
-        /* animation: float2 2s ease-in-out infinite alternate; */
+        
     }
-    /* @keyframes float1 {
-        0%   { transform: translateY(0); }
-        100% { transform: translateY(-20px); }
-    }
-    @keyframes float2 {
-        0%   { transform: translateY(0); }
-        100% { transform: translateY(-30px); }
-    } */
+
+    /* 影片區 */
+   .audioPage{
+        position: relative;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        gap:10%;
+        /* border:solid 5px rgb(91, 72, 217); */
+        top:117%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.741);
+        z-index: 12;
+   }
+   .introAudio{
+       position: absolute;
+       width: 36%;
+       height: 45%;
+       top:50%;
+       left: 13%;
+       transform: translate(0%, -50%) ;
+       margin: 2%;
+
+       border: 20px solid transparent;
+       border-image: url("../Image/MainPage1/框.png") 30 round;
+       
+   }
+   .audioText{
+       position: absolute;
+       left: 60%;
+       top:55%;
+       transform: translate(0%, -50%) ;
+       color:white;  
+   }
+   .audioBackgeound{
+       position: absolute;
+       top:-3%;
+       width:28%;
+       height: auto;
+   }
+   .audioBackgeound2{
+       position: absolute;
+       top:-7%;
+       right:0%;
+       width:24%;
+       height: auto;
+   }
+   
 
 }
 
@@ -161,7 +201,54 @@
         height: auto;
     }
 
-   
+   /* 影片區 */
+   .audioPage{
+        position: relative;
+        display: flex;
+        justify-items: center;
+        align-items: center;
+        gap:10%;
+        /* border:solid 5px rgb(91, 72, 217); */
+        top:117%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.741);
+        z-index: 12;
+   }
+   .introAudio{
+       position: absolute;
+       width: 36%;
+       height: 45%;
+       top:50%;
+       left: 13%;
+       transform: translate(0%, -50%) ;
+       margin: 2%;
+
+       border: 20px solid transparent;
+       border-image: url("../Image/MainPage1/框.png") 30 round;
+       
+   }
+   .audioText{
+       position: absolute;
+       left: 60%;
+       top:55%;
+       transform: translate(0%, -50%) ;
+       color:white;  
+   }
+   .audioBackgeound{
+       position: absolute;
+       top:-3%;
+       width:28%;
+       height: auto;
+   }
+   .audioBackgeound2{
+       position: absolute;
+       top:-7%;
+       right:0%;
+       width:24%;
+       height: auto;
+   }
+
+
 
 
 }
@@ -237,4 +324,49 @@
         width: 50%; 
         height: auto;
     }
+
+    /* 影片區 */
+   .audioPage{
+        position: absolute;
+
+        /* border:solid 5px rgb(91, 72, 217); */
+        top:10%;
+        height: 90%;
+        background-color: rgba(0, 0, 0, 0.741);
+        z-index: 12;
+   }
+   .introAudio{
+       position: absolute;
+       width: 70%;
+       height: auto;
+       top:45%;
+       left: 13%;
+       transform: translate(0%, -50%) ;
+       margin: 2%;
+
+       border: 20px solid transparent;
+       border-image: url("../Image/MainPage1/框.png") 30 round;
+       
+   }
+   /* .audioText{
+       position: absolute;
+       left: 60%;
+       top:55%;
+       transform: translate(0%, -50%) ;
+       color:white;  
+   }
+   .audioBackgeound{
+       position: absolute;
+       top:-3%;
+       width:28%;
+       height: auto;
+   }
+   .audioBackgeound2{
+       position: absolute;
+       top:-7%;
+       right:0%;
+       width:24%;
+       height: auto;
+   } */
 }
+
