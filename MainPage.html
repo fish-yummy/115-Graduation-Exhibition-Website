@@ -23,6 +23,9 @@
     <!-- 確保使用 type="module" 來支持模組化 JS -->
     <script type="module" src="Js/Main.js" defer></script>
     <script src="./Js/works_overview_script.js" type="module"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script> <!-- GSAP 動畫庫 -->
+    <script src="Js/MainPage1Animation.js" defer></script>
+
     <title>404 not found</title>
     
 </head>
@@ -129,7 +132,7 @@ window.addEventListener('scroll', function() {
         <section id="section1" class="content">
             <div class="writting">                        
                 <div class="computer_component_wrapper">
-                    <img class="audioImage" src="./image/MainPage1/播放1.png" alt="">
+                    <img class="audioImage"  id="AudioUseImg" src="./image/MainPage1/播放1.png" alt="">
 
                     <img class="computer" src="./image/MainPage1/電腦.png" alt="">
                     <img class="scrollDown" src="./image/MainPage1/scroll下拉圖示.png" alt="">
@@ -141,7 +144,7 @@ window.addEventListener('scroll', function() {
                 </div>
 
                 <div class="audioPage">
-                    
+
                 </div>
             </div>
         </section>

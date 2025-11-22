@@ -1,0 +1,1 @@
+export const img = document.getElementById("AudioUseImg");

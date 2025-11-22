@@ -61,7 +61,7 @@
         left: -1%;
         width: 19%; 
         height: auto;
-        
+        /* animation: float1 2s ease-in-out infinite alternate; */
         
       
     }
@@ -72,7 +72,16 @@
         left: 83%;
         width: 19%; 
         height: auto;
+        /* animation: float2 2s ease-in-out infinite alternate; */
     }
+    /* @keyframes float1 {
+        0%   { transform: translateY(0); }
+        100% { transform: translateY(-20px); }
+    }
+    @keyframes float2 {
+        0%   { transform: translateY(0); }
+        100% { transform: translateY(-30px); }
+    } */
 
 }
 
@@ -125,7 +134,7 @@
         z-index: 10;
         /* border:solid 5px rgb(72, 217, 166); */
     }
-    
+  
     .side{
         position: relative;
         width: 100%;
