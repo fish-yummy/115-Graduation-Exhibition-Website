@@ -1,0 +1,231 @@
+
+/* 電腦全螢幕 */
+@media (min-width: 1024px) and (min-height: 700px){
+    .computer_component_wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         /* width: 100%; */
+        margin-top: 10%;
+        height: 90vh; 
+        gap: 10%;
+         
+        /* border:solid 5px rgb(91, 72, 217); */
+    }
+    .computer{
+        position: absolute;
+      
+        width: 70%;
+        top:24%;
+        transform: translate(0%, -20%)
+        
+        /* height: auto;
+        left: 50%;
+        ; */
+        /* border:solid 5px rgb(217, 178, 72); */
+        /* z-index: 9999; */
+    }
+     .scrollDown{
+        position: absolute;
+        top:95%;
+        margin-bottom: 0.9%;
+        width: 4%;
+        height: auto;
+        /* z-index: 9999; */
+        /* border:solid 5px rgb(217, 178, 72); */
+       
+    }
+
+     .audioImage{
+        position: absolute;
+        width: 13%;    
+        height: auto;
+        top:41%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        z-index: 10;
+        /* border:solid 5px rgb(72, 217, 166); */
+    }
+    
+    .side{
+        position: relative;
+        width: 100%;
+        height: 90%;
+        /* border:solid 5px rgb(217, 178, 72); */
+    }
+    .BackgroundPenMouse{
+        position: absolute;
+        top: -7%;
+        transform: translate(0%, -7%);
+        left: -1%;
+        width: 19%; 
+        height: auto;
+        
+        
+      
+    }
+    .BackgroundPenMouse.mouse{
+        position: absolute;
+        top: 10%;
+        transform: translate(0%, -3%);
+        left: 83%;
+        width: 19%; 
+        height: auto;
+    }
+
+}
+
+/* 電腦 */
+@media (min-width: 1024px) and (max-height: 700px) {
+
+    .computer_component_wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         /* width: 100%; */
+        margin-top: 10%;
+        height: 90vh; 
+        gap: 10%;
+         
+        /* border:solid 5px rgb(91, 72, 217); */
+    }
+    .computer{
+        position: absolute;
+      
+        width: 60%;
+        top:20%;
+        transform: translate(0%, -20%)
+        
+        /* height: auto;
+        left: 50%;
+        ; */
+        /* border:solid 5px rgb(217, 178, 72); */
+        /* z-index: 9999; */
+    }
+     .scrollDown{
+        position: absolute;
+        bottom:0.05%;
+        margin-bottom: 0.9%;
+        width: 4%;
+        height: auto;
+        /* z-index: 9999; */
+        /* border:solid 5px rgb(217, 178, 72); */
+       
+    }
+
+     .audioImage{
+        position: absolute;
+        width: 13%;    
+        height: auto;
+        top:40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        z-index: 10;
+        /* border:solid 5px rgb(72, 217, 166); */
+    }
+    
+    .side{
+        position: relative;
+        width: 100%;
+        height: 90%;
+        /* border:solid 5px rgb(217, 178, 72); */
+    }
+    .BackgroundPenMouse{
+        position: absolute;
+        top: -7%;
+        transform: translate(0%, -7%);
+        left: -1%;
+        width: 19%; 
+        height: auto;
+        
+        
+      
+    }
+    .BackgroundPenMouse.mouse{
+        position: absolute;
+        top: -3%;
+        transform: translate(0%, -3%);
+        left: 83%;
+        width: 19%; 
+        height: auto;
+    }
+
+   
+
+
+}
+/* 手機 */
+@media (max-width: 767px){
+
+     .computer_component_wrapper{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+         /* width: 100%; */
+        margin-top: 10%;
+        height: 90vh; 
+        gap: 10%;
+         
+        /* border:solid 5px rgb(91, 72, 217); */
+    }
+
+    .computer{
+        position: absolute;
+      
+        width: 100%;
+        height: auto;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        
+        /* 
+        left: 50%;
+        ; */
+        /* border:solid 5px rgb(217, 178, 72); */
+    
+    }
+     .audioImage{
+        position: absolute;
+        width: 25%;    
+        height: auto;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+        z-index: 11;
+        /* border:solid 5px rgb(72, 217, 166); */
+    }
+     .scrollDown{
+        position: absolute;
+        bottom:10%;
+        margin-bottom: 0.9%;
+        width: 15%;
+        height: auto;
+        /* z-index: 9999; */
+        /* border:solid 5px rgb(217, 178, 72); */
+       
+    }
+    .BackgroundPenMouse{
+        position: absolute;
+        top: 1%;
+        transform: translate(0%, -7%);
+        left: -1%;
+        width: 50%; 
+        height: auto;
+
+        
+        
+      
+    }
+     .BackgroundPenMouse.mouse{
+        position: absolute;
+        top: 30%;
+        transform: translate(0%, -3%);
+        left: 50%;
+        width: 50%; 
+        height: auto;
+    }
+}
