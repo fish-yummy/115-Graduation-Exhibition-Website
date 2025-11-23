@@ -24,6 +24,7 @@
     <script type="module" src="Js/Main.js" defer></script>
     <script src="./Js/works_overview_script.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script> <!-- GSAP 動畫庫 -->
+    <script src="https://www.youtube.com/iframe_api" defer></script><!-- youtube 影片控制 -->
     <script src="Js/MainPage1Animation.js" defer></script>
 
     <title>404 not found</title>
@@ -126,43 +127,73 @@ window.addEventListener('scroll', function() {
             </div>
     </div>
 
-    <!-- 影片區 -->  
-    <div class="audioPage">
-        <img class="audioBackgeound" src="./image/MainPage1/背景裝飾1.png" alt="">
 
-        <img class="audioBackgeound2" src="./image/MainPage1/背景裝飾2.png" alt="">
-        <div class="audioText">
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-            <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-             <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
-             
-            
-        </div>
-
-       
-        <iframe class="introAudio"  src="https://www.youtube.com/embed/I2JBBH-ngHI?si=PbAwjsuAyVcQwkBj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-
-    </div>
 
     <div class="section-scroll-container">
         
         <!-- 第一區塊 (不變) -->            
         <section id="section1" class="content">
-            <div class="writting">                        
+            <div class="writting">    
+                
+
                 <div class="computer_component_wrapper">
+                    
+                      <!-- 影片區 -->  
+                    <div class="audioPage" id="audioPageTrigger">
+                        
+
+                        <div class="audioAndText">
+                            
+                                <iframe class="introAudio" id="introAudio"  src="https://www.youtube.com/embed/I2JBBH-ngHI?si=PbAwjsuAyVcQwkBj" 
+                                    title="YouTube video player" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                                </iframe> 
+
+                                <div class="audioText">
+                                    <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
+                                    <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
+                                    <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
+                                    <p>畢展理念畢展理念畢展理念畢展理念畢展理念</p>
+                        
+                            
+                                    
+                                </div>
+                            </div>
+                        <div class="audioBackgeoundContainer">
+                            
+                            <img class="audioBackgeound" src="./image/MainPage1/背景裝飾1.png" alt="">
+
+                            
+                    
+                            <img class="audioBackgeound2" src="./image/MainPage1/背景裝飾2.png" alt="">
+                            
+                        </div>
+
+
+                        <svg class="svgBack" id="svgBackTrigger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 73.86 73.86">
+                            <g id="圖層_2" data-name="圖層 2">
+                                <g id="_4_video" data-name="4_video">
+                                    <rect width="73.86" height="73.86" rx="9.11" fill="#fff"/>
+                                    <line x1="16" y1="24.85" x2="57.85" y2="49.01" fill="none" stroke="#18b5b0" stroke-miterlimit="10" stroke-width="3.63"/>
+                                    <line x1="57.85" y1="24.85" x2="16" y2="49.01" fill="none" stroke="#18b5b0" stroke-miterlimit="10" stroke-width="3.63"/>
+                                </g>
+                            </g>
+                        </svg> 
+                    
+                        
+
+                    </div>        
+
+                    <!-- 主頁1 -->  
                     <img class="audioImage"  id="AudioUseImg" src="./image/MainPage1/播放1.png" alt="">
 
                     <img class="computer" src="./image/MainPage1/電腦.png" alt="">
                     <img class="scrollDown" src="./image/MainPage1/scroll下拉圖示.png" alt="">
-                    <div class="side">
+               
                         <img class="BackgroundPenMouse" src="./image/MainPage1/背景裝飾_1-1.png" alt=""> 
                         <img class="BackgroundPenMouse mouse" src="./image/MainPage1/背景裝飾_1-2.png" alt="">   
 
-                    </div>
                 </div>
 
                 
