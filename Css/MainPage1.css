@@ -289,7 +289,7 @@
         width: 35%;
         height: 40%;
         margin-top: 3%;
-        /* border:solid 15px rgb(72, 217, 130); */
+        border:solid 15px rgb(72, 217, 130);
         border-image: url("../Image/MainPage1/框.png") 30 round;
         z-index: 99999;
    }
@@ -448,7 +448,7 @@
         width: 85%;
         height: 30%;
         margin-top: 3%;
-        /* border:solid 15px rgb(72, 217, 130); */
+        border:solid 15px rgb(72, 217, 130);
         border-image: url("../Image/MainPage1/框.png") 30 round;
         z-index: 99999;
    }
@@ -608,7 +608,7 @@
         width: 35%;
         height: 40%;
         margin-top: 3%;
-        /* border:solid 15px rgb(72, 217, 130); */
+        border:solid 15px rgb(72, 217, 130);
         border-image: url("../Image/MainPage1/框.png") 30 round;
         z-index: 99999;
    }
