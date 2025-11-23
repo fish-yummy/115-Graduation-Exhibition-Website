@@ -45,14 +45,15 @@ MainPage1Verb.svgTrigger.addEventListener("click", () => {
     ease: "power2.in",
     onComplete: () => {
       MainPage1Verb.audioPageTrigger.style.display = "none";
-
+      MainPage1Verb.enableScroll();
+      console.log("啟用滾動");
 
        if(introAudioPlayer && typeof introAudioPlayer.pauseVideo === "function"){
         introAudioPlayer.pauseVideo();  // 安全呼叫
       } else {
         console.warn("introAudioPlayer 尚未準備好");
       }
-      
+
       MainPage1Verb.audioPageTrigger.style.transform = "scale(1)"; // 恢復 scale 為1，方便下一次顯示
     }
   });
@@ -61,9 +62,14 @@ MainPage1Verb.svgTrigger.addEventListener("click", () => {
   
 });
 
-//class="audioImage" 滑鼠點擊開啟 class="audioPage"
+//class="audioImage" 點擊開啟 class="audioPage"
 img.addEventListener("click", () => {
   MainPage1Verb.audioPageTrigger.style.display = "block";
+
+ 
+     MainPage1Verb.disableScroll();
+     console.log("禁用滾動");
+  
 
   gsap.fromTo(
       MainPage1Verb.audioPageTrigger,
