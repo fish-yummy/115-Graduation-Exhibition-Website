@@ -30,7 +30,7 @@
         position: absolute;
         top:95%;
         margin-bottom: 0.9%;
-        width: 4%;
+        width: 3%;
         height: auto;
         /* z-index: 9999; */
         /* border:solid 5px rgb(217, 178, 72); */
@@ -189,10 +189,10 @@
     }
      .scrollDown{
         position: absolute;
-        top:99%;
+        top:99.9%;
         /* margin-top: 15%; */
         /* margin-bottom: 0.9%; */
-        width: 4%;
+        width: 3%;
         height: auto;
         /* z-index: 9999; */
         /* border:solid 5px rgb(217, 178, 72); */
@@ -366,9 +366,9 @@
     }
      .scrollDown{
         position: absolute;
-        bottom:10%;
+        bottom:14%;
         margin-bottom: 0.9%;
-        width: 15%;
+        width: 10%;
         height: auto;
         /* z-index: 9999; */
         /* border:solid 5px rgb(217, 178, 72); */
@@ -511,7 +511,7 @@
         top:99%;
         /* margin-top: 15%; */
         /* margin-bottom: 0.9%; */
-        width: 4%;
+        width: 3%;
         height: auto;
         /* z-index: 9999; */
         /* border:solid 5px rgb(217, 178, 72); */
