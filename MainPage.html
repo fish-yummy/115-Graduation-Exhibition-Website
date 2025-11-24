@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
     <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
     <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
-    <link rel="stylesheet" href="./Css/works_overview.css"> <!-- 作品總覽樣式 -->
+    <link rel="stylesheet" href="./Css/works_overview_v2.css"> <!-- 作品總覽樣式 -->
     <link rel="stylesheet" href="Css/Background.css"> 
     <link rel="stylesheet" href="Css/MainPage1.css"> 
     <link rel="stylesheet" href="./Css/traffic_info.css"> <!-- 交通資訊樣式 -->
@@ -207,82 +207,247 @@ window.addEventListener('scroll', function() {
             <div class="writting">
                 <h1>主頁第二個區塊--各組作品總覽</h1>
                 <p>放各組的作品縮圖，並連結到各組作品詳細頁</p>
-                <div class="works_overview_component_wrapper">
-    
-                    <h2 class="works_overview_main_title">各組作品總覽</h2>
+                <h2 class="works_overview_main_title">各組作品總覽</h2>
 
-                    <div class="works_overview_grid">
-                        <!-- 總共 14 組作品 -->
-                        <!-- 第 1 組 -->
-                        <a href="GroupPage.html?id=1" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖1.png" class="works_overview_image" alt="作品縮圖 1">
-                            <span class="works_overview_title">提升媒體識讀之學習型遊戲</span>
-                        </a>
-                        <!-- 第 2 組 -->
-                        <a href="GroupPage.html?id=2" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖2.png" class="works_overview_image" alt="作品縮圖 2">
-                            <span class="works_overview_title">移民模擬</span>
-                        </a>
-                        <!-- 第 3 組 -->
-                        <a href="GroupPage.html?id=3" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖3.png" class="works_overview_image" alt="作品縮圖 3">
-                            <span class="works_overview_title">化學方程式</span>
-                        </a>
-                        <!-- 第 4 組 -->
-                        <a href="GroupPage.html?id=4" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖4.png" class="works_overview_image" alt="作品縮圖 4">
-                            <span class="works_overview_title">蚵計產業</span>
-                        </a>
-                        <!-- 第 5 組 -->
-                        <a href="GroupPage.html?id=5" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖5.png" class="works_overview_image" alt="作品縮圖 5">
-                            <span class="works_overview_title">Euvuvu</span>
-                        </a>
-                        <!-- 第 6 組 -->
-                        <a href="GroupPage.html?id=6" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖6.png" class="works_overview_image" alt="作品縮圖 6">
-                            <span class="works_overview_title">SAVIOR</span>
-                        </a>
-                        <!-- 第 7 組 -->
-                        <a href="GroupPage.html?id=7" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖7.png" class="works_overview_image" alt="作品縮圖 7">
-                            <span class="works_overview_title">礦石奇旅</span>
-                        </a>
-                        <!-- 第 8 組 -->
-                        <a href="GroupPage.html?id=8" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖8.png" class="works_overview_image" alt="作品縮圖 8">
-                            <span class="works_overview_title">賭”薄”人生</span>
-                        </a>
-                        <!-- 第 9 組 -->
-                        <a href="GroupPage.html?id=9" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖9.png" class="works_overview_image" alt="作品縮圖 9">
-                            <span class="works_overview_title">防詐聖經</span>
-                        </a>
-                        <!-- 第 10 組 -->
-                        <a href="GroupPage.html?id=10" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖10.png" class="works_overview_image" alt="作品縮圖 10">
-                            <span class="works_overview_title">牽線之外</span>
-                        </a>
-                        <!-- 第 11 組 -->
-                        <a href="GroupPage.html?id=11" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖11.png" class="works_overview_image" alt="作品縮圖 11">
-                            <span class="works_overview_title">孤故 Good Story</span>
-                        </a>
-                        <!-- 第 12 組 -->
-                        <a href="GroupPage.html?id=12" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖12.png" class="works_overview_image" alt="作品縮圖 12">
-                            <span class="works_overview_title">喚起 「權」世界</span>
-                        </a>
-                        <!-- 第 13 組 -->
-                        <a href="GroupPage.html?id=13" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖13.png" class="works_overview_image" alt="作品縮圖 13">
-                            <span class="works_overview_title">Arduino互動式物理實驗教學系統</span>
-                        </a>
-                        <!-- 第 14 組 -->
-                        <a href="GroupPage.html?id=14" class="works_overview_item">
-                            <img src="./image/作品縮圖/作品縮圖14.png" class="works_overview_image" alt="作品縮圖 14">
-                            <span class="works_overview_title">建構以視覺化為核心之濕地導覽回饋系統</span>
-                        </a>
+                <div class="works_overview_v2_component_wrapper">
+                    <!-- 頂部 Project 橫幅 (第一層) -->
+                    <img src="./image/MainPage1/project/大標_專案.png" class="works_overview_v2_banner-image" alt="Project Banner">
+                    
+                    <div class="works_overview_v2_content-wrapper">
+                        <!-- 基準層: 網格圖 (正常佔據空間) -->
+                        <img src="./image/MainPage1/project/背景.png" class="works_overview_v2_base-layer" alt="網格背景">
+        
+                        <!-- 疊加層 1: 裝飾圖 -->
+                        <img src="./image/MainPage1/project/背景裝飾_2.png" class="works_overview_v2_overlay-layer" alt="裝飾背景">
+        
+                        <!-- 疊加層 2: 主內容區 -->
+                        <div class="works_overview_v2_main-content">
+                            <div class="works_overview_v2_grid">
+                            <!-- 總共 14 組作品 -->
+                            <!-- 第 1 組 -->
+                            <a href="GroupPage.html?id=1" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖1.png" class="works_overview_image" alt="作品縮圖 1">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                <span class="works_overview_title">提升媒體識讀之學習型遊戲</span>
+                            </a>
+                            <!-- 第 2 組 -->
+                            <a href="GroupPage.html?id=2" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖2.png" class="works_overview_image" alt="作品縮圖 2">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">移民模擬</span>
+                            </a>
+                            <!-- 第 3 組 -->
+                            <a href="GroupPage.html?id=3" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖3.png" class="works_overview_image" alt="作品縮圖 3">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">化學方程式</span>
+                            </a>
+                            <!-- 第 4 組 -->
+                            <a href="GroupPage.html?id=4" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖4.png" class="works_overview_image" alt="作品縮圖 4">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">蚵計產業</span>
+                            </a>
+                            <!-- 第 5 組 -->
+                            <a href="GroupPage.html?id=5" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖5.png" class="works_overview_image" alt="作品縮圖 5">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">Euvuvu</span>
+                            </a>
+                            <!-- 第 6 組 -->
+                            <a href="GroupPage.html?id=6" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖6.png" class="works_overview_image" alt="作品縮圖 6">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">SAVIOR</span>
+                            </a>
+                            <!-- 第 7 組 -->
+                            <a href="GroupPage.html?id=7" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖7.png" class="works_overview_image" alt="作品縮圖 7">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">礦石奇旅</span>
+                            </a>
+                            <!-- 第 8 組 -->
+                            <a href="GroupPage.html?id=8" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖8.png" class="works_overview_image" alt="作品縮圖 8">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">賭”薄”人生</span>
+                            </a>
+                            <!-- 第 9 組 -->
+                            <a href="GroupPage.html?id=9" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖9.png" class="works_overview_image" alt="作品縮圖 9">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">防詐聖經</span>
+                            </a>
+                            <!-- 第 10 組 -->
+                            <a href="GroupPage.html?id=10" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖10.png" class="works_overview_image" alt="作品縮圖 10">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">牽線之外</span>
+                            </a>
+                            <!-- 第 11 組 -->
+                            <a href="GroupPage.html?id=11" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖11.png" class="works_overview_image" alt="作品縮圖 11">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">孤故 Good Story</span>
+                            </a>
+                            <!-- 第 12 組 -->
+                            <a href="GroupPage.html?id=12" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖12.png" class="works_overview_image" alt="作品縮圖 12">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">喚起 「權」世界</span>
+                            </a>
+                            <!-- 第 13 組 -->
+                            <a href="GroupPage.html?id=13" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖13.png" class="works_overview_image" alt="作品縮圖 13">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">Arduino互動式物理實驗教學系統</span>
+                            </a>
+                            <!-- 第 14 組 -->
+                            <a href="GroupPage.html?id=14" class="works_overview_item">
+                                <div class="works_overview_image-container">
+                                    <img src="./image/作品縮圖/作品縮圖14.png" class="works_overview_image" alt="作品縮圖 14">
+                                    <div class="works_overview_eye-icon-wrapper">
+                                        <!-- 編號1 (常態) -->
+                                        <img src="./image/MainPage1/project/檢視-1.svg" class="works_overview_eye-icon works_overview_eye-icon--1" alt="eye icon frame 1">
+                                        <!-- 編號2 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-2.svg" class="works_overview_eye-icon works_overview_eye-icon--2" alt="eye icon frame 2">
+                                        <!-- 編號3 (懸停) -->
+                                        <img src="./image/MainPage1/project/檢視-3.svg" class="works_overview_eye-icon works_overview_eye-icon--3" alt="eye icon frame 3">
+                                    </div>
+                                </div>
+                                
+                                <span class="works_overview_title">建構以視覺化為核心之濕地導覽回饋系統</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 

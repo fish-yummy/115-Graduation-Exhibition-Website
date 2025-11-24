@@ -1,0 +1,233 @@
+/* ================================================== */
+/*         新版作品總覽組件樣式表 (v2 - 最終置中修正版) */
+/* ================================================== */
+
+/* --- 組件最外層包裹容器 --- */
+.works_overview_v2_component_wrapper {
+    width: 100%;
+    margin: 80px 0;
+    position: relative;
+}
+
+/* --- 頂部橫幅 --- */
+.works_overview_v2_banner-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: -50px;
+    position: relative;
+    z-index: 10;
+}
+
+/* --- 內容與背景的包裹容器 --- */
+.works_overview_v2_content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    position: relative;
+}
+
+/* --- 所有圖層的共同樣式 --- */
+.works_overview_v2_base-layer,
+.works_overview_v2_overlay-layer,
+.works_overview_v2_main-content {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- 圖層順序與樣式 --- */
+.works_overview_v2_base-layer { z-index: 1; object-fit: cover; }
+.works_overview_v2_overlay-layer { z-index: 2; object-fit: cover; }
+.works_overview_v2_main-content { z-index: 3; padding: 12% 10%; }
+
+/* --- 作品網格容器 --- */
+.works_overview_v2_grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 8%; 
+    column-gap: 3%;
+}
+
+/* ================================================== */
+/*                【核心修改區域】卡片樣式            */
+/* ================================================== */
+
+/* --- 每個作品項目 (<a> 標籤) --- */
+.works_overview_item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: static;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+}
+.works_overview_item:hover { 
+     transform: scale(1.05);
+}
+
+/* --- 包裹圖片和外框的容器 --- */
+.works_overview_image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    transition: transform 0.3s ease;
+}
+
+
+/* --- 漸層遮罩 --- */
+.works_overview_item::before {
+    display: none;
+}
+
+/* --- 圖片外框圖層 --- */
+/* 核心修改：使用 transform 技巧來完美置中 */
+.works_overview_image-container::after {
+    content: ''; 
+    position: absolute; 
+    
+    /* --- MODIFIED --- */
+    width: 100%;
+    height: 100%;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-image: url('../image/MainPage1/project/框_專案縮圖用.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    z-index: 3;
+}
+
+/* --- 作品圖片 --- */
+/* 核心修改：同樣使用 transform 技巧來完美置中 */
+.works_overview_image { 
+    position: absolute;
+    
+    /* --- MODIFIED --- */
+    /* 設定圖片的尺寸為容器的 84% (100% - 8%*2) */
+    width: 92%; 
+    height: 92%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    object-fit: cover;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* --- 眼睛圖示的包裹容器 --- */
+.works_overview_eye-icon-wrapper {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    z-index: 4;
+}
+
+/* --- 所有眼睛圖示的共用樣式 --- */
+.works_overview_eye-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* 預設全部透明 */
+    /* --- MODIFIED --- 這裡我們將播放次數改為 2 次 */
+    animation-iteration-count: 2; 
+    animation-fill-mode: forwards;
+}
+
+/* 預設狀態：只顯示第 1 幀 */
+.works_overview_eye-icon--1 {
+    opacity: 1;
+}
+
+/* --- 滑鼠懸停時觸發的狀態 --- */
+.works_overview_item:hover .works_overview_eye-icon--1 {
+    opacity: 0; /* 當滑鼠移上去時，第 1 幀立刻消失 */
+}
+
+/* --- 滑鼠懸停時觸發的狀態 --- */
+/* 核心：當滑鼠移入時，為每一幀都加上各自的動畫劇本 */
+.works_overview_item:hover .works_overview_eye-icon--1 {
+    /* 播放時長 0.6s */
+    animation: play-frame-1-twice 0.8s steps(1, end) forwards;
+}
+.works_overview_item:hover .works_overview_eye-icon--2 {
+    animation: play-frame-2-twice 0.8s steps(1, end) forwards;
+}
+.works_overview_item:hover .works_overview_eye-icon--3 {
+    animation: play-frame-3-twice 0.8s steps(1, end) forwards;
+}
+
+
+/* --- 核心：定義每一幀在完整播放序列中的精確劇本 --- */
+/* 假設每幀播放 0.1s，一個循環 (2->3->1) 是 0.3s，兩次是 0.6s */
+
+.works_overview_item:hover .works_overview_eye-icon--1 { animation-duration: 0.6s; }
+.works_overview_item:hover .works_overview_eye-icon--2 { animation-duration: 0.6s; }
+.works_overview_item:hover .works_overview_eye-icon--3 { animation-duration: 0.6s; }
+
+
+/* 幀 1 的劇本：預設可見 -> 消失 -> 在 0.2s-0.4s 出現 -> 消失 -> 在 0.5s-0.6s 出現並停留 */
+@keyframes play-frame-1-twice {
+    0%, 33.3% { opacity: 0; }      /* 0s - 0.2s */
+    33.4%, 50% { opacity: 1; }     /* 0.2s - 0.3s */
+    50.1%, 83.3% { opacity: 0; }   /* 0.3s - 0.5s */
+    83.4%, 100% { opacity: 1; }     /* 0.5s - 0.6s (停留) */
+}
+
+/* 幀 2 的劇本：消失 -> 在 0s-0.2s 出現 -> 消失 -> 在 0.6s-0.8s 出現 -> 消失 */
+@keyframes play-frame-2-twice {
+    0%, 16.6% { opacity: 1; }      /* 0s - 0.1s */
+    16.7%, 50% { opacity: 0; }     /* 0.1s - 0.3s */
+    50.1%, 66.6% { opacity: 1; }   /* 0.3s - 0.4s */
+    66.7%, 100% { opacity: 0; }    /* 0.4s - 0.6s */
+}
+
+/* 幀 3 的劇本：消失 -> 在 0.2s-0.4s 出現 -> 消失 -> 在 0.8s-1.0s 出現 -> 消失 */
+@keyframes play-frame-3-twice {
+    0%, 16.6% { opacity: 0; }      /* 0s - 0.1s */
+    16.7%, 33.3% { opacity: 1; }   /* 0.1s - 0.2s */
+    33.4%, 66.6% { opacity: 0; }   /* 0.2s - 0.4s */
+    66.7%, 83.3% { opacity: 1; }   /* 0.4s - 0.5s */
+    83.4%, 100% { opacity: 0; }    /* 0.5s - 0.6s */
+}
+
+
+/* --- 作品名稱 --- */
+.works_overview_title {
+    position: static;
+    transform: none;
+    width: auto;
+    max-width: 100%;
+    text-align: left;
+
+    font-family: "Gen Jyuu Gothic", "源泉丸ゴシック", sans-serif;
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    color: #034854; /* 已更新為白色 */
+    
+    white-space: normal;
+    line-height: 1.3;
+    z-index: auto;
+}
+
+/* ================================================== */
+/*                    響應式設計                      */
+/* ================================================== */
+@media (max-width: 1200px) { .works_overview_v2_grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) {
+    .works_overview_v2_grid { grid-template-columns: repeat(2, 1fr); }
+    .works_overview_v2_main-content { padding: 15% 8%; }
+    .works_overview_title { font-size: 0.8rem; }
+}
