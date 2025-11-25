@@ -2,49 +2,57 @@
 import LoadingController from './LoadingController.js'; 
 
 export function initializeNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
     const loadingOverlay = document.getElementById('loading-overlay');
-    // 獲取全螢幕選單和抽屜容器的引用
     const menuModal = document.getElementById('fullscreen-menu-modal');
-    const menuAppContainer = document.getElementById('menu-app-container');
 
-    if (!loadingOverlay || navLinks.length === 0 || !menuModal) return;
+    if (!loadingOverlay) return;
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            // 1. 阻止瀏覽器立即跳轉
-            event.preventDefault(); 
-            
-            const destination = link.href; // 儲存目標網址
+    // 修改重點：改監聽整個 document 的點擊事件 (Event Delegation)
+    // 這樣才能抓到動態生成的手機選單連結
+    document.addEventListener('click', (event) => {
+        // 1. 往上尋找被點擊的元素是否為 <a> 標籤 (或是包含在 <a> 裡面的圖片/文字)
+        const link = event.target.closest('a');
+        
+        // 如果沒有點到連結，或者連結沒有 href，就忽略
+        if (!link || !link.href) return;
 
-            // === 新增邏輯：關閉全螢幕選單並重置狀態 ===
-            // 移除 modal 的 active class，觸發 CSS 關閉動畫 (Menu.css 中是 0.6s)
-            menuModal.classList.remove('active');
-            
-            // 確保 Stage 2 狀態也被移除，防止菜單閃爍
-            menuModal.classList.remove('stage-2-active');
+        const targetUrl = link.getAttribute('href');
+        
+        // 排除空連結、javascript 語法、以及頁內錨點 (以 # 開頭)
+        if (!targetUrl || targetUrl === '#' || targetUrl.startsWith('javascript:') || targetUrl.startsWith('#')) return;
+        
+        // 2. 設定觸發條件：
+        //    - 連結包含 'GroupPage.html' (作品內頁)
+        //    - 或者擁有特定 class (.app-card, .works_overview_item, .nav-link)
+        const shouldTriggerLoading = 
+            targetUrl.includes('GroupPage.html') || 
+            link.classList.contains('app-card') || 
+            link.classList.contains('works_overview_item') ||
+            link.classList.contains('nav-link');
 
-            // 確保抽屜 (app container) 關閉
-            if (menuAppContainer) {
-                menuAppContainer.classList.remove('active');
+        if (shouldTriggerLoading) {
+            // 3. 阻止瀏覽器預設的直接跳轉
+            event.preventDefault();
+            const destination = link.href;
+
+            // 4. 如果選單是開著的，先關閉它
+            if (menuModal && menuModal.classList.contains('active')) {
+                menuModal.classList.remove('active');
             }
-            // ===========================================
 
-            // 為了讓使用者看到選單關閉動畫，我們延遲啟動 Loading 畫面
-            // 延遲 300ms (小於選單的 600ms 動畫時間)，確保在選單消失時，Loading 畫面已準備好
+            // 5. 啟動 Loading 畫面
+            // 稍微延遲 100ms 讓選單關閉動畫開始播，體驗比較流暢
             setTimeout(() => {
-                
-                // 2. 顯示 Loading 覆蓋層
                 loadingOverlay.classList.add('active');
 
-                // 3. 創建實例並啟動 Loading 動畫
+                // 建立 Loading 控制器並開始跑進度條
                 const loader = new LoadingController();
                 loader.start().then(() => {
-                    // 4. 當 Loading 動畫完成後 (Promise resolve)，執行跳轉
-                    console.log(`跳轉至: ${destination}`);
+                    // 當 Loading 完成 (Promise resolve) 後，才真正跳轉頁面
+                    console.log(`Loading 完成，跳轉至: ${destination}`);
                     window.location.href = destination;
                 });
-            }, 300); // 延遲 300 毫秒
-        });
+            }, 100);
+        }
     });
 }

@@ -1,307 +1,391 @@
-/* === Css/Menu.css (左觸發右滑入 + Anime.js 動畫最終版) === */
+/* ================================================== */
+/* 互動選單樣式表 (手機放大1.1x + 標題放大1.3x + 3D漂浮 + 上滑動畫) */
+/* ================================================== */
 
-/* --- Part 1: 全螢幕模態的基礎樣式 --- */
+/* --- 全螢幕選單容器 --- */
 #fullscreen-menu-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #34b3a9; /* 您圖片中的深青色背景 */
+    background-image: url('../image/背景.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #1cbab4;
+    
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 10000; /* 確保在最最上層 */
-    
-    /* 預設狀態：透明且輕微縮小，準備出現 */
+    z-index: 10000;
     opacity: 0;
-    transform: scale(0.95);
-    pointer-events: none; /* 預設不可點擊 */
-    
-    /* 過渡動畫：出現效果 */
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-/* 當 JS 加上 .active class 時，模態出現 */
-#fullscreen-menu-modal.active {
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto; /* 恢復可點擊 */
-}
-
-/* 關閉按鈕的樣式 */
-.modal-close-button {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    background: none;
-    border: none;
-    font-size: 48px;
-    color: white;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.2s, transform 0.2s;
-    z-index: 100;
-}
-.modal-close-button:hover {
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
-
-/* --- Part 2: 新的三欄式佈局 --- */
-#side-menu-container {
-    display: grid;
-    grid-template-columns: auto auto 1fr;
-    align-items: center;
-    gap: 30px;
-    width: 90%;
-    max-width: 1400px;
-    height: 80%;
-}
-
-/* 第一欄：觸發器 */
-.triggers-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 30px;
-}
-.trigger-item { cursor: pointer; }
-.trigger-icon {
-    width: 80px; height: 80px;
-    transition: transform 0.3s ease;
-}
-.trigger-item.is-active .trigger-icon,
-.trigger-item:hover .trigger-icon {
-    transform: scale(1.1);
-}
-
-/* 第二欄：標題 */
-.titles-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 80px;
-}
-.trigger-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.5);
-    margin: 0;
-    transition: all 0.4s ease;
-}
-.trigger-title.is-highlighted {
-    color: #ffffff;
-    transform: translateX(10px);
-}
-
-/* 第三欄：卡片顯示區域 */
-.cards-display-area {
-    position: relative;
-    height: 100%;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s;
     overflow: hidden;
 }
 
-/* 卡片組和卡片的樣式 (已為 Anime.js 修改) */
-.card-set {
-    position: absolute; top: 0; left: 0;
-    width: 100%; height: 100%;
-    overflow-y: auto; padding-right: 15px;
-    opacity: 0; pointer-events: none;
-}
-.card-set.is-visible {
-    opacity: 1; pointer-events: auto;
-}
-.menu-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-    margin-bottom: 20px;
-    opacity: 0; /* 初始狀態由 Anime.js 控制 */
-}
-.menu-card:last-child {
-    margin-bottom: 0;
+#fullscreen-menu-modal.active {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* 卡片內部樣式 */
-.card-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    flex-shrink: 0;
+/* --- 關閉按鈕 --- */
+.modal-close-button {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1002;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-.card-info {
+
+.modal-close-button img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); 
+}
+
+.modal-close-button:hover {
+    transform: rotate(90deg) scale(1.1);
+}
+
+.modal-close-button:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* --- 主要佈局容器 --- */
+.menu-layout {
+    display: flex;
+    width: 90%;
+    max-width: 1800px;
+    height: 95%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1001;
+}
+
+/* --- 左側選單區 --- */
+.menu-sidebar {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 60px; 
+    align-items: flex-start;
+    padding-left: 5%;
+    padding-top: 5%;
 }
-.card-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
+
+/* 標題 LOGO (維持 1.3x 左右的大小) */
+.menu-logo {
+    position: relative;
+    width: 616px; 
+    height: auto;
+    margin-bottom: 40px; 
 }
-.card-description {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #555;
+
+/* 左側標題按鈕 */
+.category-btn {
+    background: transparent;
+    border: none;
+    color: #0e636d; 
+    font-size: 2.5rem; 
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 10px 0;
+    font-weight: 700; 
+    font-family: "Gen Jyuu Gothic", "微軟正黑體", sans-serif;
+    opacity: 0.5;
+    text-shadow: 2px 2px 10px rgba(14, 99, 109, 0.1);
 }
-.card-link {
-    margin-top: auto; /* 將連結推到底部 */
-    font-weight: bold;
-    color: #007bff;
+
+.category-btn:hover {
+    opacity: 0.8;
+    transform: translateX(15px);
+}
+
+.category-btn.active {
+    color: #0e636d; 
+    font-size: 3.5rem; 
+    opacity: 1;
+    font-weight: 900;
+    text-shadow: 4px 4px 15px rgba(14, 99, 109, 0.2);
+}
+
+.category-btn.active::before {
+    content: '– ';
+    margin-right: 25px;
+}
+
+/* --- 右側手機容器 --- */
+.phone-wrapper {
+    flex: 1.5;
+    display: grid; 
+    place-items: center; 
+    height: 100%;
+    position: relative;
+    padding: 0;
+    align-content: center;
+}
+
+/* --- 手機放大與動畫參數調整區 (Scale 1.1) --- */
+
+/* 手機外框圖片 */
+.phone-frame {
+    grid-area: 1 / 1; 
+    width: auto;
+    height: 90vh; /* 高度 */
+    max-height: 1000px;
+    object-fit: contain;
+    
+    position: relative;
+    z-index: 1; 
+    pointer-events: none; 
+    
+    /* 初始 scale 改為 1.1 */
+    transform: translateY(100%) scale(1.1); 
+    
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+}
+
+#fullscreen-menu-modal.active .phone-frame {
+    transform: translateY(0) scale(1.1); /* 保持 scale 1.1 */
+    opacity: 1;
+    animation: float 6s ease-in-out infinite 0.8s;
+}
+
+.phone-frame.slide-up-animation {
+    animation: slideUpFrame 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 手機螢幕內容容器 */
+.phone-screen-container {
+    grid-area: 1 / 1; 
+    position: relative; 
+    z-index: 2; 
+    background-color: transparent; 
+    
+    width: 45vh;  
+    height: 82vh; 
+    max-width: 600px; 
+    max-height: 900px;
+    
+    border-radius: 45px; 
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* 初始 scale 改為 1.1 */
+    transform: translateY(100%) scale(1.1); 
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+}
+
+#fullscreen-menu-modal.active .phone-screen-container {
+    transform: translateY(0) scale(1.1); /* 保持 scale 1.1 */
+    opacity: 1;
+    animation: float 6s ease-in-out infinite 0.8s;
+}
+
+.phone-screen-container.slide-up-animation {
+    animation: slideUpContent 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* --- 關鍵影格動畫 (配合 Scale 1.1) --- */
+
+@keyframes slideUpFrame {
+    0% { transform: translateY(100%) scale(1.1); opacity: 0; }
+    100% { transform: translateY(0) scale(1.1); opacity: 1; }
+}
+
+@keyframes slideUpContent {
+    0% { transform: translateY(100%) scale(1.1); opacity: 0; }
+    100% { transform: translateY(0) scale(1.1); opacity: 1; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1.1); }
+    50% { transform: translateY(-20px) scale(1.1); }
+    100% { transform: translateY(0px) scale(1.1); }
+}
+
+/* --- 卡片內部內容 --- */
+.interface-content {
+    padding: 80px 30px 40px 30px; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+    min-height: 100%; 
+}
+
+.phone-screen-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* 作品卡片樣式 */
+.app-card {
+    background: white;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 20px;       
+    display: flex;
+    align-items: center;
+    gap: 20px;
     text-decoration: none;
-    align-self: flex-start; /* 左對齊 */
-}
-.card-link:hover {
-    text-decoration: underline;
-}
-
-/* --- Part 5: 自訂滾動條樣式 --- */
-/* Webkit 瀏覽器 (Chrome, Safari, Edge) */
-.card-set::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-.card-set::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 10px;
-    border: 3px solid transparent;
-    background-clip: content-box;
-}
-.card-set::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-.card-set::-webkit-scrollbar {
-    width: 12px;
-}
-@media (max-width: 1200px) {
-    #side-menu-container {
-        width: 95%;
-        gap: 20px;
-    }
-    .trigger-title {
-        font-size: 1.5rem;
-    }
-    .cards-display-area {
-        margin-left: -50px;
-    }
-    .menu-card {
-        width: 250px;
-    }
+    color: #333;
+    transition: all 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    flex-shrink: 0; 
+    width: 100%; 
 }
 
-
-
-@media (max-width: 1200px) {
-    #side-menu-container {
-        width: 95%;
-        gap: 20px;
-    }
-    .trigger-title {
-        font-size: 1.5rem;
-    }
-    .cards-display-area {
-        margin-left: -50px;
-    }
-    .menu-card {
-        width: 250px;
-    }
+.app-card:hover {
+    transform: translateY(-5px);
+    border-color: #1cbab4;
+    box-shadow: 0 10px 25px rgba(28, 186, 180, 0.25);
 }
 
+.app-icon {
+    width: 70px; 
+    height: 70px;
+    border-radius: 16px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #f0f0f0;
+}
 
+.app-info {
+    flex: 1;
+    overflow: hidden;
+}
+
+.app-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #034854;
+}
+
+.app-desc {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    display: -webkit-box;
+    line-clamp: 2; 
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.play-btn {
+    width: 48px; 
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: 2px solid #1cbab4;
+    color: #1cbab4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.app-card:hover .play-btn {
+    background: #1cbab4;
+    color: white;
+}
+
+.play-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    margin-left: 4px;
+}
+
+#app-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1; 
+}
+
+/* 響應式調整 */
+@media (max-width: 1024px) {
+    .menu-layout {
+        flex-direction: column; 
+        justify-content: center;
+        gap: 30px;
+    }
+    .menu-sidebar {
+        align-items: center;
+        padding: 0;
+    }
+    .menu-logo { width: 400px; } 
+    .category-btn { font-size: 3rem; }
+    .category-btn.active { font-size: 4rem; }
+    
+    /* 平板上稍微縮小 */
+    .phone-frame { transform: translateY(100%) scale(1.0); }
+    #fullscreen-menu-modal.active .phone-frame { transform: translateY(0) scale(1.0); }
+    .phone-screen-container { transform: translateY(100%) scale(1.0); }
+    #fullscreen-menu-modal.active .phone-screen-container { transform: translateY(0) scale(1.0); }
+}
 
 @media (max-width: 768px) {
-    
-    /* 1. 【關鍵】讓模態視窗本身變窄，形成卡片效果 */
-    #fullscreen-menu-modal {
-        /* 不再佔滿全螢幕，而是像一個大的彈出卡片 */
-        top: 5vh; /* 距離頂部 5% */
-        left: 5vw; /* 距離左側 5% */
-        width: 90vw; /* 寬度為 90% */
-        height: 90vh; /* 高度為 90% */
-        border-radius: 20px; /* 為整個模態視窗加上圓角 */
-        box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-        overflow: hidden;
-        box-sizing: border-box; /* 確保內部內容不會超出圓角 */
+    .menu-layout {
+        padding-top: 60px;
     }
+    .menu-sidebar {
+        align-items: center;
+        padding-left: 0;
+        padding-top: 0;
+        gap: 15px;
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+    .menu-logo {
+        width: 250px; 
+        margin-bottom: 10px;
+    }
+    .category-btn { font-size: 1.5rem; opacity: 0.7; }
+    .category-btn.active { font-size: 2rem; }
+    .category-btn.active::before { display: none; }
 
-    /* 2. 【關鍵】主容器現在負責內部佈局和滾動 */
-    #side-menu-container {
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        height: 100%;
-        width: 100%;
-        padding: 0; /* 移除 padding，由子元素自己控制 */
-        overflow-y: auto; /* 讓整個容器可以滾動 */
-        gap: 0;
-        box-sizing: border-box;
+    /* 手機版回歸正常尺寸 */
+    .phone-frame {
+        height: 65vh;
+        transform: translateY(100%) scale(1) !important;
+        animation: none !important; 
     }
-
-    /* 3. 【關鍵】觸發器區域有自己的背景和 padding */
-    .triggers-column {
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 20px 15px; /* 給予上下左右內邊距 */
-        width: 100%;
-        flex-shrink: 0;
-        background-color: #34b3a9; /* 確保它有背景色 */
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        z-index: 10;
-        position: sticky; /* 讓它在滾動時固定在頂部 */
-        top: 0;
-    }
-    .trigger-icon {
-        width: 50px;
-        height: 50px;
-    }
-
-    /* 4. 隱藏文字標題 */
-    .titles-column {
-        display: none;
+    #fullscreen-menu-modal.active .phone-frame {
+        transform: translateY(0) scale(1) !important;
     }
     
-    /* 5. 【關鍵】卡片顯示區現在是滾動內容的一部分 */
-    .cards-display-area {
-        position: relative;
-        width: 100%;
-        height: auto;
-        margin-left: 0;
-        overflow: visible;
-        padding: 20px 15px; /* 給予上下左右內邊距 */
-        background-color: #f0f2f5; /* 給內容區一個淺色背景 */
+    .phone-screen-container {
+        width: 85vw; 
+        height: 60vh;
+        top: auto; 
+        transform: translateY(100%) scale(1) !important;
+        animation: none !important;
     }
-
-    /* 6. 卡片組不再絕對定位 */
-    .card-set {
-        position: relative;
-        display: none;
-        width: 100%;
-        height: auto;
-        overflow-y: visible;
-        padding-right: 0;
-        opacity: 1;
-    }
-    .card-set.is-visible {
-        display: block;
-    }
-
-    /* 7. 卡片樣式調整 */
-    .menu-card {
-        width: 100%;
-        margin-bottom: 15px;
-        opacity: 0;
+    #fullscreen-menu-modal.active .phone-screen-container {
+        transform: translateY(0) scale(1) !important;
     }
     
-    /* 8. 移除自訂滾動條，使用瀏覽器預設的 */
-    #side-menu-container::-webkit-scrollbar {
-        display: none; /* 隱藏滾動條，但仍然可以滾動 */
+    .modal-close-button {
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
     }
 }
