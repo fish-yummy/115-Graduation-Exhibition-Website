@@ -49,10 +49,14 @@
        
             </div>
     </div>
-        <div class="section-scroll-container">
-            <section id="section1" class="content longContent">
-                <div class="writting">
-                    <h1 id="Group-Title" class="GroupTitle">作品名稱</h1>
+
+
+    <div class="section-scroll-container">
+        
+        <section id="section1" class="content longContent">
+            <img class="Group-TitleName" src="/Image/GroupPage1/大標_專案介紹.png" alt="">
+            <div class="writting">
+                <h1 id="Group-Title" class="GroupTitle">作品名稱</h1>
                     <div class="munber">
                             <div class="rectangle">
                                 <div class="MumberImageContainer"  id="Mumber-Image">
@@ -144,6 +148,23 @@
                 </div>
             </section>
     </div>
+
+    <svg style="display: none;">
+        <filter id="noiseFilter">
+            <feTurbulence 
+                type="turbulence" 
+                baseFrequency="4.5" 
+                numOctaves="1" 
+                stitchTiles="stitch" />
+            <feColorMatrix 
+                type="saturate" 
+                values="0" />
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </svg>
 
 </body>
 </html>

@@ -49,6 +49,41 @@ p{
     
 }
 
+.section-scroll-container{
+    position: relative;
+    background-color: #a2df87; 
+}
+.section-scroll-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* 讓雜訊層的背景色為微弱的黑色，以模擬雜訊顆粒 */
+    background-color: rgba(255, 255, 255, 0.26); 
+    filter: url(#noiseFilter) blur(0.5px);
+    
+    /* 3. 核心引用：套用 HTML 中定義的 SVG 濾鏡 */
+    filter: url(#noiseFilter); 
+
+    /* 確保瀏覽器兼容性 */
+    -webkit-filter: url(#noiseFilter) blur(0.5px);
+
+    
+    /* 確保雜訊層不會遮擋滑鼠事件 (例如點擊文字) */
+    pointer-events: none; 
+    
+    /* 確保它疊在背景色之上，但在內容之下 */
+    z-index: 1;
+
+}
+
+.content{
+    position: relative;
+    z-index: 2;
+}
+
 
 
 .GroupTitle{
