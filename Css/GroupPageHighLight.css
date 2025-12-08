@@ -123,10 +123,10 @@ p{
 
 .MumberImage{
     display: flex;
-    width: 9%;
+    width: 10%;
     height: auto;
     /* border:solid 10px rgb(183, 217, 72); */
-    border-radius: 50%;
+    /* border-radius: 50%; */
 
 }
 

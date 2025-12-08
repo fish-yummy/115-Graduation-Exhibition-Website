@@ -10,8 +10,11 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/1/member/3.jpg",
+                  "Image/GroupImage/1/member/7.jpg",
+                  "Image/GroupImage/1/member/呂逸森.jpg",
+                  "Image/GroupImage/1/member/李橡穎.jpg"
+                
                 ],  
             highlight_Desc: [
                   "本遊戲透過「玩中學」的方式，各樣特色卡牌，獨特遊戲設計、卡牌圖案，引導思考、判斷，使學生在沉浸式的遊戲情境中練習如何面對假消息與資訊操控的挑戰，培養其資訊判讀與傳播素養。",
@@ -36,8 +39,10 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/2/member/8386.jpg",
+                  "Image/GroupImage/2/member/8387.jpg",
+                  "Image/GroupImage/2/member/8396.jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本遊戲將台灣內的移民議題故事化，提供開放的選擇、多元的結局，以及高自由度的呈現模式，讓玩家能夠更加帶入遊戲中角色來模擬移民來台的感受，遊戲將一步一步帶領玩家面對困境，並透過各式小遊戲解決困境，引導玩家對於在台移民的包容性",
@@ -63,8 +68,9 @@ const works = [
               
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/3/member/8381.jpg",
+                  "Image/GroupImage/3/member/8739.jpg",
+                  "Image/GroupImage/3/member/梁軒慈.jpg"
                 ],  
             highlight_Desc: [
                   " 《化學方程式》的核心特色在於，將學測化學中「高錯誤率單元」巧妙轉化為遊戲關卡！",
@@ -92,8 +98,11 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/4/member/8397.jpg",
+                  "Image/GroupImage/4/member/8966.jpg",
+                  "Image/GroupImage/4/member/9136.jpg",
+                  "Image/GroupImage/4/member/S__30818355 (1).jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本作品以嘉義沿海蚵農為核心，透過第一手訪談與影像紀錄，真實呈現蚵農在潮汐間的生活節奏與產業挑戰。",
@@ -188,8 +197,10 @@ const works = [
                   "Image/GroupImage/7/Loop/圖片輪轉3.png",
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/7/member/10.jpg",
+                  "Image/GroupImage/7/member/17.jpg",
+                  "Image/GroupImage/7/螢幕擷取畫面 2025-12-08 112618.png",
+                  "Image/GroupImage/7/member/421818.jpg"
                 ],  
             highlight_Desc: [
                   "寶石礦物挖掘與交易：玩家可深入礦區挖掘原石，並透過市場進行交易提升寶石價值。",
@@ -257,8 +268,11 @@ const works = [
                   "Image/GroupImage/9/Loop/輪撥用3.png"
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/9/member/6.jpg",
+                  "Image/GroupImage/9/member/何政倫.jpg",
+                  "Image/GroupImage/9/member/曾約瑟.jpg",
+                  "Image/GroupImage/9/member/蔡峻羽.jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本作品特色在於「教育寓於互動」。",
@@ -284,8 +298,9 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/10/member/5.jpg",
+                  "Image/GroupImage/10/member/S__30818403.jpg",
+                  "Image/GroupImage/10/member/S__36012278.jpg",
                 ],  
             highlight_Desc: [
                   "分支選擇系統：多重路線與不同結局，體驗戀愛中因選擇而產生的多樣結果。",
@@ -319,8 +334,9 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/11/member/柯宇珊.jpg",
+                  "Image/GroupImage/11/member/詹柏崇.jpg",
+                 
                 ],  
             highlight_Desc: [
                   "本作最大的亮點是將抽象的「社會情緒學習」理論，透過遊戲化的方式具體呈現。",
@@ -352,8 +368,10 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/12/member/8382.jpg",
+                  "Image/GroupImage/12/member/8383.jpg",
+                  "Image/GroupImage/12/member/S__30818380.jpg",
+                  "Image/GroupImage/12/member/賴羚 (1).jpg",
                 ],  
             highlight_Desc: [
                   "1、角色扮演、情境模擬：身歷其境，代入不同角色，思考多元觀點。",
@@ -379,7 +397,8 @@ const works = [
                 ],
             Menber_image: [
                   "Image/GroupImage/13/Member/1113834廖宇茹.jpg",
-                  "",
+                  "Image/GroupImage/13/Member/IMG_0337.jpg",
+                  "Image/GroupImage/13/Member/王若皓.jpg"
                 ],  
             highlight_Desc: [
                   "我們利用感測器搭配 Arduino，設計出多項高中物理實驗，如單擺週期測量、相對運動與角速度觀察，並結合 QT 介面呈現即時數據與動畫模擬。",
@@ -405,8 +424,7 @@ const works = [
           
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/14/Member/S__30769163 (1).jpg",
                 ],  
             highlight_Desc: [
                   "本作品整合LINE Bot、Firebase 與地理定位技術，打造免下載、跨裝置、即時互動的導覽體驗。",
