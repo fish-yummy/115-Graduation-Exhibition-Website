@@ -49,6 +49,13 @@ p{
     
 }
 
+.writting{
+    background-color: #ffffff;
+    margin: 5%;
+    margin-left: 5%;
+    z-index: 2;
+}
+
 .section-scroll-container{
     position: relative;
     background-color: #a2df87; 
