@@ -4,13 +4,12 @@ p{
     justify-content: center;
     align-items: center;
 }
-.Box{
-
+.Box {
     display: flex;
-    gap: 1%; 
-    margin: 1%;
-    padding: 2%;
-    /* border:solid 10px rgb(183, 217, 72); */
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
 }
 .IntroImage{
     border-radius: 5%;
@@ -49,48 +48,59 @@ p{
     
 }
 
-.writting{
+
+
+
+
+
+.wraptest {
     background-color: #ffffff;
-    margin: 5%;
-    margin-left: 5%;
-    z-index: 2;
+    width: 80%;
+    max-width: 1400px; /* 限制最大寬度，避免在大螢幕太扁 */
+    
+    /* 【關鍵】讓卡片水平置中 */
+    margin: 0 auto;
+    
+    /* 視覺裝飾 */
+    border-radius: 40px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    
+    /* 確保能包住內容 */
+    min-height: 100%;
+    padding: 0 5%; /* 左右留白 */
+    
+    position: relative;
+    z-index: 2; 
 }
 
-.section-scroll-container{
-    position: relative;
-    background-color: #a2df87; 
-}
-.section-scroll-container::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
+.content {
     width: 100%;
-    height: 100%;
-    /* 讓雜訊層的背景色為微弱的黑色，以模擬雜訊顆粒 */
-    background-color: rgba(255, 255, 255, 0.26); 
-    filter: url(#noiseFilter) blur(0.5px);
+    min-height: 100vh; /* 配合 Scroll Snap，一頁高 */
     
-    /* 3. 核心引用：套用 HTML 中定義的 SVG 濾鏡 */
-    filter: url(#noiseFilter); 
-
-    /* 確保瀏覽器兼容性 */
-    -webkit-filter: url(#noiseFilter) blur(0.5px);
-
+    display: flex;
+    flex-direction: column; /* 內容由上排到下 */
+    justify-content: center; /* 垂直置中 */
+    align-items: center;     /* 水平置中 */
     
-    /* 確保雜訊層不會遮擋滑鼠事件 (例如點擊文字) */
-    pointer-events: none; 
-    
-    /* 確保它疊在背景色之上，但在內容之下 */
-    z-index: 1;
-
+    position: relative; /* 讓內部若有 absolute 元素以此為基準 */
+    padding: 80px 0; /* 上下留白，避免標題被切到 */
 }
 
-.content{
+.Group-TitleName {
+    /* 如果你希望它在內容上方，不需要 absolute，用 margin 即可 */
+    margin-bottom: 20px;
+    position: relative; 
+    z-index: 3;
+}
+.writting {
+    width: 100%;
+    /* 移除 absolute，讓它自然流動 */
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     z-index: 2;
 }
-
 
 
 .GroupTitle{
@@ -98,45 +108,93 @@ p{
 }
 
 /* 成員區 */
-.munber{
-
-    margin-left:5%;
-  
-    width: 90%;
-    height: 19%;
-    /* border:solid 10px rgb(183, 217, 72); */
+#section4 .munber { /* 注意: 你原本拼成 munber，建議改 member */
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
   
 
-.rectangle{
+#section4 .rectangle {
+    width: 100%;
+    background-color: transparent; /* 如果不需要灰色底，可改透明 */
     display: flex;
- 
-    align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
+}
+.MumberImageContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 6%;
+    margin: 5%;
+    width: 100%;
+}
+.memberdec{
+    position: absolute;
+     /* object-fit: contain;  */
+     width: 100%;
+     height: auto;
+     /* z-index: 1; */
+    }
+/* .memberdec1{
+    padding: 5%;
+    clip-path: polygon(0 0, 44% 0, 43% 100%, 0% 100%);
+} */
+
+
+
+.member-card {
+    position: relative; /* 關鍵：讓內部的 absolute 對齊這裡 */
     
-    margin: auto;
-    width: 90%;
+    /* 設定你想要的手機顯示寬度 */
+    width: 174px;
+    
+    /* 設定長寬比，這裡設 9:18 比較像現代手機，你可以依據你的圖片調整 */
+    aspect-ratio: 9 / 18; 
+    
+    /* 這裡不用設 border 了，因為你有圖片 */
+    background-color: transparent; 
+}
+.PhoneFrame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    background-color: #d9d9d9;
-    border-radius: 100px;
-    /* border:solid 10px rgb(183, 217, 72); */
-}
-.MumberImageContainer{
-    display: flex;
-    gap: 2%; 
-    margin-left: 5%;
-    /* border:solid 10px rgb(217, 164, 72); */
-}
-
-.MumberImage{
-    display: flex;
-    width: 10%;
-    height: auto;
-    /* border:solid 10px rgb(183, 217, 72); */
-    /* border-radius: 50%; */
-
+    
+    /* 確保手機殼蓋在照片上面 */
+    z-index: 5; 
+    
+    /* 讓滑鼠點擊可以穿透手機殼點到照片(如果有需要互動的話) */
+    pointer-events: none; 
+    
+    /* 確保圖片比例正確 */
+    object-fit: contain; 
 }
 
+.MumberImage {
+    width: 100%;
+    height: 100%;
+    
+    /* 讓照片填滿 */
+    object-fit: cover; 
+    
+    /* 放在手機殼下面 */
+    z-index: 1; 
+    
+    /* ▼▼▼ 微調區 (重要) ▼▼▼ */
+    /* 如果你的手機殼邊框很粗，照片會跑出來，請調整這裡的 padding */
+    /* 例如：padding: 5%; 讓照片往內縮一點 */
+    padding: 4%; 
+    padding-top: 9%;
+    padding-bottom: 9%;
+    
+    /* 如果手機殼是圓角，照片卻是直角跑出來，可以用這行修剪 */
+    border-radius: 20px; 
+    
+    display: block;
+  
+}
 
 
 /* 底下是亮點的 */

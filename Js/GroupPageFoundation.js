@@ -473,15 +473,46 @@ export function SetGroupPage(workId) {
           descContainer2.appendChild(p);
           }); 
 
+          // 底下是成員部份的變更
+          // const memberContainer2 = document.getElementById("Mumber-Image");
+          // memberContainer2.innerHTML = ""; // 清空舊內容
+          // workData.Menber_image.forEach(img => {
+          //   const imgElement = document.createElement("img");
+          //   imgElement.classList.add("MumberImage");
+          //   imgElement.src = img;
+          
+          //   memberContainer2.appendChild(imgElement);
+          // }); 
           const memberContainer2 = document.getElementById("Mumber-Image");
           memberContainer2.innerHTML = ""; // 清空舊內容
+
+          // 請在這裡填入你手機殼圖片的正確路徑
+          const phoneCasePath = "Image/GroupPage1/框_成員照.png"; // 範例，請改成你的實際檔名
+
           workData.Menber_image.forEach(img => {
-            const imgElement = document.createElement("img");
-            imgElement.classList.add("MumberImage");
-            imgElement.src = img;
-          
-            memberContainer2.appendChild(imgElement);
-          }); 
+              // 1. 創建卡片容器
+              const memberCard = document.createElement("div");
+              memberCard.classList.add("member-card");
+
+              // 2. 創建「成員照片」 (放在底層)
+              const photoImg = document.createElement("img");
+              photoImg.classList.add("MumberImage");
+              photoImg.src = img;
+              photoImg.alt = "成員照片";
+
+              // 3. 創建「手機殼圖片」 (放在上層)
+              const frameImg = document.createElement("img");
+              frameImg.classList.add("PhoneFrame"); 
+              frameImg.src = phoneCasePath; 
+              frameImg.alt = "手機外框";
+
+              // 4. 依序放入：先放照片，再放手機殼 (這樣殼才會蓋在照片上)
+              memberCard.appendChild(photoImg);
+              memberCard.appendChild(frameImg);
+
+              // 5. 放回主容器
+              memberContainer2.appendChild(memberCard);
+          });
 
 
           document.getElementById("Group-Title").textContent = workData.title ;

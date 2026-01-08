@@ -1,0 +1,133 @@
+/* === Css/Main.css (最終修正版) === */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* 關鍵：禁止水平滾動 */
+    background-color: #a2df87; /* 這裡設定綠色，保證永遠有底色 */
+    cursor: url("../Image/cursor/666666.png") , auto;
+}
+
+/* 2. 為所有元素設定 border-box 模型 */
+/* 這可以從根本上避免 padding 撐開寬度的問題 */
+* {
+    box-sizing: border-box;
+}
+
+/* 3. 確保圖片不會超出其容器的寬度 */
+img {
+    max-width: 100%;
+    height: auto; /* 保持圖片的長寬比 */
+    display: block; /* 避免圖片下方出現不明空隙 */
+}
+/* === 4個頁面都一樣且統一的樣式寫這邊 === */
+
+/* .webIcon{
+    width: 64px;
+    height: 64px;
+} */
+
+
+
+/* ▼▼▼ 這是本次最重要的修改 ▼▼▼ */
+/* 讓包裹所有 section 的容器也變成透明的 */
+/* .section-scroll-container {
+    background-color: transparent;
+} */
+/* ▲▲▲ 修改結束 ▲▲▲ */
+
+
+/* 3. 滾動容器 (Scroll Snap 核心) */
+.section-scroll-container {
+    width: 100%;
+    height: 100vh; /* 佔滿視窗 */
+    overflow-y: scroll; /* 允許垂直滾動 */
+    
+    /* 啟動 Scroll Snap */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    
+    /* 背景透明，透出 body 的綠色 */
+    background-color: transparent;
+    
+    /* 確保容器在雜訊層下方，但在 body 上方 */
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. 磨砂雜訊層 (Noise Filter) */
+.section-scroll-container::before {
+    content: "";
+    
+    /* 【關鍵修正】使用 fixed 固定在視窗，不隨捲動跑掉 */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 你的濾鏡設定 */
+    background-color: rgba(255, 255, 255, 0.26); 
+    filter: url(#noiseFilter); 
+    -webkit-filter: url(#noiseFilter);
+    
+    pointer-events: none; /* 讓滑鼠可以點擊穿透 */
+    z-index: 1; /* 確保蓋在所有內容最上面 */
+}
+
+@media (min-width: 1024px) {
+
+    /* === 頁面滑動 === */
+    html, body {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+        /* position: absolute; */
+    }
+
+    section {
+        height: 100vh;
+        scroll-snap-align: start;
+        /* 讓所有 section 的背景都變成透明，才能看到後面的粒子 */
+        /* background-color: transparent; */
+        /* scroll-margin-top: var(--header-height, 80px); */
+    }
+    
+}
+@media (max-width: 767px) {
+    section {
+        height: auto;
+        /* border:solid 5px rgb(217, 178, 72); */
+       
+    }
+  
+    body{
+        width: 100%;
+        height: auto;   
+        /* border:solid 5px rgb(217, 89, 72); */
+    }
+ 
+}
+
+
+:root {
+  --header-height: 65px; /* 改成你實際 header 高度 */
+}
+
+h1 {
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+}
+
+body:active{
+    cursor: url("../Image/cursor/確認2.png") 0 0, auto;
+}
+
+span:hover{
+    cursor: url("../Image/cursor/輸入(小).png") 0 0, auto;
+}
+a:hover{
+    cursor: url("../Image/cursor/點選2.png") 0 0, auto;
+}
+
