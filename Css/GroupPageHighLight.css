@@ -5,18 +5,21 @@ p{
     align-items: center;
 }
 .Box {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+     flex-direction: column;
     gap: 30px;
     width: 100%;
+    /* border:solid 10px rgb(72, 217, 186); */
 }
-.IntroImage{
+/* .IntroImage{
     border-radius: 5%;
 }
 .HighlightImage{
     border-radius: 5%;
-}
+} */
 
 @media (max-width: 767px) {
     .Box {
@@ -83,14 +86,22 @@ p{
     align-items: center;     /* 水平置中 */
     
     position: relative; /* 讓內部若有 absolute 元素以此為基準 */
-    padding: 80px 0; /* 上下留白，避免標題被切到 */
+    padding: 80px 0; 
 }
 
 .Group-TitleName {
-    /* 如果你希望它在內容上方，不需要 absolute，用 margin 即可 */
-    margin-bottom: 20px;
-    position: relative; 
-    z-index: 3;
+
+
+    display: block;       /* 讓它變成區塊元素 */
+    margin: 0 auto;       /* 水平置中 */
+    
+    margin-bottom: 1%; 
+    
+    position: relative;   /* 設定相對定位 */
+    z-index: 10;          /* 確保圖片圖層比白色卡片高 (蓋在上面) */
+    
+    max-width: 80%;       /* 限制寬度，避免手機版爆版 */
+    height: auto;
 }
 .writting {
     width: 100%;
@@ -101,6 +112,7 @@ p{
     align-items: center;
     z-index: 2;
 }
+
 
 
 .GroupTitle{
@@ -220,21 +232,100 @@ p{
 }
 
 /* 底下是介紹的 */
+#section1 {
+    /* 1. 確保最小高度是全螢幕 */
+    min-height: 100vh !important; 
 
+    /* 2. 【核心解法】強制高度自動，無視任何舊設定 */
+    height: auto !important;
+
+    /* 3. 確保佈局方向正確 */
+    display: flex !important;
+    flex-direction: column !important;
+    
+    /* 4. 重要：當內容變長時，取消置中，改從上面開始排，不然字會被切掉 */
+    justify-content: flex-start !important;
+    
+    /* 5. 增加底部留白，把下面的 Section 4 往下推遠一點 */
+    padding-bottom: 150px !important; 
+    
+    /* 6. 確保 overflow 是可見的 (預防萬一) */
+    overflow: visible !important;
+}
+
+#section1 .writting, 
+#section1 .Box {
+    height: auto !important;
+    min-height: auto !important;
+}
+
+#section2 {
+    /* 1. 確保最小高度是全螢幕 */
+    min-height: 100vh !important; 
+
+    /* 2. 【核心解法】強制高度自動，無視任何舊設定 */
+    height: auto !important;
+
+    /* 3. 確保佈局方向正確 */
+    display: flex !important;
+    flex-direction: column !important;
+    
+    /* 4. 重要：當內容變長時，取消置中，改從上面開始排，不然字會被切掉 */
+    justify-content: flex-start !important;
+    
+    /* 5. 增加底部留白，把下面的 Section 4 往下推遠一點 */
+    padding-bottom: 150px !important; 
+    
+    /* 6. 確保 overflow 是可見的 (預防萬一) */
+    overflow: visible !important;
+}
+
+#section2 .writting, 
+#section2 .Box {
+    height: auto !important;
+    min-height: auto !important;
+}
 .intro{
     flex: 1;
     /* border:solid 10px rgb(217, 130, 72); */
     padding: 3%;
 
     display: relative;
+    
+   
 }
+
 .intro.Image{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    width: 100%;
+    height: auto;
+    position: relative;
+   
+    
 }
 .IntroImage{
     width: 95%;
     height: auto;
+    /* padding: 1%;  */
+   
+
 }
+.IntroImageFrame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* 確保手機殼蓋在照片上面 */
+    z-index: 5; 
+    
+    /* 讓滑鼠點擊可以穿透手機殼點到照片(如果有需要互動的話) */
+    pointer-events: none; 
+    
+    /* 確保圖片比例正確 */
+    object-fit: contain;
+}
+

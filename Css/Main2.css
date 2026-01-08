@@ -54,6 +54,9 @@ img {
     /* 確保容器在雜訊層下方，但在 body 上方 */
     position: relative;
     z-index: 1;
+
+    padding-top: 40%;
+    scroll-padding-top: 40%;
 }
 
 /* 4. 磨砂雜訊層 (Noise Filter) */
@@ -86,11 +89,13 @@ img {
     }
 
     section {
-        height: 100vh;
+        
+        min-height: 100vh;
+        height: auto;
         scroll-snap-align: start;
-        /* 讓所有 section 的背景都變成透明，才能看到後面的粒子 */
-        /* background-color: transparent; */
-        /* scroll-margin-top: var(--header-height, 80px); */
+        padding-bottom: 20%;
+        
+        /* border:solid 5px rgb(217, 178, 72); */
     }
     
 }
