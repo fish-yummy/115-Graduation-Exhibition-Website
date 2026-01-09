@@ -14,6 +14,16 @@ p{
     width: 100%;
     /* border:solid 10px rgb(72, 217, 186); */
 }
+.Box2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     /* flex-direction: column; */
+    gap: 30px;
+    width: 100%;
+    /* border:solid 10px rgb(72, 217, 186); */
+}
 /* .IntroImage{
     border-radius: 5%;
 }
@@ -61,11 +71,11 @@ p{
     width: 80%;
     max-width: 1400px; /* 限制最大寬度，避免在大螢幕太扁 */
     
-    /* 【關鍵】讓卡片水平置中 */
+    /* 讓卡片水平置中 */
     margin: 0 auto;
     
-    /* 視覺裝飾 */
-    border-radius: 40px;
+ 
+    border-radius: 90px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     
     /* 確保能包住內容 */
@@ -78,15 +88,15 @@ p{
 
 .content {
     width: 100%;
-    min-height: 100vh; /* 配合 Scroll Snap，一頁高 */
+    min-height: 100vh; 
     
     display: flex;
-    flex-direction: column; /* 內容由上排到下 */
-    justify-content: center; /* 垂直置中 */
-    align-items: center;     /* 水平置中 */
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;    
     
-    position: relative; /* 讓內部若有 absolute 元素以此為基準 */
-    padding: 80px 0; 
+    position: relative; /* 內部若有 absolute 元素以此為基準 */
+    padding: 1% 0; 
 }
 
 .Group-TitleName {
@@ -97,8 +107,8 @@ p{
     
     margin-bottom: 1%; 
     
-    position: relative;   /* 設定相對定位 */
-    z-index: 10;          /* 確保圖片圖層比白色卡片高 (蓋在上面) */
+    position: relative;   
+    z-index: 10;          
     
     max-width: 80%;       /* 限制寬度，避免手機版爆版 */
     height: auto;
@@ -117,10 +127,14 @@ p{
 
 .GroupTitle{
     margin-top: 1%;
+    margin-left: 1%;
+    align-self: flex-start;
+    color: #034854;
+    font-weight: bold;  
 }
 
 /* 成員區 */
-#section4 .munber { /* 注意: 你原本拼成 munber，建議改 member */
+#section4 .munber { 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -158,13 +172,13 @@ p{
 .member-card {
     position: relative; /* 關鍵：讓內部的 absolute 對齊這裡 */
     
-    /* 設定你想要的手機顯示寬度 */
+    /* 手機顯示寬度 */
     width: 174px;
     
-    /* 設定長寬比，這裡設 9:18 比較像現代手機，你可以依據你的圖片調整 */
+    /*  9:18 現代手機 */
     aspect-ratio: 9 / 18; 
     
-    /* 這裡不用設 border 了，因為你有圖片 */
+ 
     background-color: transparent; 
 }
 .PhoneFrame {
@@ -174,10 +188,10 @@ p{
     width: 100%;
     height: 100%;
     
-    /* 確保手機殼蓋在照片上面 */
+
     z-index: 5; 
     
-    /* 讓滑鼠點擊可以穿透手機殼點到照片(如果有需要互動的話) */
+    /* 讓滑鼠點擊可以穿透手機殼點到照片 */
     pointer-events: none; 
     
     /* 確保圖片比例正確 */
@@ -191,17 +205,15 @@ p{
     /* 讓照片填滿 */
     object-fit: cover; 
     
-    /* 放在手機殼下面 */
+
     z-index: 1; 
     
-    /* ▼▼▼ 微調區 (重要) ▼▼▼ */
-    /* 如果你的手機殼邊框很粗，照片會跑出來，請調整這裡的 padding */
-    /* 例如：padding: 5%; 讓照片往內縮一點 */
+    /*  微調區  */
     padding: 4%; 
     padding-top: 9%;
     padding-bottom: 9%;
     
-    /* 如果手機殼是圓角，照片卻是直角跑出來，可以用這行修剪 */
+    
     border-radius: 20px; 
     
     display: block;
@@ -224,11 +236,28 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
-
+    position: relative;
 }
+
 .HighlightImage{
     width: 100%;
     height: auto;
+}
+.HighlightImageFrame{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+
+    z-index: 5; 
+    
+    /* 讓滑鼠點擊可以穿透手機殼點到照片 */
+    pointer-events: none; 
+    
+    /* 確保圖片比例正確 */
+    object-fit: contain;
 }
 
 /* 底下是介紹的 */
@@ -260,23 +289,23 @@ p{
 }
 
 #section2 {
-    /* 1. 確保最小高度是全螢幕 */
+   
     min-height: 100vh !important; 
 
-    /* 2. 【核心解法】強制高度自動，無視任何舊設定 */
+   
     height: auto !important;
 
-    /* 3. 確保佈局方向正確 */
+   
     display: flex !important;
     flex-direction: column !important;
     
-    /* 4. 重要：當內容變長時，取消置中，改從上面開始排，不然字會被切掉 */
+    
     justify-content: flex-start !important;
     
-    /* 5. 增加底部留白，把下面的 Section 4 往下推遠一點 */
+   
     padding-bottom: 150px !important; 
     
-    /* 6. 確保 overflow 是可見的 (預防萬一) */
+   
     overflow: visible !important;
 }
 
@@ -319,13 +348,111 @@ p{
     width: 100%;
     height: 100%;
     
-    /* 確保手機殼蓋在照片上面 */
+
     z-index: 5; 
     
-    /* 讓滑鼠點擊可以穿透手機殼點到照片(如果有需要互動的話) */
+    /* 讓滑鼠點擊可以穿透手機殼點到照片*/
     pointer-events: none; 
     
     /* 確保圖片比例正確 */
     object-fit: contain;
 }
 
+.IntroIitle{
+    width: 18%;    
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5%;
+}
+.menber-TitleName{
+    width: 18%;    
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+}
+.highlightTitle{
+    width: 18%;    
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5%;
+}
+
+/* 底下是TAG */
+.tag{
+    align-self: flex-start;
+    margin: 1.5%;
+}
+.tag .groupTag {
+    /* 顯示模式：讓 P 標籤變成「內容多寬、盒子就多寬」 */
+    display: inline-block; 
+    background-color: #1ebdb2;  
+    color: #084e4e;           
+    border-radius: 50px; 
+    padding: 8px 24px;
+    
+    font-weight: bold;      
+    font-size: 28px;         
+    letter-spacing: 1px;     
+    text-align: center;   
+}
+
+.tag .row {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+}
+.Group-dec{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: 5;
+    top: 0;    
+    left: -1%;
+    margin-top: 40%;
+  
+    clip-path: polygon(0 0, 44% 0, 41% 67%, 0 69%);
+    
+}
+.Group-dec2{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: 5;
+    top: 0;    
+    right: -1%;
+    margin-top: 45%;
+  
+    clip-path: polygon(50% 0, 100% 0, 100% 56%, 50% 56%);
+    
+}
+
+.Group-dec3{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: 5;
+    top: 0;    
+    right: -1%;
+    margin-top: 80%;
+  
+   clip-path: polygon(51% 50%, 100% 53%, 100% 100%, 51% 100%);
+    
+}
+.Group-dec4{
+    position: absolute;
+    width: 90%;
+    height: auto;
+    z-index: 5;
+    top: 0;    
+    left: -1%;
+    margin-top: 70%;
+  
+    clip-path: polygon(0 73%, 43% 75%, 44% 100%, 0 100%);
+    
+}

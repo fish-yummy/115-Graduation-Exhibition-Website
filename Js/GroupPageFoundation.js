@@ -26,6 +26,7 @@ const works = [
                   "作品主要面向學生族群，透過角色扮演與策略卡牌機制，讓玩家於遊戲中體會資訊傳播的真實情境。"
             
                 ],
+            Tag: "互動遊戲類",
       
           },
           {
@@ -55,6 +56,7 @@ const works = [
                   "這不僅是一場遊戲，更是一段關於勇氣、韌性與夢想的旅程。"
      
                 ],
+            Tag: "互動遊戲類",
          
           },
           {
@@ -84,6 +86,7 @@ const works = [
                   "本遊戲採用「問題導向學習」（PBL）設計，將化學反應融入實際解謎過程中。",
                   "玩家在緊張刺激的情境裡，不僅能感受到挑戰與樂趣，更能透過操作深刻理解化學原理與反應機制。"
                 ],
+            Tag: "互動遊戲類",
          
           },
           {
@@ -114,6 +117,7 @@ const works = [
                   "我們走進蚵農家庭，記錄他們從養殖、剝蚵到販售的過程，並探討在地產業的傳承與變遷。",
                   "作品結合文字、照片與地方細節，不僅展現海邊勞動的辛苦，更希望讓讀者看見這份產業背後的文化價值與故鄉情感。"
                 ],
+            Tag: "影像敘事類",
          
           },
           {
@@ -144,6 +148,7 @@ const works = [
                 "在我們的遊戲內，將以製作風笛為主軸，帶領玩家一步步學習鄒族的傳統工藝，並且讓玩家在遊玩的過程中，透過和鄒族文化相關的神明接觸、卡牌效果或地圖內物件，更加了解鄒族文化，並且激發好奇與興趣，不知不覺對此有印象或是記住了。",
                 
                 ],
+            Tag: "互動遊戲類",
 
           },
           {
@@ -183,7 +188,8 @@ const works = [
                   "如果，需要有人成為救世主，你願意嗎？",
                   "你會是成功的救世主，還是失敗的救世主呢？"
                 ],
-            IG:["IG:  https://www.instagram.com/savior_25219/"]
+            IG:["IG:  https://www.instagram.com/savior_25219/"],
+            Tag: "影像敘事類",
       
           },
           {
@@ -214,6 +220,7 @@ const works = [
                   "遊戲過程中充滿隨機事件與市場波動，考驗玩家的決策能力。",
                   "同時融入豐富的寶石知識與礦業資訊，讓玩家在遊玩中自然認識各類礦石特性與市場機制，兼具教育意義與策略深度。"
                 ],
+            Tag: "系統開發",
          
           },
           {
@@ -255,6 +262,7 @@ const works = [
                   "遊戲裡,你的每一個決定都將影響賭癮值和精神值,最終決定阿憨的命運。",
                   "你所做的,真的是你內心最深處的渴望嗎?"
                 ],
+            Tag: "互動遊戲類",
          
           },
           {
@@ -284,6 +292,7 @@ const works = [
                   "漫畫手冊以敘事方式呈現十大常見詐騙手法，拆解話術與流程，幫助讀者迅速理解陷阱與求助管道；桌遊則模擬真實詐騙案例，透過交易、查證、報案等機制，讓玩家在遊戲過程中學習判斷訊息真偽並制定應對策略。",
                   "作品結合教育性與趣味性，提升受眾防詐意識與實際應對能力。"
                 ],
+            Tag: "影像敘事類",
          
           },
           {
@@ -317,7 +326,8 @@ const works = [
                   "遊戲結合分支劇情與即時回饋，讓玩家在輕鬆有趣的氛圍中學習建立健康、成熟且互相尊重的親密關係。"
                 ],
             IG:["IG:  https://www.instagram.com/investigator_001_?igsh=c3hhdHNyYTl4dW1p "],
-            FB:["FB:  https://www.facebook.com/profile.php?id=61581151400794"]
+            FB:["FB:  https://www.facebook.com/profile.php?id=61581151400794"],
+            Tag: "影像敘事類",
       
           },
           {
@@ -349,7 +359,8 @@ const works = [
                   "在探索過程中，玩家需要與代表不同情緒挑戰的角色互動，學習覺察自我情緒及同理他人，最終將遊戲中的體悟應用於現實生活。"
                 ],
             IG:["IG:  https://www.instagram.com/goodstory_ncyu?igsh=MWViZGkxZmU4ejJjMg=="],
-            Web:["自己寫的網站:  https://goodstory-lgbhnj.manus.space/"]
+            Web:["自己寫的網站:  https://goodstory-lgbhnj.manus.space/"],
+            Tag: "互動遊戲類",
          
           },
           {
@@ -383,6 +394,7 @@ const works = [
                   "我們關注當代教育重視的議題，嘗試將人權、勞動權益等內容轉化為易於理解且具參與感的數位教材，讓學習不再侷限於課本，而是能以生動方式融入生活。",
                   "希望學生在體驗過程中，不只是獲得知識，也能培養思考與表達的能力。"
                 ],
+            Tag: "系統開發",
          
           },
           {
@@ -411,6 +423,7 @@ const works = [
                   "透過動手實作、數據分析與視覺回饋，學生能深化對物理現象的理解，提升學習興趣與參與度。",
                   "此外，系統亦提供模擬測驗與結果比對機制，檢驗學生對物理原理的掌握，達到學習與評估並行的效果。"
                 ],
+            Tag: "系統開發",
          
           },
            {
@@ -438,6 +451,7 @@ const works = [
                   "此系統適用於一般遊客與學校戶外教學，提升濕地教育的趣味性與互動性。"
                  
                 ],
+            Tag: "系統開發",
          
           }
         ];
@@ -474,15 +488,6 @@ export function SetGroupPage(workId) {
           }); 
 
           // 底下是成員部份的變更
-          // const memberContainer2 = document.getElementById("Mumber-Image");
-          // memberContainer2.innerHTML = ""; // 清空舊內容
-          // workData.Menber_image.forEach(img => {
-          //   const imgElement = document.createElement("img");
-          //   imgElement.classList.add("MumberImage");
-          //   imgElement.src = img;
-          
-          //   memberContainer2.appendChild(imgElement);
-          // }); 
           const memberContainer2 = document.getElementById("Mumber-Image");
           memberContainer2.innerHTML = ""; // 清空舊內容
 
@@ -516,6 +521,7 @@ export function SetGroupPage(workId) {
 
 
           document.getElementById("Group-Title").textContent = workData.title ;
+          document.getElementById("Group-Tag").textContent = workData.Tag ;
 
           document.getElementById("Intro-Image").src = workData.intro_image;
           document.getElementById("Highlight-Image").src = workData.Highlight_image;
