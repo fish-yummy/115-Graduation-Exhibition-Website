@@ -205,7 +205,7 @@ const works = [
             Menber_image: [
                   "Image/GroupImage/7/member/10.jpg",
                   "Image/GroupImage/7/member/17.jpg",
-                  "Image/GroupImage/7/螢幕擷取畫面 2025-12-08 112618.png",
+                  "Image/GroupImage/7/member/421817.jpg",
                   "Image/GroupImage/7/member/421818.jpg"
                 ],  
             highlight_Desc: [
@@ -299,7 +299,7 @@ const works = [
             id: 10,
             title: "牽線之外",
             Highlight_image: "Image/GroupImage/10/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/10/作品介紹配圖.png",
+            intro_image: "Image/GroupImage/10/作品介紹配圖.jpg",
             Loop_image: [
                   "Image/GroupImage/10/Loop/輪轉圖_1.png",
                   "Image/GroupImage/10/Loop/輪轉圖_2.png",
@@ -545,9 +545,50 @@ export function SetGroupPage(workId) {
           
        
         } 
-        // else {
-        //   alert("找不到該作品資料");
-        // }
+        
+
+        const introFrame = document.querySelector('.IntroImageFrame');
+        const introImage = document.getElementById("Intro-Image"); // 抓取內容圖，用來計算比例
+       
+
+          // 2. 確保元素存在
+          if (introFrame && introImage) {
+              // 3. 判斷是否為 id=6
+              if (workId === 6) {
+                introFrame.style.display = 'none'; 
+
+
+                  // 設定一個載入後的處理函式，確保抓得到正確寬高
+              //     introImage.onload = function() {
+              //         // 計算長寬比 (高度 / 寬度)
+              //         // 例如：高 1600 / 寬 900 = 1.77 倍
+              //         let scaleRatio = introImage.naturalHeight / introImage.naturalWidth;
+                      
+              //         // 如果計算出錯或比例小於1，給一個預設值 (例如 1.78 是常見的 16:9)
+              //         if (!scaleRatio || scaleRatio < 1) scaleRatio = 1.78; 
+
+              //         // 應用樣式：旋轉 90 度 + 放大比例
+              //         introFrame.style.transform = `rotate(90deg) scale(${-scaleRatio})`;
+              //     };
+
+              //     // 如果圖片已經在快取中載入完成，手動觸發一次 onload
+              //     if (introImage.complete) {
+              //         introImage.onload();
+              //     }
+
+              // } else {
+              //     // 如果不是 id 6，清除樣式與監聽事件
+              //     introFrame.style.transform = '';
+              //     introImage.onload = null; // 清除事件，避免影響其他頁面
+              }
+          }
+
+
+
+
+
+
+
 }
 export function loadGroupPage() {
    
