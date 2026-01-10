@@ -123,15 +123,47 @@ p{
     z-index: 2;
 }
 
-
+.titleArea{
+    align-self: flex-start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap:3%;
+}
 
 .GroupTitle{
     margin-top: 1%;
-    margin-left: 1%;
-    align-self: flex-start;
+    margin-left: 0%;
+    /* margin-right: 1%; */
     color: #034854;
     font-weight: bold;  
+    white-space: nowrap;
 }
+
+.icon{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    /* transition: all 0.3s ease; */
+    cursor: pointer;
+    
+}
+.titleArea a {
+    display: block;        
+    width: 32px;          
+    height: 32px;          
+    flex-shrink: 0;        /* 絕對不壓縮 */ 
+    
+}
+
+/* icon沒有連結的狀態 */
+.icon.disabled {
+    filter: grayscale(100%);   /* 變成黑白 */
+    opacity: 0.3;              
+    cursor: default;           
+    pointer-events: none;      
+}
+
 
 /* 成員區 */
 #section4 .munber { 
@@ -388,6 +420,7 @@ p{
 .tag{
     align-self: flex-start;
     margin: 1.5%;
+    margin-left: 0;
 }
 .tag .groupTag {
     /* 顯示模式：讓 P 標籤變成「內容多寬、盒子就多寬」 */
@@ -407,6 +440,11 @@ p{
     display: flex;
     justify-content: center; 
     align-items: center;     
+}
+
+.Group-dec, .Group-dec2, .Group-dec3, .Group-dec4, 
+.Group-TitleName {
+    pointer-events: none;
 }
 .Group-dec{
     position: absolute;

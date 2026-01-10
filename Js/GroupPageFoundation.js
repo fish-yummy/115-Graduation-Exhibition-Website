@@ -27,6 +27,9 @@ const works = [
             
                 ],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
       
           },
           {
@@ -57,6 +60,9 @@ const works = [
      
                 ],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -87,6 +93,9 @@ const works = [
                   "玩家在緊張刺激的情境裡，不僅能感受到挑戰與樂趣，更能透過操作深刻理解化學原理與反應機制。"
                 ],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -118,6 +127,9 @@ const works = [
                   "作品結合文字、照片與地方細節，不僅展現海邊勞動的辛苦，更希望讓讀者看見這份產業背後的文化價值與故鄉情感。"
                 ],
             Tag: "影像敘事類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -149,6 +161,9 @@ const works = [
                 
                 ],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
 
           },
           {
@@ -188,8 +203,10 @@ const works = [
                   "如果，需要有人成為救世主，你願意嗎？",
                   "你會是成功的救世主，還是失敗的救世主呢？"
                 ],
-            IG:["IG:  https://www.instagram.com/savior_25219/"],
             Tag: "影像敘事類",
+            FB:[""],
+            IG:["https://www.instagram.com/savior_25219/"],
+            Web:[""],
       
           },
           {
@@ -221,6 +238,9 @@ const works = [
                   "同時融入豐富的寶石知識與礦業資訊，讓玩家在遊玩中自然認識各類礦石特性與市場機制，兼具教育意義與策略深度。"
                 ],
             Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -263,6 +283,9 @@ const works = [
                   "你所做的,真的是你內心最深處的渴望嗎?"
                 ],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -293,6 +316,9 @@ const works = [
                   "作品結合教育性與趣味性，提升受眾防詐意識與實際應對能力。"
                 ],
             Tag: "影像敘事類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -325,9 +351,10 @@ const works = [
                   "透過沉浸式的情境模擬，玩家需要做出各種選擇並承擔後果，體驗戀愛中的溝通、理解與衝突解決。",
                   "遊戲結合分支劇情與即時回饋，讓玩家在輕鬆有趣的氛圍中學習建立健康、成熟且互相尊重的親密關係。"
                 ],
-            IG:["IG:  https://www.instagram.com/investigator_001_?igsh=c3hhdHNyYTl4dW1p "],
-            FB:["FB:  https://www.facebook.com/profile.php?id=61581151400794"],
             Tag: "影像敘事類",
+            FB:["https://www.facebook.com/profile.php?id=61581151400794"],
+            IG:["https://www.instagram.com/investigator_001_?igsh=c3hhdHNyYTl4dW1p"],
+            Web:[""],
       
           },
           {
@@ -358,9 +385,10 @@ const works = [
                   "玩家將扮演一位在校園中感到孤獨的學生，意外進入一個象徵內心世界的奇幻場景。",
                   "在探索過程中，玩家需要與代表不同情緒挑戰的角色互動，學習覺察自我情緒及同理他人，最終將遊戲中的體悟應用於現實生活。"
                 ],
-            IG:["IG:  https://www.instagram.com/goodstory_ncyu?igsh=MWViZGkxZmU4ejJjMg=="],
-            Web:["自己寫的網站:  https://goodstory-lgbhnj.manus.space/"],
             Tag: "互動遊戲類",
+            FB:[""],
+            IG:["https://www.instagram.com/goodstory_ncyu?igsh=MWViZGkxZmU4ejJjMg=="],
+            Web:["https://goodstory-lgbhnj.manus.space/"],
          
           },
           {
@@ -395,6 +423,9 @@ const works = [
                   "希望學生在體驗過程中，不只是獲得知識，也能培養思考與表達的能力。"
                 ],
             Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -424,6 +455,9 @@ const works = [
                   "此外，系統亦提供模擬測驗與結果比對機制，檢驗學生對物理原理的掌握，達到學習與評估並行的效果。"
                 ],
             Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
            {
@@ -452,6 +486,9 @@ const works = [
                  
                 ],
             Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           }
         ];
@@ -542,7 +579,9 @@ export function SetGroupPage(workId) {
           imageContainer.appendChild(div);
           }); 
             
-          
+          updateSocialIcon(".icon.fb", workData.FB);
+          updateSocialIcon(".icon.ig", workData.IG);
+          updateSocialIcon(".icon.ownWeb", workData.Web);
        
         } 
         
@@ -551,37 +590,19 @@ export function SetGroupPage(workId) {
         const introImage = document.getElementById("Intro-Image"); // 抓取內容圖，用來計算比例
        
 
-          // 2. 確保元素存在
+        //第6組是長的，加框好麻煩，不給他加手機框
           if (introFrame && introImage) {
-              // 3. 判斷是否為 id=6
+              // 是否為 id=6
               if (workId === 6) {
                 introFrame.style.display = 'none'; 
-
-
-                  // 設定一個載入後的處理函式，確保抓得到正確寬高
-              //     introImage.onload = function() {
-              //         // 計算長寬比 (高度 / 寬度)
-              //         // 例如：高 1600 / 寬 900 = 1.77 倍
-              //         let scaleRatio = introImage.naturalHeight / introImage.naturalWidth;
-                      
-              //         // 如果計算出錯或比例小於1，給一個預設值 (例如 1.78 是常見的 16:9)
-              //         if (!scaleRatio || scaleRatio < 1) scaleRatio = 1.78; 
-
-              //         // 應用樣式：旋轉 90 度 + 放大比例
-              //         introFrame.style.transform = `rotate(90deg) scale(${-scaleRatio})`;
-              //     };
-
-              //     // 如果圖片已經在快取中載入完成，手動觸發一次 onload
-              //     if (introImage.complete) {
-              //         introImage.onload();
-              //     }
-
-              // } else {
-              //     // 如果不是 id 6，清除樣式與監聽事件
-              //     introFrame.style.transform = '';
-              //     introImage.onload = null; // 清除事件，避免影響其他頁面
+              }
+              else {
+                introFrame.style.display = 'block'; // 記得加這行，不然切換到別頁框框會不見
+                introFrame.style.transform = '';
               }
           }
+
+       
 
 
 
@@ -614,4 +635,42 @@ export function loadGroupPage() {
     // });
 }
 
+
+
+
+
+// 這個是處理 Icon 狀態的小工具函式 
+function updateSocialIcon(iconSelector, linkData) {
+    const iconImg = document.querySelector(iconSelector);
+    if (!iconImg) return; // 找不到圖片就跳過
+
+    // 取得網址 (如果陣列是空的或字串是空值，視為無效)
+    const url = (linkData && linkData[0]) ? linkData[0].trim() : "";
+    
+    // 檢查圖片現在是不是被 <a> 包起來了
+    const parent = iconImg.parentElement;
+    const isWrapped = parent.tagName === 'A';
+
+    if (url !== "") {
+        // --- 狀況 A: 有網址 ---
+        iconImg.classList.remove('disabled'); // 1. 恢復顏色
+
+        if (isWrapped) {
+            // 更新網址
+            parent.href = url;
+            parent.target = "_blank"; // 新分頁開啟
+        } 
+    } else {
+        // --- 狀況 B: 沒網址 (空字串) ---
+        iconImg.classList.add('disabled'); // 1. 變黑白變淡
+
+        if (isWrapped) {
+            // 如果現在被 <a> 包著，要把 <a> 拆掉，只留圖片
+            // 把圖片搬到 <a> 的外面 (前面)
+            parent.parentNode.insertBefore(iconImg, parent);
+            // 刪除空的 <a>
+            parent.remove();
+        }
+    }
+}
 
