@@ -9,16 +9,16 @@ import { initializeModalMenu } from './modal-menu.js';
 
 
 
-const mediaQuery = window.matchMedia("(max-width: 768px)");
+// const mediaQuery = window.matchMedia("(max-width: 768px)");
 
-if (!mediaQuery.matches) {
-  // 這段 JS 只會在電腦上執行
-    Scrollbar.GotoTopButtonFunction();
-  // 可以載入 desktop.js 或執行特定邏輯
-} else {
-  document.addEventListener('scroll', Scrollbar.GotoTopButtonFunctionAtPhone);
-  // 在手機上不執行桌面端的 JS
-}
+// if (!mediaQuery.matches) {
+//   // 這段 JS 只會在電腦上執行
+//     Scrollbar.GotoTopButtonFunction();
+//   // 可以載入 desktop.js 或執行特定邏輯
+// } else {
+//   document.addEventListener('scroll', Scrollbar.GotoTopButtonFunctionAtPhone);
+//   // 在手機上不執行桌面端的 JS
+// }
 
 let introAudioPlayer;
 function onYouTubeIframeAPIReady() {
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Banner 功能由 HTML 中的 <script> 處理，此處不再需要呼叫
         
         Scrollbar.ScrollbarImageChange();
-        // Scrollbar.GotoTopButtonFunction();
+        Scrollbar.GotoTopButtonFunction();
         
         // 現在這個函式將有機會被執行
         initializeMenu(); 
