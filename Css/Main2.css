@@ -55,8 +55,8 @@ img {
     position: relative;
     z-index: 1;
 
-    padding-top: 40%;
-    scroll-padding-top: 40%;
+    padding-top: 10%;
+    scroll-padding-top: 50%;
 }
 
 /* 4. 磨砂雜訊層 (Noise Filter) */
@@ -85,7 +85,7 @@ img {
     html, body {
         scroll-snap-type: y mandatory;
         scroll-behavior: smooth;
-        /* position: absolute; */
+    
     }
 
     section {

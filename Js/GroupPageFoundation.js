@@ -582,6 +582,21 @@ export function SetGroupPage(workId) {
           updateSocialIcon(".icon.fb", workData.FB);
           updateSocialIcon(".icon.ig", workData.IG);
           updateSocialIcon(".icon.ownWeb", workData.Web);
+
+
+
+          const indicatorContainer = document.getElementById("member-indicators");
+          if (indicatorContainer) {
+              indicatorContainer.innerHTML = ""; // 清空舊的圓點
+              
+              workData.Menber_image.forEach((_, index) => {
+                  const dot = document.createElement("div");
+                  dot.classList.add("indicator-dot");
+                  // 預設第一個是 active
+                  if (index === 0) dot.classList.add("active");
+                  indicatorContainer.appendChild(dot);
+              });
+          }
        
         } 
         
@@ -602,9 +617,12 @@ export function SetGroupPage(workId) {
               }
           }
 
+
+          
+          
        
 
-
+          enableMobile3DEffect();
 
 
 
@@ -674,3 +692,128 @@ function updateSocialIcon(iconSelector, linkData) {
     }
 }
 
+
+
+// === 手機版專用：將普通卡片改造成可翻轉卡片 ===
+// === 手機版專用：滑動時的 3D 傾斜效果 ===
+// function enableMobile3DEffect() {
+//     // 1. 檢查是否為手機版
+//     if (window.innerWidth > 767) return; 
+
+//     const container = document.getElementById("Mumber-Image");
+//     if (!container) return;
+
+//     const cards = container.querySelectorAll(".member-card");
+//     if (cards.length === 0) return;
+
+//     // 核心計算函式：計算並應用每個卡片的角度
+//     function updateTransforms() {
+//         // 取得容器目前的中心點位置 (相對於捲軸起始點)
+//         const containerCenter = container.scrollLeft + (container.clientWidth / 2);
+        
+//         // 設定最大旋轉角度 (度數)
+//         const maxAngle = 25; 
+
+//         cards.forEach(card => {
+//             // 取得卡片自身的中心點位置
+//             // card.offsetLeft 是卡片距離容器左邊界的距離
+//             const cardCenter = card.offsetLeft + (card.clientWidth / 2);
+            
+//             // 計算距離：卡片中心點 - 容器中心點
+//             // 結果為負數表示在左邊，正數在右邊，0 表示在正中間
+//             const distance = cardCenter - containerCenter;
+            
+//             // 計算旋轉比例：距離越遠，比例越大 (限制在 -1 到 1 之間)
+//             // 除以 (container.clientWidth / 1.5) 是為了控制旋轉的敏感度
+//             let ratio = distance / (container.clientWidth / 1.5);
+            
+//             // 限制 ratio 最大不超過 1，最小不低於 -1
+//             ratio = Math.max(-1, Math.min(1, ratio));
+
+//             // 計算最終角度 (例如：-1 * 25 = -25度)
+//             const angle = ratio * maxAngle;
+            
+//             // 為了讓中間的突顯出來，旁邊的稍微縮小一點點 (選用)
+//             // 距離越遠 (ratio絕對值越大)，縮放比例越小
+//             const scale = 1 - (Math.abs(ratio) * 0.1); 
+
+//             // 應用變形
+//             // rotateY: 沿著 Y 軸旋轉 (左右翻)
+//             // scale: 縮放
+//             card.style.transform = `rotateY(${angle}deg) scale(${scale})`;
+//             // 調整 z-index 確保中間的在最上面
+//             card.style.zIndex = 10 - Math.round(Math.abs(ratio) * 10);
+//         });
+//     }
+
+//     // 2. 監聽滑動事件，一滑動就重新計算
+//     container.addEventListener("scroll", updateTransforms);
+    
+//     // 3. 視窗大小改變時也要重新計算
+//     window.addEventListener("resize", updateTransforms);
+
+//     // 4. 初始化：一載入就先計算一次，讓第一張圖是正的
+//     // 需要延遲一下下確保元素都長好了
+//     setTimeout(updateTransforms, 100);
+// }
+
+
+
+function enableMobile3DEffect() {
+    // 1. 檢查是否為手機版
+    if (window.innerWidth > 767) return; 
+
+    const container = document.getElementById("Mumber-Image");
+    if (!container) return;
+
+    const cards = container.querySelectorAll(".member-card");
+    if (cards.length === 0) return;
+    
+    // 抓取剛剛生成的圓點
+    const dots = document.querySelectorAll(".indicator-dot");
+
+    // 核心計算函式
+    function updateTransforms() {
+        const containerCenter = container.scrollLeft + (container.clientWidth / 2);
+        const maxAngle = 25; 
+        
+        // 用來記錄目前哪個卡片離中間最近
+        let closestIndex = 0;
+        let minDistance = Infinity;
+
+        cards.forEach((card, index) => {
+            const cardCenter = card.offsetLeft + (card.clientWidth / 2);
+            const distance = cardCenter - containerCenter;
+            
+            // --- 判斷誰是主角 ---
+            // 取絕對值，越小代表離中間越近
+            if (Math.abs(distance) < minDistance) {
+                minDistance = Math.abs(distance);
+                closestIndex = index;
+            }
+            // ------------------
+
+            let ratio = distance / (container.clientWidth / 1.5);
+            ratio = Math.max(-1, Math.min(1, ratio));
+            
+            const angle = ratio * maxAngle;
+            const scale = 1 - (Math.abs(ratio) * 0.1); 
+
+            card.style.transform = `rotateY(${angle}deg) scale(${scale})`;
+            card.style.zIndex = 10 - Math.round(Math.abs(ratio) * 10);
+        });
+
+        // --- 更新圓點狀態 ---
+        dots.forEach((dot, index) => {
+            if (index === closestIndex) {
+                dot.classList.add("active"); // 變成方塊
+            } else {
+                dot.classList.remove("active"); // 變回圓點
+            }
+        });
+    }
+
+    container.addEventListener("scroll", updateTransforms);
+    window.addEventListener("resize", updateTransforms);
+    setTimeout(updateTransforms, 100);
+}
