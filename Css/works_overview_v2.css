@@ -5,7 +5,8 @@
 /* --- 組件最外層包裹容器 --- */
 .works_overview_v2_component_wrapper {
     width: 100%;
-    margin: 80px 0;
+    /* --- MODIFIED --- 移除上下的 margin */
+    margin: 0; 
     position: relative;
 }
 
@@ -21,9 +22,6 @@
 
 /* --- 內容與背景的包裹容器 --- */
 .works_overview_v2_content-wrapper {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
     position: relative;
 }
 
@@ -31,21 +29,54 @@
 .works_overview_v2_base-layer,
 .works_overview_v2_overlay-layer,
 .works_overview_v2_main-content {
-    grid-area: 1 / 1;
+    /* grid-area: 1 / 1; */
     width: 100%;
     height: 100%;
 }
 
 /* --- 圖層順序與樣式 --- */
-.works_overview_v2_base-layer { z-index: 1; object-fit: cover; }
-.works_overview_v2_overlay-layer { z-index: 2; object-fit: cover; }
-.works_overview_v2_main-content { z-index: 3; padding: 12% 10%; }
+
+/* 圖層 1 & 2: 背景圖層 (網格圖 和 裝飾圖) */
+.works_overview_v2_base-layer,
+.works_overview_v2_overlay-layer {
+    position: absolute; /* 設為絕對定位 */
+    top: 0;
+    left: 0;
+    /* height: 100% 會讓它們自動適應父容器的高度 */
+}
+
+.works_overview_v2_base-layer { 
+    z-index: 1; 
+    object-fit: cover; 
+}
+.works_overview_v2_overlay-layer { 
+    z-index: 2; 
+    object-fit: cover; 
+}
+
+/* 圖層 3: 主內容區 (現在負責撐開高度) */
+.works_overview_v2_main-content { 
+    z-index: 3; 
+    padding: 12% 10%; 
+    
+    /* 新增：讓它變回正常的元素，不再絕對定位 */
+    position: relative; 
+    height: auto; /* 高度由內容決定 */
+    
+    /* 新增：將網格背景圖應用在這裡 */
+    background-image: url('../image/Your_BlueGreen_Grid_BG.png'); /* 請確認路徑 */
+    background-repeat: repeat;
+    }
 
 /* --- 作品網格容器 --- */
 .works_overview_v2_grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    row-gap: 8%; 
+    
+    /* --- 移除 row-gap --- */
+    /* row-gap: 25%; */ 
+
+    /* --- column-gap 保持不變 --- */
     column-gap: 3%;
 }
 
@@ -63,7 +94,12 @@
     transition: transform 0.3s ease;
     position: static;
     background-color: transparent;
-    padding: 0;
+    
+    /* --- 新增：使用 padding 來創造垂直間距 --- */
+    /* 上下各 5% 的 padding，總共 10% 的垂直空間 */
+    /* 左右 0，因為已有 column-gap */
+    padding: 5% 0;
+
     border-radius: 0;
     box-shadow: none;
     overflow: visible;
@@ -225,9 +261,41 @@
 /* ================================================== */
 /*                    響應式設計                      */
 /* ================================================== */
-@media (max-width: 1200px) { .works_overview_v2_grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* --- 平板裝置 (例如：寬度小於 1200px) --- */
+@media (max-width: 1200px) { 
+    .works_overview_v2_grid { 
+        /* 從 5 欄變為 3 欄 */
+        grid-template-columns: repeat(3, 1fr); 
+    } 
+}
+
+/* --- 手機裝置 (寬度小於 768px) --- */
 @media (max-width: 768px) {
-    .works_overview_v2_grid { grid-template-columns: repeat(2, 1fr); }
-    .works_overview_v2_main-content { padding: 15% 8%; }
-    .works_overview_title { font-size: 0.8rem; }
+    /* --- MODIFIED --- 為手機版的橫幅減小負邊距 --- */
+    .works_overview_v2_banner-image {
+        margin-bottom: -30px; /* 從 -50px 減為 -30px */
+    }
+
+    /* --- MODIFIED --- 為手機版的最外層容器增加對應的 padding-bottom --- */
+    .works_overview_v2_component_wrapper {
+        padding-bottom: 30px; /* 新增這一行來抵銷上面的 -30px */
+    }
+    
+    /* --- 以下是您原有的手機版設定 (保持不變) --- */
+    .works_overview_v2_grid { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .works_overview_v2_main-content { 
+        padding: 15% 8%; 
+    }
+    .works_overview_title { 
+        font-size: 0.8rem; 
+    }
+    .works_overview_eye-icon-wrapper {
+        width: 30px;
+        height: 30px;
+        bottom: 15px;
+        right: 15px;
+    }
 }
