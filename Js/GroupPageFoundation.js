@@ -10,8 +10,11 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/1/member/3.jpg",
+                  "Image/GroupImage/1/member/7.jpg",
+                  "Image/GroupImage/1/member/呂逸森.jpg",
+                  "Image/GroupImage/1/member/李橡穎.jpg"
+                
                 ],  
             highlight_Desc: [
                   "本遊戲透過「玩中學」的方式，各樣特色卡牌，獨特遊戲設計、卡牌圖案，引導思考、判斷，使學生在沉浸式的遊戲情境中練習如何面對假消息與資訊操控的挑戰，培養其資訊判讀與傳播素養。",
@@ -23,6 +26,10 @@ const works = [
                   "作品主要面向學生族群，透過角色扮演與策略卡牌機制，讓玩家於遊戲中體會資訊傳播的真實情境。"
             
                 ],
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
       
           },
           {
@@ -36,8 +43,10 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/2/member/8386.jpg",
+                  "Image/GroupImage/2/member/8387.jpg",
+                  "Image/GroupImage/2/member/8396.jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本遊戲將台灣內的移民議題故事化，提供開放的選擇、多元的結局，以及高自由度的呈現模式，讓玩家能夠更加帶入遊戲中角色來模擬移民來台的感受，遊戲將一步一步帶領玩家面對困境，並透過各式小遊戲解決困境，引導玩家對於在台移民的包容性",
@@ -50,6 +59,10 @@ const works = [
                   "這不僅是一場遊戲，更是一段關於勇氣、韌性與夢想的旅程。"
      
                 ],
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -63,8 +76,9 @@ const works = [
               
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/3/member/8381.jpg",
+                  "Image/GroupImage/3/member/8739.jpg",
+                  "Image/GroupImage/3/member/梁軒慈.jpg"
                 ],  
             highlight_Desc: [
                   " 《化學方程式》的核心特色在於，將學測化學中「高錯誤率單元」巧妙轉化為遊戲關卡！",
@@ -78,6 +92,10 @@ const works = [
                   "本遊戲採用「問題導向學習」（PBL）設計，將化學反應融入實際解謎過程中。",
                   "玩家在緊張刺激的情境裡，不僅能感受到挑戰與樂趣，更能透過操作深刻理解化學原理與反應機制。"
                 ],
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -92,8 +110,11 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/4/member/8397.jpg",
+                  "Image/GroupImage/4/member/8966.jpg",
+                  "Image/GroupImage/4/member/9136.jpg",
+                  "Image/GroupImage/4/member/S__30818355 (1).jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本作品以嘉義沿海蚵農為核心，透過第一手訪談與影像紀錄，真實呈現蚵農在潮汐間的生活節奏與產業挑戰。",
@@ -105,6 +126,10 @@ const works = [
                   "我們走進蚵農家庭，記錄他們從養殖、剝蚵到販售的過程，並探討在地產業的傳承與變遷。",
                   "作品結合文字、照片與地方細節，不僅展現海邊勞動的辛苦，更希望讓讀者看見這份產業背後的文化價值與故鄉情感。"
                 ],
+            Tag: "影像敘事類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -135,6 +160,10 @@ const works = [
                 "在我們的遊戲內，將以製作風笛為主軸，帶領玩家一步步學習鄒族的傳統工藝，並且讓玩家在遊玩的過程中，透過和鄒族文化相關的神明接觸、卡牌效果或地圖內物件，更加了解鄒族文化，並且激發好奇與興趣，不知不覺對此有印象或是記住了。",
                 
                 ],
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
 
           },
           {
@@ -174,7 +203,10 @@ const works = [
                   "如果，需要有人成為救世主，你願意嗎？",
                   "你會是成功的救世主，還是失敗的救世主呢？"
                 ],
-            IG:["IG:  https://www.instagram.com/savior_25219/"]
+            Tag: "影像敘事類",
+            FB:[""],
+            IG:["https://www.instagram.com/savior_25219/"],
+            Web:[""],
       
           },
           {
@@ -188,8 +220,10 @@ const works = [
                   "Image/GroupImage/7/Loop/圖片輪轉3.png",
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/7/member/10.jpg",
+                  "Image/GroupImage/7/member/17.jpg",
+                  "Image/GroupImage/7/member/421817.jpg",
+                  "Image/GroupImage/7/member/421818.jpg"
                 ],  
             highlight_Desc: [
                   "寶石礦物挖掘與交易：玩家可深入礦區挖掘原石，並透過市場進行交易提升寶石價值。",
@@ -203,6 +237,10 @@ const works = [
                   "遊戲過程中充滿隨機事件與市場波動，考驗玩家的決策能力。",
                   "同時融入豐富的寶石知識與礦業資訊，讓玩家在遊玩中自然認識各類礦石特性與市場機制，兼具教育意義與策略深度。"
                 ],
+            Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -244,6 +282,10 @@ const works = [
                   "遊戲裡,你的每一個決定都將影響賭癮值和精神值,最終決定阿憨的命運。",
                   "你所做的,真的是你內心最深處的渴望嗎?"
                 ],
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -257,8 +299,11 @@ const works = [
                   "Image/GroupImage/9/Loop/輪撥用3.png"
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/9/member/6.jpg",
+                  "Image/GroupImage/9/member/何政倫.jpg",
+                  "Image/GroupImage/9/member/曾約瑟.jpg",
+                  "Image/GroupImage/9/member/蔡峻羽.jpg"
+                  
                 ],  
             highlight_Desc: [
                   "本作品特色在於「教育寓於互動」。",
@@ -270,13 +315,17 @@ const works = [
                   "漫畫手冊以敘事方式呈現十大常見詐騙手法，拆解話術與流程，幫助讀者迅速理解陷阱與求助管道；桌遊則模擬真實詐騙案例，透過交易、查證、報案等機制，讓玩家在遊戲過程中學習判斷訊息真偽並制定應對策略。",
                   "作品結合教育性與趣味性，提升受眾防詐意識與實際應對能力。"
                 ],
+            Tag: "影像敘事類",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
             id: 10,
             title: "牽線之外",
             Highlight_image: "Image/GroupImage/10/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/10/作品介紹配圖.png",
+            intro_image: "Image/GroupImage/10/作品介紹配圖.jpg",
             Loop_image: [
                   "Image/GroupImage/10/Loop/輪轉圖_1.png",
                   "Image/GroupImage/10/Loop/輪轉圖_2.png",
@@ -284,8 +333,9 @@ const works = [
                   
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/10/member/5.jpg",
+                  "Image/GroupImage/10/member/S__30818403.jpg",
+                  "Image/GroupImage/10/member/S__36012278.jpg",
                 ],  
             highlight_Desc: [
                   "分支選擇系統：多重路線與不同結局，體驗戀愛中因選擇而產生的多樣結果。",
@@ -301,8 +351,10 @@ const works = [
                   "透過沉浸式的情境模擬，玩家需要做出各種選擇並承擔後果，體驗戀愛中的溝通、理解與衝突解決。",
                   "遊戲結合分支劇情與即時回饋，讓玩家在輕鬆有趣的氛圍中學習建立健康、成熟且互相尊重的親密關係。"
                 ],
-            IG:["IG:  https://www.instagram.com/investigator_001_?igsh=c3hhdHNyYTl4dW1p "],
-            FB:["FB:  https://www.facebook.com/profile.php?id=61581151400794"]
+            Tag: "影像敘事類",
+            FB:["https://www.facebook.com/profile.php?id=61581151400794"],
+            IG:["https://www.instagram.com/investigator_001_?igsh=c3hhdHNyYTl4dW1p"],
+            Web:[""],
       
           },
           {
@@ -319,8 +371,9 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/11/member/柯宇珊.jpg",
+                  "Image/GroupImage/11/member/詹柏崇.jpg",
+                 
                 ],  
             highlight_Desc: [
                   "本作最大的亮點是將抽象的「社會情緒學習」理論，透過遊戲化的方式具體呈現。",
@@ -332,8 +385,10 @@ const works = [
                   "玩家將扮演一位在校園中感到孤獨的學生，意外進入一個象徵內心世界的奇幻場景。",
                   "在探索過程中，玩家需要與代表不同情緒挑戰的角色互動，學習覺察自我情緒及同理他人，最終將遊戲中的體悟應用於現實生活。"
                 ],
-            IG:["IG:  https://www.instagram.com/goodstory_ncyu?igsh=MWViZGkxZmU4ejJjMg=="],
-            Web:["自己寫的網站:  https://goodstory-lgbhnj.manus.space/"]
+            Tag: "互動遊戲類",
+            FB:[""],
+            IG:["https://www.instagram.com/goodstory_ncyu?igsh=MWViZGkxZmU4ejJjMg=="],
+            Web:["https://goodstory-lgbhnj.manus.space/"],
          
           },
           {
@@ -352,8 +407,10 @@ const works = [
                  
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/12/member/8382.jpg",
+                  "Image/GroupImage/12/member/8383.jpg",
+                  "Image/GroupImage/12/member/S__30818380.jpg",
+                  "Image/GroupImage/12/member/賴羚 (1).jpg",
                 ],  
             highlight_Desc: [
                   "1、角色扮演、情境模擬：身歷其境，代入不同角色，思考多元觀點。",
@@ -365,6 +422,10 @@ const works = [
                   "我們關注當代教育重視的議題，嘗試將人權、勞動權益等內容轉化為易於理解且具參與感的數位教材，讓學習不再侷限於課本，而是能以生動方式融入生活。",
                   "希望學生在體驗過程中，不只是獲得知識，也能培養思考與表達的能力。"
                 ],
+            Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
           {
@@ -379,7 +440,8 @@ const works = [
                 ],
             Menber_image: [
                   "Image/GroupImage/13/Member/1113834廖宇茹.jpg",
-                  "",
+                  "Image/GroupImage/13/Member/IMG_0337.jpg",
+                  "Image/GroupImage/13/Member/王若皓.jpg"
                 ],  
             highlight_Desc: [
                   "我們利用感測器搭配 Arduino，設計出多項高中物理實驗，如單擺週期測量、相對運動與角速度觀察，並結合 QT 介面呈現即時數據與動畫模擬。",
@@ -392,6 +454,10 @@ const works = [
                   "透過動手實作、數據分析與視覺回饋，學生能深化對物理現象的理解，提升學習興趣與參與度。",
                   "此外，系統亦提供模擬測驗與結果比對機制，檢驗學生對物理原理的掌握，達到學習與評估並行的效果。"
                 ],
+            Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           },
            {
@@ -405,8 +471,7 @@ const works = [
           
                 ],
             Menber_image: [
-                  "",
-                  "",
+                  "Image/GroupImage/14/Member/S__30769163 (1).jpg",
                 ],  
             highlight_Desc: [
                   "本作品整合LINE Bot、Firebase 與地理定位技術，打造免下載、跨裝置、即時互動的導覽體驗。",
@@ -420,6 +485,10 @@ const works = [
                   "此系統適用於一般遊客與學校戶外教學，提升濕地教育的趣味性與互動性。"
                  
                 ],
+            Tag: "系統開發",
+            FB:[""],
+            IG:[""],
+            Web:[""],
          
           }
         ];
@@ -455,18 +524,41 @@ export function SetGroupPage(workId) {
           descContainer2.appendChild(p);
           }); 
 
+          // 底下是成員部份的變更
           const memberContainer2 = document.getElementById("Mumber-Image");
           memberContainer2.innerHTML = ""; // 清空舊內容
+
+          // 請在這裡填入你手機殼圖片的正確路徑
+          const phoneCasePath = "Image/GroupPage1/框_成員照.png"; // 範例，請改成你的實際檔名
+
           workData.Menber_image.forEach(img => {
-            const imgElement = document.createElement("img");
-            imgElement.classList.add("MumberImage");
-            imgElement.src = img;
-          
-            memberContainer2.appendChild(imgElement);
-          }); 
+              // 1. 創建卡片容器
+              const memberCard = document.createElement("div");
+              memberCard.classList.add("member-card");
+
+              // 2. 創建「成員照片」 (放在底層)
+              const photoImg = document.createElement("img");
+              photoImg.classList.add("MumberImage");
+              photoImg.src = img;
+              photoImg.alt = "成員照片";
+
+              // 3. 創建「手機殼圖片」 (放在上層)
+              const frameImg = document.createElement("img");
+              frameImg.classList.add("PhoneFrame"); 
+              frameImg.src = phoneCasePath; 
+              frameImg.alt = "手機外框";
+
+              // 4. 依序放入：先放照片，再放手機殼 (這樣殼才會蓋在照片上)
+              memberCard.appendChild(photoImg);
+              memberCard.appendChild(frameImg);
+
+              // 5. 放回主容器
+              memberContainer2.appendChild(memberCard);
+          });
 
 
           document.getElementById("Group-Title").textContent = workData.title ;
+          document.getElementById("Group-Tag").textContent = workData.Tag ;
 
           document.getElementById("Intro-Image").src = workData.intro_image;
           document.getElementById("Highlight-Image").src = workData.Highlight_image;
@@ -487,12 +579,55 @@ export function SetGroupPage(workId) {
           imageContainer.appendChild(div);
           }); 
             
-          
+          updateSocialIcon(".icon.fb", workData.FB);
+          updateSocialIcon(".icon.ig", workData.IG);
+          updateSocialIcon(".icon.ownWeb", workData.Web);
+
+
+
+          const indicatorContainer = document.getElementById("member-indicators");
+          if (indicatorContainer) {
+              indicatorContainer.innerHTML = ""; // 清空舊的圓點
+              
+              workData.Menber_image.forEach((_, index) => {
+                  const dot = document.createElement("div");
+                  dot.classList.add("indicator-dot");
+                  // 預設第一個是 active
+                  if (index === 0) dot.classList.add("active");
+                  indicatorContainer.appendChild(dot);
+              });
+          }
        
         } 
-        // else {
-        //   alert("找不到該作品資料");
-        // }
+        
+
+        const introFrame = document.querySelector('.IntroImageFrame');
+        const introImage = document.getElementById("Intro-Image"); // 抓取內容圖，用來計算比例
+       
+
+        //第6組是長的，加框好麻煩，不給他加手機框
+          if (introFrame && introImage) {
+              // 是否為 id=6
+              if (workId === 6) {
+                introFrame.style.display = 'none'; 
+              }
+              else {
+                introFrame.style.display = 'block'; // 記得加這行，不然切換到別頁框框會不見
+                introFrame.style.transform = '';
+              }
+          }
+
+
+          
+          
+       
+
+          enableMobile3DEffect();
+
+
+
+
+
 }
 export function loadGroupPage() {
    
@@ -519,3 +654,166 @@ export function loadGroupPage() {
 }
 
 
+
+
+
+// 這個是處理 Icon 狀態的小工具函式 
+function updateSocialIcon(iconSelector, linkData) {
+    const iconImg = document.querySelector(iconSelector);
+    if (!iconImg) return; // 找不到圖片就跳過
+
+    // 取得網址 (如果陣列是空的或字串是空值，視為無效)
+    const url = (linkData && linkData[0]) ? linkData[0].trim() : "";
+    
+    // 檢查圖片現在是不是被 <a> 包起來了
+    const parent = iconImg.parentElement;
+    const isWrapped = parent.tagName === 'A';
+
+    if (url !== "") {
+        // --- 狀況 A: 有網址 ---
+        iconImg.classList.remove('disabled'); // 1. 恢復顏色
+
+        if (isWrapped) {
+            // 更新網址
+            parent.href = url;
+            parent.target = "_blank"; // 新分頁開啟
+        } 
+    } else {
+        // --- 狀況 B: 沒網址 (空字串) ---
+        iconImg.classList.add('disabled'); // 1. 變黑白變淡
+
+        if (isWrapped) {
+            // 如果現在被 <a> 包著，要把 <a> 拆掉，只留圖片
+            // 把圖片搬到 <a> 的外面 (前面)
+            parent.parentNode.insertBefore(iconImg, parent);
+            // 刪除空的 <a>
+            parent.remove();
+        }
+    }
+}
+
+
+
+// === 手機版專用：將普通卡片改造成可翻轉卡片 ===
+// === 手機版專用：滑動時的 3D 傾斜效果 ===
+// function enableMobile3DEffect() {
+//     // 1. 檢查是否為手機版
+//     if (window.innerWidth > 767) return; 
+
+//     const container = document.getElementById("Mumber-Image");
+//     if (!container) return;
+
+//     const cards = container.querySelectorAll(".member-card");
+//     if (cards.length === 0) return;
+
+//     // 核心計算函式：計算並應用每個卡片的角度
+//     function updateTransforms() {
+//         // 取得容器目前的中心點位置 (相對於捲軸起始點)
+//         const containerCenter = container.scrollLeft + (container.clientWidth / 2);
+        
+//         // 設定最大旋轉角度 (度數)
+//         const maxAngle = 25; 
+
+//         cards.forEach(card => {
+//             // 取得卡片自身的中心點位置
+//             // card.offsetLeft 是卡片距離容器左邊界的距離
+//             const cardCenter = card.offsetLeft + (card.clientWidth / 2);
+            
+//             // 計算距離：卡片中心點 - 容器中心點
+//             // 結果為負數表示在左邊，正數在右邊，0 表示在正中間
+//             const distance = cardCenter - containerCenter;
+            
+//             // 計算旋轉比例：距離越遠，比例越大 (限制在 -1 到 1 之間)
+//             // 除以 (container.clientWidth / 1.5) 是為了控制旋轉的敏感度
+//             let ratio = distance / (container.clientWidth / 1.5);
+            
+//             // 限制 ratio 最大不超過 1，最小不低於 -1
+//             ratio = Math.max(-1, Math.min(1, ratio));
+
+//             // 計算最終角度 (例如：-1 * 25 = -25度)
+//             const angle = ratio * maxAngle;
+            
+//             // 為了讓中間的突顯出來，旁邊的稍微縮小一點點 (選用)
+//             // 距離越遠 (ratio絕對值越大)，縮放比例越小
+//             const scale = 1 - (Math.abs(ratio) * 0.1); 
+
+//             // 應用變形
+//             // rotateY: 沿著 Y 軸旋轉 (左右翻)
+//             // scale: 縮放
+//             card.style.transform = `rotateY(${angle}deg) scale(${scale})`;
+//             // 調整 z-index 確保中間的在最上面
+//             card.style.zIndex = 10 - Math.round(Math.abs(ratio) * 10);
+//         });
+//     }
+
+//     // 2. 監聽滑動事件，一滑動就重新計算
+//     container.addEventListener("scroll", updateTransforms);
+    
+//     // 3. 視窗大小改變時也要重新計算
+//     window.addEventListener("resize", updateTransforms);
+
+//     // 4. 初始化：一載入就先計算一次，讓第一張圖是正的
+//     // 需要延遲一下下確保元素都長好了
+//     setTimeout(updateTransforms, 100);
+// }
+
+
+
+function enableMobile3DEffect() {
+    // 1. 檢查是否為手機版
+    if (window.innerWidth > 767) return; 
+
+    const container = document.getElementById("Mumber-Image");
+    if (!container) return;
+
+    const cards = container.querySelectorAll(".member-card");
+    if (cards.length === 0) return;
+    
+    // 抓取剛剛生成的圓點
+    const dots = document.querySelectorAll(".indicator-dot");
+
+    // 核心計算函式
+    function updateTransforms() {
+        const containerCenter = container.scrollLeft + (container.clientWidth / 2);
+        const maxAngle = 25; 
+        
+        // 用來記錄目前哪個卡片離中間最近
+        let closestIndex = 0;
+        let minDistance = Infinity;
+
+        cards.forEach((card, index) => {
+            const cardCenter = card.offsetLeft + (card.clientWidth / 2);
+            const distance = cardCenter - containerCenter;
+            
+            // --- 判斷誰是主角 ---
+            // 取絕對值，越小代表離中間越近
+            if (Math.abs(distance) < minDistance) {
+                minDistance = Math.abs(distance);
+                closestIndex = index;
+            }
+            // ------------------
+
+            let ratio = distance / (container.clientWidth / 1.5);
+            ratio = Math.max(-1, Math.min(1, ratio));
+            
+            const angle = ratio * maxAngle;
+            const scale = 1 - (Math.abs(ratio) * 0.1); 
+
+            card.style.transform = `rotateY(${angle}deg) scale(${scale})`;
+            card.style.zIndex = 10 - Math.round(Math.abs(ratio) * 10);
+        });
+
+        // --- 更新圓點狀態 ---
+        dots.forEach((dot, index) => {
+            if (index === closestIndex) {
+                dot.classList.add("active"); // 變成方塊
+            } else {
+                dot.classList.remove("active"); // 變回圓點
+            }
+        });
+    }
+
+    container.addEventListener("scroll", updateTransforms);
+    window.addEventListener("resize", updateTransforms);
+    setTimeout(updateTransforms, 100);
+}
