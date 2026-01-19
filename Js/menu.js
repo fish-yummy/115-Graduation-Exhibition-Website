@@ -5,10 +5,10 @@ const projectsData = {
     games: [
         { id: 1, title: "試釋就適識", desc: "提升媒體識讀之學習型遊戲", img: "image/作品縮圖/作品縮圖1.png" },
         { id: 2, title: "移民模擬", desc: "體驗移民者的艱辛旅程", img: "image/作品縮圖/作品縮圖2.PNG" },
-        { id: 3, title: "化學方程式", desc: "實驗室逃脫解謎遊戲", img: "image/作品縮圖/作品縮圖3.png" },
+        { id: 11, title: "孤故 Good Story", desc: "社會情緒學習敘事冒險", img: "image/作品縮圖/作品縮圖11.png" },
         { id: 5, title: "Euvuvu", desc: "鄒族文化劇情冒險遊戲", img: "image/作品縮圖/作品縮圖5.PNG" },
         { id: 8, title: "賭薄人生", desc: "沉浸式第一人稱體驗", img: "image/作品縮圖/作品縮圖8.png" },
-        { id: 11, title: "孤故 Good Story", desc: "社會情緒學習敘事冒險", img: "image/作品縮圖/作品縮圖11.png" }
+        { id: 3, title: "化學方程式", desc: "實驗室逃脫解謎遊戲", img: "image/作品縮圖/作品縮圖3.png" },
     ],
     narrative: [
         { id: 4, title: "蚵計產業", desc: "嘉義沿海蚵農電子書", img: "image/作品縮圖/作品縮圖4.png" },
