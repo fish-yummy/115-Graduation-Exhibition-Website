@@ -436,10 +436,16 @@
         text-align: center;
         white-space: nowrap;
         width: auto;
+        
+    }
+     .category-btn:focus {
+        transform: none !important; /* 強制不准動 */
+        background-color: rgba(255, 255, 255, 0.2); /* 保持背景色 */
     }
     
     .category-btn.active {
         font-size: 1.4rem;
+        transform: none !important;
         background-color: #fff;
         color: #034854;
     }
@@ -567,8 +573,13 @@
         color: #fff;
         text-align: center;
     }
+    .category-btn:focus {
+        transform: none !important; /* 強制不准動 */
+        background-color: rgba(255, 255, 255, 0.2);
+    }
     
     .category-btn.active {
+        transform: none !important;
         font-size: 1rem;
         background-color: #fff;
         color: #034854;
