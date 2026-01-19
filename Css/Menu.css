@@ -66,16 +66,19 @@
 
 .menu-layout {
     display: flex;
-    flex-direction: row; /* 強制橫向排列 */
+    flex-direction: row; 
     width: 90%;
-    max-width: 1600px;   /* 限制最大寬度 */
+    max-width: 1600px;
     height: 90vh; 
     align-items: center;
-    justify-content: center; /* 整體置中 */
+    justify-content: center; 
     margin: 0 auto;
-    
-    /* 文字與手機之間的間距 */
     gap: 5vw; 
+    
+    /* ▼▼▼ [新增] 確保頂部絕對留白，防止 Logo 撞到天花板 ▼▼▼ */
+    padding-top: 40px; 
+    padding-bottom: 20px;
+    box-sizing: border-box; /* 確保 padding 不會撐大高度 */
     
     position: relative;
     z-index: 1001;
@@ -270,15 +273,18 @@
 .app-card {
     background: white;
     border: 1px solid #eee;
-    border-radius: 16px;
-    padding: 15px;       
+    border-radius: 12px; /* 圓角稍微縮小 */
+    
+    /* ▼▼▼ [關鍵] 縮小內距，騰出空間給文字 ▼▼▼ */
+    padding: 10px 12px;       
+    gap: 12px;
+    
     display: flex;
     align-items: center;
-    gap: 15px;
     text-decoration: none;
     color: #333;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     width: 100%; 
     box-sizing: border-box; 
 }
@@ -286,13 +292,14 @@
 .app-card:hover {
     transform: translateY(-3px);
     border-color: #1cbab4;
-    box-shadow: 0 5px 15px rgba(28, 186, 180, 0.2);
+    box-shadow: 0 5px 12px rgba(28, 186, 180, 0.2);
 }
 
 .app-icon {
-    width: 60px; 
-    height: 60px;
-    border-radius: 12px;
+    /* ▼▼▼ [關鍵] 縮小圖片，原本 60px/70px 太佔空間 ▼▼▼ */
+    width: 50px; 
+    height: 50px;
+    border-radius: 10px;
     object-fit: cover;
     flex-shrink: 0;
     background: #f0f0f0;
@@ -300,13 +307,17 @@
 
 .app-info {
     flex: 1;
-    overflow: hidden;
+    overflow: hidden; /* 確保文字過長會被截斷 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .app-name {
-    font-size: 1.1rem;
+    /* ▼▼▼ [關鍵] 字體縮小 ▼▼▼ */
+    font-size: 1rem; 
     font-weight: bold;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
     color: #034854;
     white-space: nowrap;
     overflow: hidden;
@@ -314,23 +325,29 @@
 }
 
 .app-desc {
-    font-size: 0.95rem;
+    /* ▼▼▼ [關鍵] 字體縮小，行高縮小 ▼▼▼ */
+    font-size: 0.8rem;
     color: #666;
-    line-height: 1.5;
+    line-height: 1.3;
     
+    /* 確保兩行顯示 */
     display: -webkit-box;
-    line-clamp: 2;          
-    -webkit-line-clamp: 2;  
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    
+    /* 移除多餘 margin */
+    margin: 0;
 }
 
+/* 播放按鈕微調 */
 .play-btn {
-    width: 40px; 
-    height: 40px;
+    width: 32px; 
+    height: 32px;
     flex-shrink: 0;
     border-radius: 50%;
-    border: 2px solid #1cbab4;
+    border: 1.5px solid #1cbab4; /* 線條細一點 */
     color: #1cbab4;
     display: flex;
     align-items: center;
@@ -338,6 +355,10 @@
     transition: all 0.2s;
 }
 
+.play-btn svg {
+    width: 14px;
+    height: 14px;
+}
 .app-card:hover .play-btn {
     background: #1cbab4;
     color: white;
