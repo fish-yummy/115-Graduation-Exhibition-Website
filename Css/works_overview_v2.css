@@ -64,7 +64,7 @@
     height: auto; /* 高度由內容決定 */
     
     /* 新增：將網格背景圖應用在這裡 */
-    background-image: url('../image/Your_BlueGreen_Grid_BG.png'); /* 請確認路徑 */
+    /* background-image: url('../image/Your_BlueGreen_Grid_BG.png'); */
     background-repeat: repeat;
     }
 

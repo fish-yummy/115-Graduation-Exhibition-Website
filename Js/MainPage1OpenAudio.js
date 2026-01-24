@@ -1,6 +1,8 @@
 import { img } from './MainPage1Verb.js';
 import * as MainPage1Verb from "./MainPage1Verb.js";
 
+
+
 //class="svgBack" 滑鼠點擊關閉 class="audioPage"
 MainPage1Verb.svgTrigger.addEventListener("click", () => {
   
@@ -14,11 +16,11 @@ MainPage1Verb.svgTrigger.addEventListener("click", () => {
       MainPage1Verb.enableScroll();
       console.log("啟用滾動");
 
-       if(introAudioPlayer && typeof introAudioPlayer.pauseVideo === "function"){
-        introAudioPlayer.pauseVideo();  // 安全呼叫
-      } else {
-        console.warn("introAudioPlayer 尚未準備好");
-      }
+      //  if(introAudioPlayer && typeof introAudioPlayer.pauseVideo === "function"){
+      //   introAudioPlayer.pauseVideo(); 
+      // } else {
+      //   console.warn("introAudioPlayer 尚未準備好");
+      // }
 
       MainPage1Verb.audioPageTrigger.style.transform = "scale(1)"; // 恢復 scale 為1，方便下一次顯示
     }

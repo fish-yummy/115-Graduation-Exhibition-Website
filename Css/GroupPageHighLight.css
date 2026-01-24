@@ -765,7 +765,7 @@ p{
         display: block; /* 讓寬高生效 */
 
         /* 3. 設定背景圖片 */
-        background-image: url("../Image/scrollBar/選擇頁面ICON.png");
+        background-image: url("../Image/scrollBar/SelectICON.png");
         
         /* 4. 【關鍵】讓圖片縮放以適應上面的寬高 */
         background-size: contain; 
