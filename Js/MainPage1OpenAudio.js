@@ -47,11 +47,11 @@ img.addEventListener("click", () => {
 
 //class="audioImage" 滑鼠hover
 img.addEventListener("mouseover", () => {
-  img.src = "../Image/MainPage1/播放2.png";   
+  img.src = "../Image/MainPage1/Play2.png";   
 
 });
 img.addEventListener("mouseout", () => {
   
-  img.src = "../Image/MainPage1/播放1.png"; 
+  img.src = "../Image/MainPage1/Play1.png"; 
   
 });
