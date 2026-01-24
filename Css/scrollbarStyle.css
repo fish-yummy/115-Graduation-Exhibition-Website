@@ -217,36 +217,44 @@ section {
 
     /* === 懶人按鍵 === */
     .toTOp-button-container{
-        position: absolute;
+        position: relative;
         
-        width: 40%;
+        width: 100%;
+        height: auto;
         
         /* border:solid 1px rgb(212, 143, 90); */
-        left: 54%;
-        top: 65%;
-        transform: translateX(-50%); 
+    
     
         cursor: pointer;
-        
+        display: flex;
+        justify-content: center;
+        align-items: center;
     
         
     }
     .a-toTOp-button{
         position: relative;
         /* border:solid 1px rgb(210, 34, 34); */
-    
+        width: 100%;
+        height: auto;
         display: flex;
+        opacity: 0;     /* 預設透明 (看不見) */
+        visibility: hidden; /* 預設不可點擊 */
         justify-content: center; 
         align-items: center;  
-    
+        
         
     }
+    .a-toTOp-button.show {
+        /* cursor: pointer; */
+        opacity: 1;
+        visibility: visible;
+    }
     .toTOp-button{
-        /* display: show; */
-    
+   
         position: relative;
-        width: 70% ;
-        height: 70%;
+        width: 27% ;
+        height: auto;
         /* border:solid 1px rgb(128, 210, 34); */
     
         
