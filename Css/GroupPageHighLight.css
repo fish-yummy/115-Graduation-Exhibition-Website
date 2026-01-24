@@ -507,6 +507,8 @@ p{
         position: relative;
         z-index: 2; 
     }
+
+
     
     .Box {
         position: relative;
@@ -838,5 +840,31 @@ p{
         position: relative;
         /* margin-left: 5px;      */
     }
+
+
+    /* === 修復手機版 Section 間距過大問題 === */
+    
+
+    #section1, #section2, #section4, .content {
+        min-height: auto !important; 
+        height: auto !important;     
+        
+     
+        padding-bottom: 70px !important; 
+        
+   
+        justify-content: flex-start !important; 
+    }
+
+    /* 4. 調整內容區塊間的間距 (原本 Box gap: 80px 可能也太寬) */
+    .Box, .Box2 {
+        gap: 40px !important; /* 讓圖片跟文字靠得近一點 */
+    }
+    
+    /* 修正作品介紹文字區可能被過度推擠 */
+    .intro.Text {
+        margin-top: 0 !important; /* 歸零，避免負值造成重疊或過遠 */
+    }
+
 
 }
