@@ -5,8 +5,8 @@ const works = [
             Highlight_image: "Image/GroupImage/1/作品亮點配圖.png",
             intro_image: "Image/GroupImage/1/作品介紹配圖.png",
             Loop_image: [
-                  "Image/GroupImage/1/Loop/輪播圖 (1).png",
-                  "Image/GroupImage/1/Loop/輪播圖 (2).png"
+                  "Image/GroupImage/1/Loop/輪播圖 (1).jpg",
+                  "Image/GroupImage/1/Loop/輪播圖 (2).jpg"
                   
                 ],
             Menber_image: [
@@ -104,7 +104,7 @@ const works = [
             Highlight_image: "Image/GroupImage/4/蚵的生長圖(介紹).png",
             intro_image: "Image/GroupImage/4/作品亮點.png",
             Loop_image: [
-                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).png",
+                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).jpg",
                   "Image/GroupImage/4/Loop/蚵棚.png",
                   "Image/GroupImage/4/Loop/電子書章節封面.png"
                   
@@ -138,8 +138,8 @@ const works = [
             Highlight_image: "Image/GroupImage/Euvuvu/亮點介紹配圖.png",
             intro_image: "Image/GroupImage/Euvuvu/作品介紹配圖.png",
             Loop_image: [
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).png",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).png",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).jpg",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).jpg",
                   
                   
                 ],
@@ -212,12 +212,12 @@ const works = [
           {
             id: 7,
             title: "礦石奇旅",
-            Highlight_image: "Image/GroupImage/7/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/7/作品介紹配圖.png",
+            Highlight_image: "Image/GroupImage/7/作品亮點配圖.jpg",
+            intro_image: "Image/GroupImage/7/作品介紹配圖.jpg",
             Loop_image: [
                   "Image/GroupImage/7/Loop/圖片輪轉1.jpg",
-                  "Image/GroupImage/7/Loop/圖片輪轉2.png",
-                  "Image/GroupImage/7/Loop/圖片輪轉3.png",
+                  "Image/GroupImage/7/Loop/圖片輪轉2.jpg",
+                  "Image/GroupImage/7/Loop/圖片輪轉3.jpg",
                 ],
             Menber_image: [
                   "Image/GroupImage/7/member/10.jpg",
@@ -246,19 +246,19 @@ const works = [
           {
             id: 8,
             title: "賭薄人生",
-            Highlight_image: "Image/GroupImage/8/亮點圖.png",
-            intro_image: "Image/GroupImage/8/賭薄人生.png",
+            Highlight_image: "Image/GroupImage/8/亮點圖.jpg",
+            intro_image: "Image/GroupImage/8/賭薄人生.jpg",
             Loop_image: [
-                  "Image/GroupImage/8/Loop/遊戲封面.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面1.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面2.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面3.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面4.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面5.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面6.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面7.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面8.png",
-                  "Image/GroupImage/8/Loop/遊戲畫面9.png"
+                  "Image/GroupImage/8/Loop/遊戲封面.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面1.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面2.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面3.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面4.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面5.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面6.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面7.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面8.jpg",
+                  "Image/GroupImage/8/Loop/遊戲畫面9.jpg"
 
                 ],
             Menber_image: [
@@ -291,12 +291,12 @@ const works = [
           {
             id: 9,
             title: "防詐聖經",
-            Highlight_image: "Image/GroupImage/9/配圖_暫.png",
-            intro_image: "Image/GroupImage/9/配圖_暫.png",
+            Highlight_image: "Image/GroupImage/9/配圖_暫.jpg",
+            intro_image: "Image/GroupImage/9/配圖_暫.jpg",
             Loop_image: [
-                  "Image/GroupImage/9/Loop/輪撥用1.png",
-                  "Image/GroupImage/9/Loop/輪撥用2.png",
-                  "Image/GroupImage/9/Loop/輪撥用3.png"
+                  "Image/GroupImage/9/Loop/輪撥用1.jpg",
+                  "Image/GroupImage/9/Loop/輪撥用2.jpg",
+                  "Image/GroupImage/9/Loop/輪撥用3.jpg"
                 ],
             Menber_image: [
                   "Image/GroupImage/9/member/6.jpg",
@@ -329,7 +329,7 @@ const works = [
             Loop_image: [
                   "Image/GroupImage/10/Loop/輪轉圖_1.png",
                   "Image/GroupImage/10/Loop/輪轉圖_2.png",
-                  "Image/GroupImage/10/Loop/輪轉圖_3.png",
+                  "Image/GroupImage/10/Loop/輪轉圖_3.jpg",
                   
                 ],
             Menber_image: [
@@ -464,7 +464,7 @@ const works = [
             id: 14,
             title: "建構以視覺化為核心之濕地導覽回饋系統",
             Highlight_image: "Image/GroupImage/14/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/14/作品介紹配圖.png",
+            intro_image: "Image/GroupImage/14/作品介紹配圖.jpg",
             Loop_image: [
                   "Image/GroupImage/14/Loop/圖片輪轉用圖_1.png",
                   "Image/GroupImage/14/Loop/圖片輪轉用圖_2.png"
