@@ -2,18 +2,18 @@ const works = [
           {
             id: 1,
             title: "提升媒體識讀之學習型遊戲",
-            Highlight_image: "Image/GroupImage/1/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/1/作品介紹配圖.png",
+            Highlight_image: "Image/GroupImage/1/作品亮點配圖.webp",
+            intro_image: "Image/GroupImage/1/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/1/Loop/輪播圖 (1).jpg",
-                  "Image/GroupImage/1/Loop/輪播圖 (2).jpg"
+                  "Image/GroupImage/1/Loop/輪播圖 (1).webp",
+                  "Image/GroupImage/1/Loop/輪播圖 (2).webp"
                   
                 ],
             Menber_image: [
-                  "Image/GroupImage/1/member/3.jpg",
-                  "Image/GroupImage/1/member/7.jpg",
-                  "Image/GroupImage/1/member/呂逸森.jpg",
-                  "Image/GroupImage/1/member/李橡穎.jpg"
+                  "Image/GroupImage/1/member/3.webp",
+                  "Image/GroupImage/1/member/7.webp",
+                  "Image/GroupImage/1/member/呂逸森.webp",
+                  "Image/GroupImage/1/member/李橡穎.webp"
                 
                 ],  
             highlight_Desc: [
@@ -35,17 +35,17 @@ const works = [
           {
             id: 2,
             title: "移民模擬",
-            Highlight_image: "Image/GroupImage/2/no3.png",
-            intro_image: "Image/GroupImage/2/IMG_1130 (1).png",
+            Highlight_image: "Image/GroupImage/2/no3.webp",
+            intro_image: "Image/GroupImage/2/IMG_1130 (1).webp",
             Loop_image: [
-                  "Image/GroupImage/2/Loop/1 (1).png",
-                  "Image/GroupImage/2/Loop/2 (1).png"
+                  "Image/GroupImage/2/Loop/1 (1).webp",
+                  "Image/GroupImage/2/Loop/2 (1).webp"
                  
                 ],
             Menber_image: [
-                  "Image/GroupImage/2/member/8386.jpg",
-                  "Image/GroupImage/2/member/8387.jpg",
-                  "Image/GroupImage/2/member/8396.jpg"
+                  "Image/GroupImage/2/member/8386.webp",
+                  "Image/GroupImage/2/member/8387.webp",
+                  "Image/GroupImage/2/member/8396.webp"
                   
                 ],  
             highlight_Desc: [
@@ -68,17 +68,17 @@ const works = [
           {
             id: 3,
             title: "化學方程式",
-            Highlight_image: "Image/GroupImage/3/作品構想配圖.png",
-            intro_image: "Image/GroupImage/3/遊戲開始介面.png",
+            Highlight_image: "Image/GroupImage/3/作品構想配圖.webp",
+            intro_image: "Image/GroupImage/3/遊戲開始介面.webp",
             Loop_image: [
-                  "Image/GroupImage/3/Loop/人物展示圖1.png",
-                  "Image/GroupImage/3/Loop/人物展示圖2.png"
+                  "Image/GroupImage/3/Loop/人物展示圖1.webp",
+                  "Image/GroupImage/3/Loop/人物展示圖2.webp"
               
                 ],
             Menber_image: [
-                  "Image/GroupImage/3/member/8381.jpg",
-                  "Image/GroupImage/3/member/8739.jpg",
-                  "Image/GroupImage/3/member/梁軒慈.jpg"
+                  "Image/GroupImage/3/member/8381.webp",
+                  "Image/GroupImage/3/member/8739.webp",
+                  "Image/GroupImage/3/member/梁軒慈.webp"
                 ],  
             highlight_Desc: [
                   " 《化學方程式》的核心特色在於，將學測化學中「高錯誤率單元」巧妙轉化為遊戲關卡！",
@@ -101,19 +101,19 @@ const works = [
           {
             id: 4,
             title: "蚵計產業",
-            Highlight_image: "Image/GroupImage/4/蚵的生長圖(介紹).png",
-            intro_image: "Image/GroupImage/4/作品亮點.png",
+            Highlight_image: "Image/GroupImage/4/蚵的生長圖(介紹).webp",
+            intro_image: "Image/GroupImage/4/作品亮點.webp",
             Loop_image: [
-                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).jpg",
-                  "Image/GroupImage/4/Loop/蚵棚.png",
-                  "Image/GroupImage/4/Loop/電子書章節封面.png"
+                  "Image/GroupImage/4/Loop/1b7302a5-4434-4592-ba69-dfa5d0c76e75 (1).webp",
+                  "Image/GroupImage/4/Loop/蚵棚.webp",
+                  "Image/GroupImage/4/Loop/電子書章節封面.webp"
                   
                 ],
             Menber_image: [
-                  "Image/GroupImage/4/member/8397.jpg",
-                  "Image/GroupImage/4/member/8966.jpg",
-                  "Image/GroupImage/4/member/9136.jpg",
-                  "Image/GroupImage/4/member/S__30818355 (1).jpg"
+                  "Image/GroupImage/4/member/8397.webp",
+                  "Image/GroupImage/4/member/8966.webp",
+                  "Image/GroupImage/4/member/9136.webp",
+                  "Image/GroupImage/4/member/S__30818355 (1).webp"
                   
                 ],  
             highlight_Desc: [
@@ -135,19 +135,19 @@ const works = [
           {
             id: 5,
             title: "Euvuvu",
-            Highlight_image: "Image/GroupImage/Euvuvu/亮點介紹配圖.png",
-            intro_image: "Image/GroupImage/Euvuvu/作品介紹配圖.png",
+            Highlight_image: "Image/GroupImage/Euvuvu/亮點介紹配圖.webp",
+            intro_image: "Image/GroupImage/Euvuvu/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).jpg",
-                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).jpg",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉1(改).webp",
+                  "Image/GroupImage/Euvuvu/Loop/圖片輪轉2(改).webp",
                   
                   
                 ],
             Menber_image: [
-                  "Image/GroupImage/Euvuvu/member/陳郁萱.png",
-                  "Image/GroupImage/Euvuvu/member/陳宗羽.png",
-                  "Image/GroupImage/Euvuvu/member/陳怡文.png",
-                  "Image/GroupImage/Euvuvu/member/李昕俞.png"
+                  "Image/GroupImage/Euvuvu/member/陳郁萱.webp",
+                  "Image/GroupImage/Euvuvu/member/陳宗羽.webp",
+                  "Image/GroupImage/Euvuvu/member/陳怡文.webp",
+                  "Image/GroupImage/Euvuvu/member/李昕俞.webp"
                 ],  
             Intro_Desc: [
                   "跨系合作 X 甩風笛召喚神 X 嘉義本土鄒族文化",
@@ -169,18 +169,18 @@ const works = [
           {
             id: 6,
             title: "SAVIOR",
-            Highlight_image: "Image/GroupImage/6/CG. see bully.png",
-            intro_image: "Image/GroupImage/6/作品介紹亮點配圖.png",
+            Highlight_image: "Image/GroupImage/6/CG. see bully.webp",
+            intro_image: "Image/GroupImage/6/作品介紹亮點配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/6/Loop/圖片輪轉用圖1.jpg",
-                  "Image/GroupImage/6/Loop/圖片輪轉用圖2.jpg",
-                  "Image/GroupImage/6/Loop/圖片輪轉用圖3.jpg",
+                  "Image/GroupImage/6/Loop/圖片輪轉用圖1.webp",
+                  "Image/GroupImage/6/Loop/圖片輪轉用圖2.webp",
+                  "Image/GroupImage/6/Loop/圖片輪轉用圖3.webp",
                 ],
             Menber_image: [
-                  "Image/GroupImage/6/Member/劉澤菁.jpg",
-                  "Image/GroupImage/6/Member/于嘉瑤.jpg",
-                  "Image/GroupImage/6/Member/王宣雅.jpg",
-                  "Image/GroupImage/6/Member/黃子宸.jpg"
+                  "Image/GroupImage/6/Member/劉澤菁.webp",
+                  "Image/GroupImage/6/Member/于嘉瑤.webp",
+                  "Image/GroupImage/6/Member/王宣雅.webp",
+                  "Image/GroupImage/6/Member/黃子宸.webp"
                 ],  
             highlight_Desc: [
                   "一個發現、一個決定，你將陪伴主角踏上既定的命途。",
@@ -212,18 +212,18 @@ const works = [
           {
             id: 7,
             title: "礦石奇旅",
-            Highlight_image: "Image/GroupImage/7/作品亮點配圖.jpg",
-            intro_image: "Image/GroupImage/7/作品介紹配圖.jpg",
+            Highlight_image: "Image/GroupImage/7/作品亮點配圖.webp",
+            intro_image: "Image/GroupImage/7/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/7/Loop/圖片輪轉1.jpg",
-                  "Image/GroupImage/7/Loop/圖片輪轉2.jpg",
-                  "Image/GroupImage/7/Loop/圖片輪轉3.jpg",
+                  "Image/GroupImage/7/Loop/圖片輪轉1.webp",
+                  "Image/GroupImage/7/Loop/圖片輪轉2.webp",
+                  "Image/GroupImage/7/Loop/圖片輪轉3.webp",
                 ],
             Menber_image: [
-                  "Image/GroupImage/7/member/10.jpg",
-                  "Image/GroupImage/7/member/17.jpg",
-                  "Image/GroupImage/7/member/421817.jpg",
-                  "Image/GroupImage/7/member/421818.jpg"
+                  "Image/GroupImage/7/member/10.webp",
+                  "Image/GroupImage/7/member/17.webp",
+                  "Image/GroupImage/7/member/421817.webp",
+                  "Image/GroupImage/7/member/421818.webp"
                 ],  
             highlight_Desc: [
                   "寶石礦物挖掘與交易：玩家可深入礦區挖掘原石，並透過市場進行交易提升寶石價值。",
@@ -246,24 +246,24 @@ const works = [
           {
             id: 8,
             title: "賭薄人生",
-            Highlight_image: "Image/GroupImage/8/亮點圖.jpg",
-            intro_image: "Image/GroupImage/8/賭薄人生.jpg",
+            Highlight_image: "Image/GroupImage/8/亮點圖.webp",
+            intro_image: "Image/GroupImage/8/賭薄人生.webp",
             Loop_image: [
-                  "Image/GroupImage/8/Loop/遊戲封面.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面1.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面2.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面3.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面4.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面5.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面6.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面7.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面8.jpg",
-                  "Image/GroupImage/8/Loop/遊戲畫面9.jpg"
+                  "Image/GroupImage/8/Loop/遊戲封面.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面1.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面2.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面3.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面4.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面5.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面6.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面7.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面8.webp",
+                  "Image/GroupImage/8/Loop/遊戲畫面9.webp"
 
                 ],
             Menber_image: [
-                  "Image/GroupImage/8/Member/組長劉昱翰.png",
-                  "Image/GroupImage/8/Member/組員 黃錦秀照片.png",
+                  "Image/GroupImage/8/Member/組長劉昱翰.webp",
+                  "Image/GroupImage/8/Member/組員 黃錦秀照片.webp",
                 ],  
             highlight_Desc: [
                   "沉浸式第一人稱體驗: ",
@@ -291,18 +291,18 @@ const works = [
           {
             id: 9,
             title: "防詐聖經",
-            Highlight_image: "Image/GroupImage/9/配圖_暫.jpg",
-            intro_image: "Image/GroupImage/9/配圖_暫.jpg",
+            Highlight_image: "Image/GroupImage/9/配圖_暫.webp",
+            intro_image: "Image/GroupImage/9/配圖_暫.webp",
             Loop_image: [
-                  "Image/GroupImage/9/Loop/輪撥用1.jpg",
-                  "Image/GroupImage/9/Loop/輪撥用2.jpg",
-                  "Image/GroupImage/9/Loop/輪撥用3.jpg"
+                  "Image/GroupImage/9/Loop/輪撥用1.webp",
+                  "Image/GroupImage/9/Loop/輪撥用2.webp",
+                  "Image/GroupImage/9/Loop/輪撥用3.webp"
                 ],
             Menber_image: [
-                  "Image/GroupImage/9/member/6.jpg",
-                  "Image/GroupImage/9/member/何政倫.jpg",
-                  "Image/GroupImage/9/member/曾約瑟.jpg",
-                  "Image/GroupImage/9/member/蔡峻羽.jpg"
+                  "Image/GroupImage/9/member/6.webp",
+                  "Image/GroupImage/9/member/何政倫.webp",
+                  "Image/GroupImage/9/member/曾約瑟.webp",
+                  "Image/GroupImage/9/member/蔡峻羽.webp"
                   
                 ],  
             highlight_Desc: [
@@ -324,18 +324,18 @@ const works = [
           {
             id: 10,
             title: "牽線之外",
-            Highlight_image: "Image/GroupImage/10/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/10/作品介紹配圖.jpg",
+            Highlight_image: "Image/GroupImage/10/作品亮點配圖.webp",
+            intro_image: "Image/GroupImage/10/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/10/Loop/輪轉圖_1.png",
-                  "Image/GroupImage/10/Loop/輪轉圖_2.png",
-                  "Image/GroupImage/10/Loop/輪轉圖_3.jpg",
+                  "Image/GroupImage/10/Loop/輪轉圖_1.webp",
+                  "Image/GroupImage/10/Loop/輪轉圖_2.webp",
+                  "Image/GroupImage/10/Loop/輪轉圖_3.webp",
                   
                 ],
             Menber_image: [
-                  "Image/GroupImage/10/member/5.jpg",
-                  "Image/GroupImage/10/member/S__30818403.jpg",
-                  "Image/GroupImage/10/member/S__36012278.jpg",
+                  "Image/GroupImage/10/member/5.webp",
+                  "Image/GroupImage/10/member/S__30818403.webp",
+                  "Image/GroupImage/10/member/S__36012278.webp",
                 ],  
             highlight_Desc: [
                   "分支選擇系統：多重路線與不同結局，體驗戀愛中因選擇而產生的多樣結果。",
@@ -360,19 +360,19 @@ const works = [
           {
             id: 11,
             title: "孤故 Good Story",
-            Highlight_image: "Image/GroupImage/11/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/11/作品介紹配圖.png",
+            Highlight_image: "Image/GroupImage/11/作品亮點配圖.webp",
+            intro_image: "Image/GroupImage/11/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/11/Loop/圖片輪轉用圖1.png",
-                  "Image/GroupImage/11/Loop/圖片輪轉用圖2.png",
-                  "Image/GroupImage/11/Loop/圖片輪轉用圖3.png",
-                  "Image/GroupImage/11/Loop/圖片輪轉用圖4.png",
-                  "Image/GroupImage/11/Loop/圖片輪轉用圖5.png"
+                  "Image/GroupImage/11/Loop/圖片輪轉用圖1.webp",
+                  "Image/GroupImage/11/Loop/圖片輪轉用圖2.webp",
+                  "Image/GroupImage/11/Loop/圖片輪轉用圖3.webp",
+                  "Image/GroupImage/11/Loop/圖片輪轉用圖4.webp",
+                  "Image/GroupImage/11/Loop/圖片輪轉用圖5.webp"
                  
                 ],
             Menber_image: [
-                  "Image/GroupImage/11/member/柯宇珊.jpg",
-                  "Image/GroupImage/11/member/詹柏崇.jpg",
+                  "Image/GroupImage/11/member/柯宇珊.webp",
+                  "Image/GroupImage/11/member/詹柏崇.webp",
                  
                 ],  
             highlight_Desc: [
@@ -394,23 +394,23 @@ const works = [
           {
             id: 12,
             title: "「Loud」工進行式",
-            Highlight_image: "Image/GroupImage/12/作品構想配圖1.png",
-            intro_image: "Image/GroupImage/12/作品介紹配圖1.png",
+            Highlight_image: "Image/GroupImage/12/作品構想配圖1.webp",
+            intro_image: "Image/GroupImage/12/作品介紹配圖1.webp",
             Loop_image: [
-                  "Image/GroupImage/12/Loop/1.png",
-                  "Image/GroupImage/12/Loop/2.png",
-                  "Image/GroupImage/12/Loop/3.png",
-                  "Image/GroupImage/12/Loop/4.png",
-                  "Image/GroupImage/12/Loop/5.png",
-                  "Image/GroupImage/12/Loop/6.png"
+                  "Image/GroupImage/12/Loop/1.webp",
+                  "Image/GroupImage/12/Loop/2.webp",
+                  "Image/GroupImage/12/Loop/3.webp",
+                  "Image/GroupImage/12/Loop/4.webp",
+                  "Image/GroupImage/12/Loop/5.webp",
+                  "Image/GroupImage/12/Loop/6.webp"
                   
                  
                 ],
             Menber_image: [
-                  "Image/GroupImage/12/member/8382.jpg",
-                  "Image/GroupImage/12/member/8383.jpg",
-                  "Image/GroupImage/12/member/S__30818380.jpg",
-                  "Image/GroupImage/12/member/賴羚 (1).jpg",
+                  "Image/GroupImage/12/member/8382.webp",
+                  "Image/GroupImage/12/member/8383.webp",
+                  "Image/GroupImage/12/member/S__30818380.webp",
+                  "Image/GroupImage/12/member/賴羚 (1).webp",
                 ],  
             highlight_Desc: [
                   "1、角色扮演、情境模擬：身歷其境，代入不同角色，思考多元觀點。",
@@ -431,17 +431,17 @@ const works = [
           {
             id: 13,
             title: "Arduino互動式物理實驗教學系統",
-            Highlight_image: "Image/GroupImage/13/作品亮點.png",
-            intro_image: "Image/GroupImage/13/作品介紹.png",
+            Highlight_image: "Image/GroupImage/13/作品亮點.webp",
+            intro_image: "Image/GroupImage/13/作品介紹.webp",
             Loop_image: [
-                  "Image/GroupImage/13/Loop/2 (1).png",
-                  "Image/GroupImage/13/Loop/4.png",
-                  "Image/GroupImage/13/Loop/5 (1).png"
+                  "Image/GroupImage/13/Loop/2 (1).webp",
+                  "Image/GroupImage/13/Loop/4.webp",
+                  "Image/GroupImage/13/Loop/5 (1).webp"
                 ],
             Menber_image: [
                   "Image/GroupImage/13/Member/1113834廖宇茹.jpg",
-                  "Image/GroupImage/13/Member/IMG_0337.jpg",
-                  "Image/GroupImage/13/Member/王若皓.jpg"
+                  "Image/GroupImage/13/Member/IMG_0337.webp",
+                  "Image/GroupImage/13/Member/王若皓.webp"
                 ],  
             highlight_Desc: [
                   "我們利用感測器搭配 Arduino，設計出多項高中物理實驗，如單擺週期測量、相對運動與角速度觀察，並結合 QT 介面呈現即時數據與動畫模擬。",
@@ -463,15 +463,15 @@ const works = [
            {
             id: 14,
             title: "建構以視覺化為核心之濕地導覽回饋系統",
-            Highlight_image: "Image/GroupImage/14/作品亮點配圖.png",
-            intro_image: "Image/GroupImage/14/作品介紹配圖.jpg",
+            Highlight_image: "Image/GroupImage/14/作品亮點配圖.webp",
+            intro_image: "Image/GroupImage/14/作品介紹配圖.webp",
             Loop_image: [
-                  "Image/GroupImage/14/Loop/圖片輪轉用圖_1.png",
-                  "Image/GroupImage/14/Loop/圖片輪轉用圖_2.png"
+                  "Image/GroupImage/14/Loop/圖片輪轉用圖_1.webp",
+                  "Image/GroupImage/14/Loop/圖片輪轉用圖_2.webp"
           
                 ],
             Menber_image: [
-                  "Image/GroupImage/14/Member/S__30769163 (1).jpg",
+                  "Image/GroupImage/14/Member/S__30769163 (1).webp",
                 ],  
             highlight_Desc: [
                   "本作品整合LINE Bot、Firebase 與地理定位技術，打造免下載、跨裝置、即時互動的導覽體驗。",

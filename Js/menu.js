@@ -3,24 +3,24 @@
 // --- 作品資料 ---
 const projectsData = {
     games: [
-        { id: 1, title: "試釋就適識", desc: "提升媒體識讀之學習型遊戲", img: "image/作品縮圖/Project1.png" },
-        { id: 2, title: "移民模擬", desc: "體驗移民者的艱辛旅程", img: "image/作品縮圖/Project2.PNG" },
-        { id: 11, title: "孤故 Good Story", desc: "社會情緒學習敘事冒險", img: "image/作品縮圖/Project11.png" },
-        { id: 5, title: "Euvuvu", desc: "鄒族文化劇情冒險遊戲", img: "image/作品縮圖/Project5.PNG" },
-        { id: 8, title: "賭薄人生", desc: "沉浸式第一人稱體驗", img: "image/作品縮圖/Project8.png" },
-        { id: 3, title: "化學方程式", desc: "實驗室逃脫解謎遊戲", img: "image/作品縮圖/Project3.png" },
+        { id: 1, title: "試釋就適識", desc: "提升媒體識讀之學習型遊戲", img: "image/作品縮圖/Project1.webp" },
+        { id: 2, title: "移民模擬", desc: "體驗移民者的艱辛旅程", img: "image/作品縮圖/Project2.webp" },
+        { id: 11, title: "孤故 Good Story", desc: "社會情緒學習敘事冒險", img: "image/作品縮圖/Project11.webp" },
+        { id: 5, title: "Euvuvu", desc: "鄒族文化劇情冒險遊戲", img: "image/作品縮圖/Project5.webp" },
+        { id: 8, title: "賭薄人生", desc: "沉浸式第一人稱體驗", img: "image/作品縮圖/Project8.webp" },
+        { id: 3, title: "化學方程式", desc: "實驗室逃脫解謎遊戲", img: "image/作品縮圖/Project3.webp" },
     ],
     narrative: [
-        { id: 4, title: "蚵計產業", desc: "嘉義沿海蚵農電子書", img: "image/作品縮圖/Project4.png" },
-        { id: 6, title: "SAVIOR", desc: "探討霸凌的選擇遊戲", img: "image/作品縮圖/Project6.png" },
-        { id: 9, title: "防詐聖經", desc: "漫畫＋桌遊防詐教育", img: "image/作品縮圖/Project9.PNG" },
-        { id: 10, title: "牽線之外", desc: "高中生情感教育遊戲", img: "image/作品縮圖/Project10.png" }
+        { id: 4, title: "蚵計產業", desc: "嘉義沿海蚵農電子書", img: "image/作品縮圖/Project4.webp" },
+        { id: 6, title: "SAVIOR", desc: "探討霸凌的選擇遊戲", img: "image/作品縮圖/Project6.webp" },
+        { id: 9, title: "防詐聖經", desc: "漫畫＋桌遊防詐教育", img: "image/作品縮圖/Project9.webp" },
+        { id: 10, title: "牽線之外", desc: "高中生情感教育遊戲", img: "image/作品縮圖/Project10.webp" }
     ],
     system: [
-        { id: 7, title: "礦石奇旅", desc: "寶石挖掘與交易策略遊戲", img: "image/作品縮圖/Project7.png" },
-        { id: 12, title: "Loud工進行式", desc: "勞動權益數位學習平台", img: "image/作品縮圖/Project12.png" },
-        { id: 13, title: "Arduino物理實驗", desc: "互動式物理實驗教學系統", img: "image/作品縮圖/Project13.png" },
-        { id: 14, title: "濕地導覽系統", desc: "建構以視覺化為核心之濕地導覽", img: "image/作品縮圖/Project14.png" }
+        { id: 7, title: "礦石奇旅", desc: "寶石挖掘與交易策略遊戲", img: "image/作品縮圖/Project7.webp" },
+        { id: 12, title: "Loud工進行式", desc: "勞動權益數位學習平台", img: "image/作品縮圖/Project12.webp" },
+        { id: 13, title: "Arduino物理實驗", desc: "互動式物理實驗教學系統", img: "image/作品縮圖/Project13.webp" },
+        { id: 14, title: "濕地導覽系統", desc: "建構以視覺化為核心之濕地導覽", img: "image/作品縮圖/Project14.webp" }
     ]
 };
 
