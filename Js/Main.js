@@ -65,3 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("在初始化腳本時發生錯誤:", error);
     }
 })
+
+
+window.addEventListener('pageshow', function(event) {
+    // event.persisted 為 true 代表這個頁面是從 bfcache (快取) 中恢復的
+    if (event.persisted) {
+        console.log("從快取恢復，強制重整");
+        window.location.reload(); 
+    }
+});
