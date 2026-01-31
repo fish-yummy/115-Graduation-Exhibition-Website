@@ -57,3 +57,17 @@ img.addEventListener("mouseout", () => {
   img.src = "../Image/MainPage1/Play1.png"; 
   
 });
+
+// 新增在檔案最下方，不影響原本內容
+const scrollContainer = document.querySelector('.section-scroll-container');
+const header = document.getElementById('header');
+
+if (scrollContainer && header) {
+    scrollContainer.addEventListener('scroll', () => {
+        if (scrollContainer.scrollTop > 50) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
+    });
+}

@@ -51,6 +51,16 @@
 }
 
 /* 縮小狀態 */
+.header.shrink {
+    padding: 5px 3% !important; /* 把原本的 15px 縮小成 5px，這才是變窄的關鍵！ */
+}
+/* -------------------- */
+
+.header.shrink .nav-icon {
+    height: 18px;
+}
+/* ... 後面接你原本的代碼 ... */
+/* 新 */
 .header.shrink .nav-icon {
     height: 18px;  /* 縮小後的圖標大小 */
 }
@@ -69,4 +79,17 @@
 
 .header.shrink .dept-logo {
     height: 22px;
+}
+/* 使用 !important 確保強制執行 */
+header#header.shrink {
+    padding: 5px 3% !important; /* 強制壓扁 Navbar */
+    background: linear-gradient(90deg, rgba(106, 17, 203, 0.95) 0%, rgba(37, 117, 252, 0.95) 100%) !important;
+}
+
+header#header.shrink .main-title {
+    height: 25px !important; /* 強制縮小標題圖片 */
+}
+
+header#header.shrink .nav-icon {
+    height: 18px !important; /* 強制縮小圖標 */
 }

@@ -640,3 +640,36 @@
 
 }
 
+/*  RWD 修正檔，不更動隊友原本代碼 */
+@media (max-width: 767px) {
+    /* Navbar 在手機版隱藏文字，只留圖示 */
+    .nav-item span {
+        display: none !important;
+    }
+    
+    /* 區塊一電腦圖片縮小 */
+    .computer {
+        width: 90% !important;
+        height: auto !important;
+        top: 45% !important;
+    }
+
+    /* 影片彈窗改為上下堆疊，防止文字跑出螢幕 */
+    .audioAndText {
+        flex-direction: column !important;
+        padding-top: 40px !important;
+    }
+    /* 讓彈窗顯示的關鍵：這段沒寫，點擊就不會有反應 */
+.audioPage {
+    display: none; /* 平時隱藏 */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.audioPage.active {
+    display: block !important; /* JS 觸發後顯示 */
+    opacity: 1;
+    z-index: 9999; /* 確保它在最前面 */
+}
+}
+

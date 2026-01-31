@@ -579,6 +579,27 @@ window.addEventListener('scroll', function() {
             </div>
         </div>
     </div>
+    
+    <!-- 滾動Nav縮放 -->
+    <script>
+    const scrollBox = document.querySelector('.section-scroll-container');
+    const myHeader = document.getElementById('header');
+
+    function checkScroll(y) {
+        console.log("目前滾動高度:", y); // 你可以在 F12 看到數字有沒有在跳
+        if (y > 50) {
+            myHeader.classList.add('shrink');
+        } else {
+            myHeader.classList.remove('shrink');
+        }
+    }
+
+    // 同時監聽「大盒子」和「視窗」
+    if (scrollBox) {
+        scrollBox.addEventListener('scroll', () => checkScroll(scrollBox.scrollTop));
+    }
+    window.addEventListener('scroll', () => checkScroll(window.scrollY));
+</script>
 
 </body>
 </html>
