@@ -103,3 +103,184 @@
         margin: 50px auto;
     }
 }
+
+/* ===== 第三區塊：比例調整穩定版 ===== */
+/* ===== 十字裝飾（不動比例，只微調） ===== */
+
+
+.p3-cross {
+ position: absolute;
+  top: 5px;              /* ⬅ 控制離 section 頂端距離 */
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 28px;            /* 固定大小，絕不會爆 */
+  height: auto;
+
+  z-index: 999;           /* 一定壓在 banner 上 */
+  pointer-events: none;
+}
+
+.p3-traffic-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh; 
+  height: auto; 
+  overflow: visible; 
+  background-color: #11a9a4;
+}
+
+/* 標題 */
+.p3-banner-container {
+  position: relative;
+  z-index: 50;
+  line-height: 0;
+}
+.p3-banner-img {
+  width: 100%;
+  display: block;
+}
+
+/* 舞台 */
+.p3-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 地圖 */
+/* 地圖底層 */
+/* 白色外框 */
+.p3-map-frame {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  padding: 16px 0;
+  box-sizing: border-box;
+}
+
+.p3-map-inner {
+  width: 100%;
+  height: calc(100% - 32px);
+}
+
+.p3-map-inner iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+.p3-map-base {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  bottom: 130px;   /* ⬅️ 留給 bottom 圖的高度 */
+  z-index: 1;
+}
+
+
+
+
+
+
+
+/* ===== 左側資訊（縮小 + 防外溢） ===== */
+.p3-left-card {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 22%;
+  z-index: 80;
+
+  position: relative;   /* ✅ 關鍵：讓文字以卡片為定位基準 */
+}
+
+.p3-left-card img {
+  width: 100%;
+  display: block;
+}
+
+/* 文字一定鎖在框內 */
+.p3-text-box {
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+
+  font-size: 0.75vw;
+  font-weight: bold;
+  color: #0b3d3b;
+  line-height: 1.4;
+
+  box-sizing: border-box;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.p3-highlight {
+  margin-top: 4px;
+}
+
+
+/* ===== 右側圖片（縮小 1/4 + 往中間） ===== */
+.p3-right-card {
+  position: absolute;
+  top: 14%;
+  right: 10%;               /* ⬅ 原本 3%，現在 6% */
+  width: 20%;              /* ⬅ 約縮小 1/4 */
+  z-index: 20;
+}
+
+.p3-right-card img {
+  width: 100%;
+  display: block;
+}
+
+
+
+
+/* ===== 底部覆蓋（縮小高度） ===== */
+.p3-footer-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 40;
+  line-height: 0;
+}
+
+.p3-footer-overlay img {
+  width: 100%;
+  display: block;
+}
+
+.p3-footer-text {
+  position: absolute;
+  bottom: 100px;      /* 依你 bottom 圖高度微調 */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #0b3d3b;    /* 跟你整體色系一致 */
+  z-index: 100;
+  white-space: nowrap;
+}
+
+
+/* ===== RWD 微調 ===== */
+@media (max-width: 768px) {
+
+  .p3-left-card {
+    width: 32%;
+  }
+
+  .p3-right-card {
+    width: 34%;
+    right: 8%;
+  }
+
+  .p3-text-box {
+    font-size: 12px;
+  }
+}

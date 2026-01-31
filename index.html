@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="kWouQkSimfmnpliktf-r2XT1XdZB3ophT9i2i3CinyY" />
-    <link rel="stylesheet" href="Css/scrollbarStyle.css"> 
-    <link rel="stylesheet" href="Css/style.css"> <!--banner的css-->
+    <link rel="stylesheet" href="Css/scrollbarStyle.css">
+    <link rel="stylesheet" href="Css/MainPage1.css">  
     <link rel="stylesheet" href="Css/Main.css"> <!-- 主要樣式 -->
     <link rel="stylesheet" href="Css/Menu.css"> <!-- 彈出選單樣式 -->
     <link rel="stylesheet" href="Css/Loading.css"> <!-- Loading 畫面樣式 -->
     <link rel="stylesheet" href="./Css/works_overview_v2.css"> <!-- 作品總覽樣式 -->
     <link rel="stylesheet" href="Css/Background.css"> 
-    <link rel="stylesheet" href="Css/MainPage1.css"> 
     <link rel="stylesheet" href="./Css/traffic_info.css"> <!-- 交通資訊樣式 -->
+    <link rel="stylesheet" href="Css/style.css"> <!--banner的css-->
     <!-- 作品總覽字體 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -64,7 +64,7 @@
         </div>
     </header>   
 
-    <script> //ES6 模組在 file:// 協議下會被瀏覽器阻擋。
+    <!-- <script> //ES6 模組在 file:// 協議下會被瀏覽器阻擋。
   const header = document.getElementById('header');
 const banner = document.getElementById('banner');
 
@@ -101,7 +101,7 @@ window.addEventListener('scroll', function() {
     
     lastScrollY = currentScrollY;
     });
-    </script>
+    </script> -->
     
 
     <div class="scroll-bar-fixed">
@@ -462,37 +462,68 @@ window.addEventListener('scroll', function() {
             </div>
         </section>
 
-        <!-- 第三區塊 (不變) -->
-        <section id="section3" class="content longContent">
-            <div class="writting">
-                <h1>主頁第三個區塊--交通資訊區</h1>
-                <div class="traffic_info_component_wrapper">
+    <!-- 第三區塊 (不變) -->
+    <section id="section3" class="p3-traffic-section">
+         <!-- 十字裝飾 -->
+        <img src="./image/MainPage1/project/deco_cross.png" class="p3-cross">
+  <!-- 標題 -->
+        <div class="p3-banner-container">
+        <img src="./image/MainPage1/project/Exhibition.png"
+            alt="Exhibition"
+            class="p3-banner-img">
+        </div>
+
+  <!-- 舞台（整個畫面不捲動） -->
+  <div class="p3-stage">
+
+    <!-- 地圖 -->
+    <div class="p3-map-base">
+        <div class="p3-map-frame">
+            <div class="p3-map-inner">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.6571098736554!2d120.42119837532952!3d23.544832078811172!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ebdeffd8bbf93%3A0xd14334637d161acc!2z5ZyL56uL5ZiJ576p5aSn5a245pWZ6IKy6aSo!5e0!3m2!1szh-TW!2stw!4v1769894429236!5m2!1szh-TW!2stw"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+        </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 左側資訊框 -->
+    <div class="p3-left-card">
+      <img src="./image/MainPage1/project/deco_left.png" alt="">
+      <div class="p3-text-box">
+        <p>621 嘉義縣民雄鄉85號</p>
+        <p>國立嘉義大學民雄校區教育館</p>
+        <p class="p3-highlight">■ 展覽日期 2026-03-30 (一)</p>
+        <p class="p3-highlight">■ 開放時間 09:00–17:00</p>
+      </div>
+    </div>
+
+    <!-- 右側圖片 -->
+    <div class="p3-right-card">
+      <img src="./image/MainPage1/project/deco_right.png" alt="">
+    </div>
+
     
-                    <div class="traffic_info_grid">
-        
-                        <!-- 左側：校內展資訊_大尺寸 -->
-                        <div class="traffic_info_map-image-container">
-                            <!-- 校內展資訊_大尺寸 -->
-                            <img src="./image/校內展資訊_大尺寸.png" class="traffic_info_map-image" alt="校內展覽地圖">
-                        </div>
 
-                        <!-- 右側：嵌入的 Google 地圖 -->
-                        <div class="traffic_info_google-map-container">
-                            <!-- ncyu iframe !!! -->
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3657.6815906271213!2d120.422674!3d23.543952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346ebdeffd8bbf93%3A0xd14334637d161acc!2z5ZyL56uL5ZiJ576p5aSn5a245pWZ6IKy6aSo!5e0!3m2!1szh-TW!2stw!4v1759456450928!5m2!1szh-TW!2stw" 
-                            width="600" 
-                            height="450" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
+    <!-- 底部覆蓋圖層（關鍵） -->
+        <div class="p3-footer-overlay">
+        <img src="./image/MainPage1/project/deco_bottom.png" alt="">
+        </div>
+        <div class="p3-footer-text">
+            © 2025 NCYU DEDM Graduation
+        </div>
 
-                    </div>
-                </div>
-            </div>
-        </section>
+
+    </div>
+    </section>
+<div class="scroll-end-spacer"></div>
+
+
 
         <!-- <section id="section4" class="content">
             <div class="writting">
@@ -582,24 +613,34 @@ window.addEventListener('scroll', function() {
     
     <!-- 滾動Nav縮放 -->
     <script>
-    const scrollBox = document.querySelector('.section-scroll-container');
-    const myHeader = document.getElementById('header');
 
-    function checkScroll(y) {
-        console.log("目前滾動高度:", y); // 你可以在 F12 看到數字有沒有在跳
-        if (y > 50) {
-            myHeader.classList.add('shrink');
-        } else {
-            myHeader.classList.remove('shrink');
-        }
-    }
+    (function() {
+    const myScroller = document.querySelector('.section-scroll-container');
+    const myNav = document.getElementById('header');
 
-    // 同時監聽「大盒子」和「視窗」
-    if (scrollBox) {
-        scrollBox.addEventListener('scroll', () => checkScroll(scrollBox.scrollTop));
+    if (myScroller && myNav) {
+        // 使用 wheel (滾輪) 事件作為最終保險
+        myScroller.addEventListener('wheel', function(e) {
+            // e.deltaY > 0 代表往下滾
+            if (myScroller.scrollTop > 50 || e.deltaY > 0) {
+                myNav.classList.add('shrink');
+                myNav.style.padding = "5px 3%"; // 直接強制縮小
+                console.log("➡️ 偵測到滾動/滾輪！執行縮小");
+            } else if (myScroller.scrollTop < 10) {
+                myNav.classList.remove('shrink');
+                myNav.style.padding = "15px 3%"; // 恢復原狀
+            }
+        }, { passive: true });
+
+        // 同時保留原本的高度監聽
+        myScroller.onscroll = function() {
+            console.log("當前容器高度:", myScroller.scrollTop);
+        };
+        
+        console.log("🚀 [終極模式] 監聽已切換至『滾輪偵測』！");
     }
-    window.addEventListener('scroll', () => checkScroll(window.scrollY));
-</script>
+})();
+    </script>
 
 </body>
 </html>
