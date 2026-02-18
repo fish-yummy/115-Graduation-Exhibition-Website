@@ -152,3 +152,47 @@ header#header.shrink .nav-icon {
 header#header.shrink .banner {
     gap: 15px !important; /* 強制縮小間距 */
 }
+
+/* 預設隱藏選單 */
+#fullscreen-menu-modal {
+    display: none; 
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: #11a9a4; /* 平設組青綠色 */
+    z-index: 10000;
+}
+
+/* 當 JS 啟動時，讓它顯示出來 */
+#fullscreen-menu-modal.active {
+    display: flex !important;
+}
+
+/* 讓手機外框動畫動起來 (對應 JS 裡的 slide-up-animation) */
+.slide-up-animation {
+    animation: menuSlideUp 0.6s ease-out forwards;
+}
+
+@keyframes menuSlideUp {
+    from { transform: translateY(100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+/* 讓兩張圖片疊在一起的關鍵 */
+.image-swap-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* 第二張圖（Hover）預設藏起來並疊在第一張上面 */
+.img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* 預設透明 */
+    transition: opacity 0.3s ease; /* 變身的過渡感 */
+}
+
+/* 滑鼠移上去時，第二張現身 */
+.image-swap-container:hover .img-hover {
+    opacity: 1;
+}

@@ -60,8 +60,10 @@
                 <img src="banner_image/edem.png" alt="Web" class="nav-social-icon">
             </a>
             
-            <a href="#" id="open-menu-btn" class="nav-icon-link menu-btn">
-                <img src="banner_image/Menu.svg" alt="選單" class="nav-social-icon">
+            <a href="#" id="open-menu-btn" class="nav-icon-link menu-btn image-swap-container">
+                <img src="banner_image/Menu.svg" alt="選單" class="nav-social-icon img-default">
+                <img src="banner_image/Menu_Hover.svg" alt="選單指向" class="nav-social-icon img-hover">
+            </a>
             </a>
         </div>
     </div>
@@ -650,7 +652,40 @@ window.addEventListener('scroll', function() {
 
 
     </script>
+
     
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const openBtn = document.getElementById('open-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const modal = document.getElementById('fullscreen-menu-modal');
+
+        if (openBtn && modal) {
+            openBtn.onclick = function(e) {
+                e.preventDefault();
+                modal.classList.add('active');
+                modal.style.display = 'flex';
+
+                // --- 🚀 新增：觸發手機滑入動畫 ---
+                // 抓出手機外框跟內螢幕
+                const phoneElements = modal.querySelectorAll('.phone-frame, .phone-screen-container');
+                phoneElements.forEach(el => {
+                    // 先移除動畫，再強制重刷，最後加上動畫，確保每次點開都會動
+                    el.classList.remove('slide-up-animation');
+                    void el.offsetWidth; // 這是關鍵，強制瀏覽器重繪
+                    el.classList.add('slide-up-animation');
+                });
+            };
+
+            if (closeBtn) {
+                closeBtn.onclick = function() {
+                    modal.classList.remove('active');
+                    modal.style.display = 'none';
+                };
+            }
+        }
+    });
+</script>
 
 </body>
 </html>
