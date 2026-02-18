@@ -3,19 +3,71 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 15px 3%;
-    background: linear-gradient(90deg, rgba(106, 17, 203, 0.8) 0%, rgba(37, 117, 252, 0.8) 100%); /* 增加透明度 */
+    /* --- 把高度增加到 90px (長度變長) --- */
+    height: 90px; 
+    /* --- 鎖定平設組青綠色 --- */
+    background-color: #11a9a4 !important; 
     color: white;
-    z-index: 1000;
-    transition: all 0.4s ease;
-    backdrop-filter: blur(10px); /* 添加毛玻璃效果 */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    transition: all 0.4s ease; /* 控制縮放動畫的順滑度 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 為了防止手機版文字「擠壓」，請務必加上這段 */
+@media (max-width: 768px) {
+    .header {
+        height: 75px; 
+    }
 }
 
 .banner {
     display: flex;
+    justify-content: space-between; /* 關鍵：這行會把 nav-left 推到左邊，nav-right 推到右邊 */
     align-items: center;
-    gap: 20px;
-    transition: all 0.4s ease;
+    width: 100%;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* 圖示之間的間距 */
+}
+
+.main-logo {
+    height: 60px; /* Logo 大小 */
+    width: auto;
+}
+
+.nav-social-icon {
+    height: 28px; /* FB, IG, 選單圖示的大小 */
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.nav-social-icon:hover {
+    transform: scale(1.1); /* 滑鼠移上去稍微放大 */
+}
+
+/* 專門調整「互動選單」按鈕的大小 */
+#open-menu-btn .nav-social-icon {
+    /* 1. 調整高度 (原本如果是 28px，你可以試試看 35px 或 40px) */
+    height: 50px !important; 
+    
+    /* 2. 寬度設為 auto，讓 SVG 依照比例縮放不變形 */
+    width: auto;
+    
+    /* 3. 如果覺得位置太高或太低，可以用 margin 微調 */
+    margin-top: 2px; 
+}
+
+/* 📱 針對手機版進行縮放 (避免在手機上看太突兀) */
+@media (max-width: 768px) {
+    #open-menu-btn .nav-social-icon {
+        height: 30px !important; /* 手機版稍微縮小一點 */
+    }
 }
 
 .main-title {
@@ -51,8 +103,10 @@
 }
 
 /* 縮小狀態 */
-.header.shrink {
-    padding: 5px 3% !important; /* 把原本的 15px 縮小成 5px，這才是變窄的關鍵！ */
+.header.scrolled, .header.shrink {
+    height: 70px; /* 往下滾時稍微縮小一點點，維持動態感 */
+    background-color: #11a9a4 !important; /* 強制滾動後顏色不准變回紫色 */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 /* -------------------- */
 
@@ -83,7 +137,7 @@
 /* 使用 !important 確保強制執行 */
 header#header.shrink {
     padding: 5px 3% !important; /* 強制縮小間距 */
-    background: linear-gradient(90deg, rgba(106, 17, 203, 0.95) 0%, rgba(37, 117, 252, 0.95) 100%) !important;
+    background: #11a9a4 !important;
     transition: all 0.4s ease !important;
 }
 

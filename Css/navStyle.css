@@ -1,7 +1,25 @@
-nav{
-    display: none;
-    height: 30px;
-	background-color: #fff;
-	border-bottom: 1px solid #ccc;  
+/* 這是 navStyle.css 的內容 */
+nav {
+    display: flex !important; /* 強制顯示，解決消失問題 */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 70px; 
+    background-color: #11a9a4; /* 平設組青綠色 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999; /* 解決 groupPage 點不到按鈕的問題 */
+    padding: 0 5%;
+    border-bottom: 2px solid #0b3d3b;
+}
 
+/* 響應式：解決手機版文字圖案被擠壓 */
+@media (max-width: 768px) {
+    nav {
+        height: 60px;
+    }
+    nav img {
+        height: 35px !important; /* 縮小圖片防止擠壓 */
+    }
 }

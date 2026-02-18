@@ -285,3 +285,91 @@
     font-size: 12px;
   }
 }
+/* ================================================== */
+/* 手機版：恢復「卡片漂浮」設計感 (針對 768px 以下)   */
+/* ================================================== */
+
+/* ================================================== */
+/* 只針對手機版 (螢幕 768px 以下) 的響應式修正          */
+/* ================================================== */
+
+@media (max-width: 768px) {
+    /* 1. 舞台高度調整，讓地圖比例在手機上好看 */
+    .p3-stage {
+        height: 600px !important;
+        position: relative;
+    }
+
+    /* 2. 左側「校內展資訊」卡片：維持漂浮，但縮放比例 */
+    .p3-left-card {
+        position: absolute !important;
+        width: 65% !important;   /* 寬度稍微放大，字才不會太擠 */
+        top: 2% !important;      /* 靠最上面 */
+        left: 2% !important;     /* 靠最左邊 */
+        z-index: 80;
+    }
+
+    /* 文字框內部的修正：解決文字疊在一起、掉出白框的問題 */
+    .p3-text-box {
+        position: absolute !important;
+        /* ⬅️ 把 top 調小 (原本是 10-15%)，這樣整塊文字(含標題)都會一起往上提 */
+        top: 40% !important; 
+        left: 15% !important;
+        width: 80% !important;
+        
+        /* 使用 flex 確保每一行都乖乖排隊，不會重疊 */
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+
+    /* 2. 單獨處理「校內展資訊」：移除 transform，改用 margin 推開 */
+    .p3-text-box p:first-child {
+        transform: none !important;   /* ⬅️ 關鍵：把原本會造成重疊的位移刪掉 */
+        
+        /* 增加下方的間距，強制把地址往下推 */
+        /* 如果覺得地址還是太近，就把 15px 改成 20px */
+        margin: 0 0 15px 0 !important; 
+        
+        font-size: 5vw !important;
+        font-weight: 900 !important;
+        line-height: 1.2 !important;
+        color: #0b3d3b;
+        display: block !important;
+    }
+
+    /* 3. 確保地址與後續文字恢復正常排列 */
+    .p3-text-box p:not(:first-child) {
+        transform: none !important;    /* 移除位移 */
+        margin: 0 0 5px 0 !important;  /* 設定每一行地址之間的微小間距 */
+        font-size: 3vw !important;
+        line-height: 1.4 !important;
+        display: block !important;
+    }
+    
+
+    /* 3. 右側「照片卡片」：維持漂浮，但移動到右下角，避免擋住左側資訊 */
+    .p3-right-card {
+        position: absolute !important;
+        width: 50% !important;
+        top: auto !important;     /* 取消電腦版的 top 設定 */
+        bottom: 12% !important;   /* 改成對齊底部往上 12% */
+        right: 2% !important;
+        z-index: 70;
+    }
+
+    /* 4. 底部版權字與裝飾圖調整 */
+    .p3-footer-overlay {
+        bottom: 0 !important;
+    }
+    .p3-footer-text {
+        bottom: 10px !important;
+        font-size: 10px !important;
+        color: #0b3d3b !important;
+    }
+
+    /* 手機版隱藏十字裝飾，讓畫面更清爽 */
+    .p3-cross {
+        display: none !important;
+    }
+}

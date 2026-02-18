@@ -42,27 +42,30 @@
 </head>
 <body>
     <header class="header" id="header">
-        <div class="banner" id="banner">
-            <img src="banner_image/MainVusualTitle.png" alt="畢業專題" class="main-title">
-            <a href="#section1" class="nav-item">
-                <img src="banner_image/MainPageIcon.png" alt="首頁" class="nav-icon"><span>首頁</span>
+    <div class="banner" id="banner">
+        <div class="nav-left">
+            <a href="#section1">
+                <img src="banner_image/MainPageIcon.png" alt="畢業專題" class="main-logo">
             </a>
-            <!-- ▼▼▼ 這是觸發彈出選單的唯一按鈕 ▼▼▼ -->
-            <a href="#" id="open-menu-btn" class="nav-item">
-                <img src="banner_image/Select.png" alt="選單" class="nav-icon"><span>互動選單</span>
-            </a>
-            <a href="#section2" class="nav-item">作品總覽</a>
-            <a href="#section3" class="nav-item">交通資訊</a>
-            <a href="#section4" class="nav-item">關於我們</a>
-            <a href="#" class="nav-item">
-                <img src="banner_image/fb.png" alt="Facebook" class="nav-icon">
-            </a>
-            <a href="#" class="nav-item">
-                <img src="banner_image/ig.png" alt="Instagram" class="nav-icon">
-            </a>
-            <img src="banner_image/edem.png" alt="系網標" class="dept-logo">
         </div>
-    </header>   
+
+        <div class="nav-right">
+            <a href="#" class="nav-icon-link">
+                <img src="banner_image/fb.png" alt="Facebook" class="nav-social-icon">
+            </a>
+            <a href="#" class="nav-icon-link">
+                <img src="banner_image/ig.png" alt="Instagram" class="nav-social-icon">
+            </a>
+            <a href="#" class="nav-icon-link">
+                <img src="banner_image/edem.png" alt="Web" class="nav-social-icon">
+            </a>
+            
+            <a href="#" id="open-menu-btn" class="nav-icon-link menu-btn">
+                <img src="banner_image/Menu.svg" alt="選單" class="nav-social-icon">
+            </a>
+        </div>
+    </div>
+    </header> 
 
     <!-- <script> //ES6 模組在 file:// 協議下會被瀏覽器阻擋。
   const header = document.getElementById('header');
@@ -640,7 +643,14 @@ window.addEventListener('scroll', function() {
         console.log("🚀 [終極模式] 監聽已切換至『滾輪偵測』！");
     }
 })();
+
+
+
+
+
+
     </script>
+    
 
 </body>
 </html>
