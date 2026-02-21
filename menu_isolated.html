@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Css/style.css"> 
+    <link rel="stylesheet" href="Css/MainPage1.css">
+    <link rel="stylesheet" href="Css/Main.css">
+    <link rel="stylesheet" href="Css/Menu.css">
+    
+    <style>
+        /* 🚀 暴力鎖定：不管視窗多小，都要長得跟 Desktop 一樣 */
+        html, body {
+            margin: 0; padding: 0;
+            background: transparent !important; 
+            width: 100vw; height: 100vh;
+            overflow: hidden;
+        }
+
+        #fullscreen-menu-modal {
+            background-image: url('image/互動選單/背景.png') !important;
+            background-size: cover;
+            background-position: center;
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .menu-layout {
+            display: flex !important;
+            flex-direction: row !important;
+            width: 90% !important;
+            max-width: 1400px;
+            height: 90vh !important;
+            justify-content: center !important;
+            align-items: center !important;
+            gap: 5vw !important;
+            /* 👈 關鍵：徹底消除 Menu.css 裡的 RWD 負邊距位移 */
+            transform: none !important; 
+            margin-top: 0 !important; 
+        }
+
+        /* 🚀 強制漂浮：讓手機動起來 */
+        .phone-wrapper {
+            flex: 0 0 auto !important;
+            height: 85vh !important;
+            aspect-ratio: 9 / 18.5 !important;
+            position: relative !important;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            /* 手動掛載漂浮動畫，確保無視 JS 報錯直接動 */
+            animation: float-force 6s ease-in-out infinite !important;
+        }
+
+        .phone-frame, .phone-screen-container {
+            transform: translateY(0) !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            display: block !important;
+        }
+
+        @keyframes float-force {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* 🚀 關閉按鈕：確保在最高層，且點擊能穿透 */
+        .modal-close-button {
+            z-index: 99999 !important;
+            pointer-events: auto !important;
+            cursor: pointer !important;
+            position: fixed !important;
+            top: 30px; right: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="fullscreen-menu-modal">
+        <button id="close-menu-btn" class="modal-close-button">
+            <img src="image/MainPage1/關閉按鈕.svg" alt="關閉">
+        </button>
+
+        <div class="menu-layout">
+            <div class="menu-sidebar">
+                <img src="./image/MainPage1/title.png" alt="Logo" class="menu-logo">
+                <div style="flex: 1;"></div> 
+                <button class="category-btn active" data-category="games">互動遊戲類</button>
+                <button class="category-btn" data-category="narrative">影像敘事類</button>
+                <button class="category-btn" data-category="system">系統開發類</button>
+                <div style="flex: 1;"></div>
+            </div>
+
+            <div class="phone-wrapper">
+                <img src="image/互動選單/手機.png" alt="Phone Frame" class="phone-frame">
+                <div class="phone-screen-container">
+                    <div class="interface-content">
+                        <div id="app-list-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+    import { initializeMenu } from './Js/menu.js';
+
+    window.onload = () => {
+        // 1. 🚀 【關鍵修正】騙過 menu.js 的檢查
+        // 因為沙盒裡沒有 open-menu-btn，我們手動建立一個虛擬對象，防止 JS 執行中斷
+        if (!document.getElementById('open-menu-btn')) {
+            const fakeBtn = document.createElement('div');
+            fakeBtn.id = 'open-menu-btn';
+            fakeBtn.style.display = 'none';
+            document.body.appendChild(fakeBtn);
+        }
+
+        try {
+            // 2. 執行原本的初始化
+            initializeMenu();
+
+            // 3. 🚀 【核心修正】強制重新綁定關閉訊號
+            // 因為原本 JS 裡的 closeBtn 監聽可能因為環境問題沒過，我們這裡再綁一次
+            const closeBtn = document.getElementById('close-menu-btn');
+            if (closeBtn) {
+                closeBtn.onclick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log("內部：按下叉叉，發送 CLOSE_SANDBOX...");
+                    // 這裡的暗號必須跟 GroupPage.html 聽的一模一樣
+                    if (window.parent !== window) {
+    window.parent.postMessage('CLOSE_SANDBOX', '*');
+} else {
+    window.location.href = "group.html"; 
+}
+                };
+            }
+
+            // 4. 作品連結整頁跳轉
+            document.getElementById('app-list-container').onclick = (e) => {
+                const card = e.target.closest('a');
+                if (card) {
+                    e.preventDefault();
+                    window.parent.location.href = card.href;
+                }
+            };
+
+            // 5. 強制讓 CSS 動畫類別生效
+            document.getElementById('fullscreen-menu-modal').classList.add('active');
+
+        } catch (err) {
+            console.error("JS 啟動失敗，但我們補救了關閉功能:", err);
+        }
+    };
+</script>
+</body>
+</html>

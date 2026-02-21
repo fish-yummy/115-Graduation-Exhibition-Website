@@ -274,6 +274,8 @@
 
   .p3-left-card {
     width: 32%;
+    position: absolute;
+    bottom: 70%;
   }
 
   .p3-right-card {

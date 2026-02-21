@@ -107,10 +107,11 @@
 /* 標題 LOGO */
 .menu-logo {
     position: relative;
-    width: 616px;
-    max-width: 100%; 
+    width: 320px !important; /* 強制縮小到 320px，防止它撐開佈局 */
+    max-width: 40vw; 
     height: auto;
     margin-bottom: 20px; 
+    display: block;
 }
 
 /* 左側標題按鈕 */
@@ -388,19 +389,23 @@
     /* 2. [關鍵] 主佈局：大幅減少頂部空間 */
     .menu-layout {
         display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        
-        width: 100%;
-        height: 100vh;
-        
-        padding-top: 40px; /* [修改] 原本 80px -> 改為 40px，整體上移 */
-        padding-bottom: 20px;
-        
-        overflow-y: auto;
-        overflow-x: hidden;
-        gap: 10px;         /* [修改] 縮小元件間距，讓手機靠更近 */
+    flex-direction: row; 
+    width: 100% !important; /* 強制寬度 */
+    height: 100vh !important; /* 強制高度佔滿 */
+    align-items: center;
+    justify-content: center; 
+    margin: 0 auto;
+    gap: 40px; 
+    
+    padding: 40px; 
+    box-sizing: border-box;
+    
+    /* 🚀 關鍵：整體縮小，解決裁切感 */
+    transform: scale(0.85); 
+    transform-origin: center center;
+    
+    position: relative;
+    z-index: 1001;
     }
 
     /* 3. 上方選單區 */
@@ -517,12 +522,17 @@
     
     /* 1. 關閉按鈕 */
     .modal-close-button {
-        top: 15px;
-        right: 15px;
-        width: 35px;
-        height: 35px;
-        z-index: 2000;
-        position: absolute;
+        position: fixed !important; /* 改成 fixed 並加強力膠 */
+    top: 30px;
+    right: 30px;
+    width: 50px; /* 稍微縮小一點點比較精緻 */
+    height: 50px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 2000000 !important; /* 數字給最高，確保不被蓋住 */
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
     }
 
     /* 2. 主佈局：垂直排列，禁止滾動 */
@@ -675,4 +685,6 @@
         gap: 10px !important;
         padding-top: 50px !important;
     }
+
+    
 }
