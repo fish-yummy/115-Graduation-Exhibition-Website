@@ -287,13 +287,13 @@
             };
         }
 
-        // ✅ 聽對講機：當 iframe 喊 'CLOSE_SANDBOX'，就把門關上
+        // 當 iframe 呼叫 'CLOSE_SANDBOX'，關閉
         window.addEventListener('message', function(event) {
     console.log("收到訊息:", event.data);
     console.log("來源:", event.origin);
 
     if (event.data === 'CLOSE_SANDBOX') {
-        console.log("外面收到關閉指令！");
+        console.log("外面收到關閉指令");
         sandbox.style.display = 'none';
     }
 });
