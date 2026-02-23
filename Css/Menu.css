@@ -1,690 +1,282 @@
 /* ================================================== */
-/* 互動選單樣式表 (最終完整版：Desktop / Tablet / Mobile 完美適配) */
+/* 互動選單樣式表 (最終完整版：防禦隔離 + 全端 RWD + 完美漂浮) */
 /* ================================================== */
+
+/* --- [關鍵防禦] 隔離層：強制重置選單內部的基礎樣式，抵抗外部 CSS 污染 --- */
+#fullscreen-menu-modal * {
+    box-sizing: border-box !important;
+}
+#fullscreen-menu-modal p, 
+#fullscreen-menu-modal a, 
+#fullscreen-menu-modal div, 
+#fullscreen-menu-modal span {
+    line-height: normal; 
+    letter-spacing: normal;
+}
+#fullscreen-menu-modal img {
+    max-width: none; 
+    max-height: none;
+    border: none;
+    outline: none;
+}
 
 /* --- 全螢幕選單容器 --- */
 #fullscreen-menu-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: fixed; top: 0; left: 0; 
+    width: 100vw; height: 100vh; /* 使用 vw/vh 確保蓋滿視窗 */
     background-image: url('../image/互動選單/背景.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #1cbab4; /* 圖片載入前的備用色 */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10000;
-    opacity: 0;
-    visibility: hidden;
+    background-size: cover; background-position: center; background-repeat: no-repeat;
+    background-color: #1cbab4; 
+    display: flex; justify-content: center; align-items: center;
+    z-index: 99999; /* 設極高，確保蓋過 navbar */
+    opacity: 0; visibility: hidden;
     transition: opacity 0.4s ease, visibility 0.4s;
-    overflow: hidden; /* 防止捲動穿透 */
+    overflow: hidden; 
 }
-
-#fullscreen-menu-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
+#fullscreen-menu-modal.active { opacity: 1; visibility: visible; }
 
 /* --- 關閉按鈕 --- */
 .modal-close-button {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 60px;
-    height: 60px;
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    z-index: 1005; /* 確保在最上層 */
+    position: absolute; top: 30px; right: 40px; width: 60px; height: 60px;
+    background: transparent; border: none; padding: 0; cursor: pointer;
+    z-index: 100005; /* 必須比 modal 還高 */
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-
-.modal-close-button img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); 
-}
-
-.modal-close-button:hover {
-    transform: rotate(90deg) scale(1.1);
-}
-
-.modal-close-button:active {
-    transform: rotate(90deg) scale(0.95);
-}
+.modal-close-button img { width: 100%; height: 100%; display: block; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2)); }
+.modal-close-button:hover { transform: rotate(90deg) scale(1.1); }
+.modal-close-button:active { transform: rotate(90deg) scale(0.95); }
 
 /* ================================================== */
-/*        核心佈局 (桌面版：左右各半)                 */
+/*        核心佈局 (桌面版)                          */
 /* ================================================== */
-
 .menu-layout {
-    display: flex;
-    flex-direction: row; 
-    width: 90%;
-    max-width: 1600px;
-    height: 90vh; 
-    align-items: center;
-    justify-content: center; 
-    margin: 0 auto;
-    gap: 5vw; 
-    
-    /* ▼▼▼ [新增] 確保頂部絕對留白，防止 Logo 撞到天花板 ▼▼▼ */
-    padding-top: 40px; 
-    padding-bottom: 20px;
-    box-sizing: border-box; /* 確保 padding 不會撐大高度 */
-    
-    position: relative;
-    z-index: 1001;
+    display: flex; flex-direction: row; width: 90%; max-width: 1600px;
+    height: 90vh; align-items: center; justify-content: center; 
+    margin: 0 auto; gap: 5vw; padding-top: 40px; padding-bottom: 20px;
+    position: relative; z-index: 100001;
 }
 
-/* --- 左側選單區 (佔據左邊空間) --- */
+/* --- 左側選單區 --- */
 .menu-sidebar {
-    flex: 0 1 auto; /* 自動寬度，不強佔空間 */
-    display: flex;
-    flex-direction: column;
-    gap: 40px; 
-    
-    /* 讓文字往右靠 (靠近手機) */
-    align-items: flex-end; 
-    padding-right: 0;
-    padding-left: 0;
-    
-    justify-content: center;
-    height: 100%;
-    
-    /* [關鍵] 提升層級，確保文字浮在最上面 */
-    position: relative;
-    z-index: 30; 
+    flex: 0 1 auto; display: flex; flex-direction: column; gap: 40px; 
+    align-items: flex-end; padding: 0; justify-content: center;
+    height: 100%; position: relative; z-index: 30; 
 }
-
-/* 標題 LOGO */
-.menu-logo {
-    position: relative;
-    width: 320px !important; /* 強制縮小到 320px，防止它撐開佈局 */
-    max-width: 40vw; 
-    height: auto;
-    margin-bottom: 20px; 
-    display: block;
-}
-
-/* 左側標題按鈕 */
+.menu-logo { width: 616px; max-width: 100%; height: auto; margin-bottom: 20px; display: block; }
 .category-btn {
-    background: transparent;
-    border: none;
-    color: #0e636d; 
-    font-size: 2.5rem; 
-    text-align: right; /* 文字靠右對齊 */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    padding: 10px 0;
-    font-weight: 700; 
+    background: transparent; border: none; color: #0e636d; font-size: 2.5rem; 
+    text-align: right; cursor: pointer; transition: all 0.3s ease;
+    position: relative; padding: 10px 0; font-weight: 700; 
     font-family: "Gen Jyuu Gothic", "微軟正黑體", sans-serif;
-    opacity: 0.5;
-    text-shadow: 2px 2px 10px rgba(14, 99, 109, 0.1);
+    opacity: 0.5; text-shadow: 2px 2px 10px rgba(14, 99, 109, 0.1);
 }
+.category-btn:hover { opacity: 0.8; transform: translateX(-15px); }
+.category-btn.active { color: #0e636d; font-size: 3.5rem; opacity: 1; font-weight: 900; text-shadow: 4px 4px 15px rgba(14, 99, 109, 0.2); }
+.category-btn.active::after { content: ' –'; margin-left: 25px; }
 
-.category-btn:hover {
-    opacity: 0.8;
-    transform: translateX(-15px); /* 往左動一點 */
-}
-
-.category-btn.active {
-    color: #0e636d; 
-    font-size: 3.5rem; 
-    opacity: 1;
-    font-weight: 900;
-    text-shadow: 4px 4px 15px rgba(14, 99, 109, 0.2);
-}
-
-.category-btn.active::after { /* 在右邊顯示提示 */
-    content: ' –';
-    margin-left: 25px;
-}
-.category-btn.active::before { 
-    content: none;
-}
-
-/* ================================================== */
-/*        右側手機容器 (核心修正區塊)                 */
-/* ================================================== */
-
+/* --- 右側手機容器 --- */
 .phone-wrapper {
-    /* 不使用 flex-grow，避免被拉伸 */
-    flex: 0 0 auto; 
-    
-    position: relative; 
-    /* 設定高度與長寬比 */
-    height: 85vh; 
-    width: auto;
-    aspect-ratio: 9 / 18.5; /* 手機長寬比 */
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    padding: 0;
-    margin: 0;
+    flex: 0 0 auto; position: relative; height: 85vh; width: auto;
+    aspect-ratio: 9 / 18.5; display: flex; justify-content: center; align-items: center;
+    padding: 0; margin: 0;
+}
+
+/* 🚀 讓父容器負責漂浮，避免與 JS 控制的 slideUp 衝突 */
+#fullscreen-menu-modal.active .phone-wrapper {
+    animation: float-menu 6s ease-in-out infinite 0.8s;
 }
 
 /* 1. 手機外框圖片 */
 .phone-frame {
-    /* 絕對定位，填滿 wrapper */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    
-    /* 層級較低 (作為背景) */
-    z-index: 10; 
-    pointer-events: none; /* 讓滑鼠穿透圖片 */
-    
-    /* 初始狀態 */
-    transform: translateY(100%); 
-    opacity: 0;
-    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: fill;
+    z-index: 10; pointer-events: none; transform: translateY(100%); opacity: 0;
 }
 
 /* 2. 手機螢幕內容容器 */
 .phone-screen-container {
-    /* 絕對定位，鎖在 wrapper 內部 */
-    position: absolute;
-    
-    /* 層級較高 (浮在手機框上面) */
-    z-index: 20; 
-    
-    /* 必須有背景色 */
-    background-color: #fff; 
-    
-    /* [微調] 這些數值用來控制內容與手機邊框的距離 */
-    top: 11%;
-    bottom: 11%;
-    left: 7%;
-    right: 7%;
-    width: auto;  /* 讓 left/right 決定寬度 */
-    height: auto; /* 讓 top/bottom 決定高度 */
-    
-    border-radius: 30px; /* 配合手機圓角 */
-    
-    overflow-y: auto;
-    overflow-x: hidden;
+    position: absolute; z-index: 20; background-color: #fff; 
+    top: 11%; bottom: 11%; left: 7%; right: 7%; width: auto; height: auto;
+    border-radius: 30px; overflow-y: auto; overflow-x: hidden;
+    transform: translateY(100%); opacity: 0;
+}
 
-    /* 初始狀態 */
-    transform: translateY(100%); 
-    opacity: 0;
+/* 🚀 讓 JS 控制的 slide-up 生效 */
+#fullscreen-menu-modal.active .phone-frame,
+#fullscreen-menu-modal.active .phone-screen-container {
+    transform: translateY(0); 
+    opacity: 1;
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.8s ease;
 }
 
-/* --- 啟動狀態 (Active) --- */
-#fullscreen-menu-modal.active .phone-frame,
-#fullscreen-menu-modal.active .phone-screen-container {
-    transform: translateY(0); /* 回到原位 */
-    opacity: 1;
-    /* 漂浮動畫 */
-    animation: float 6s ease-in-out infinite 0.8s;
-}
-
-/* 上滑動畫 class */
+/* 獨立的滑入動畫類別 (供 js 使用) */
 .slide-up-animation {
-    animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation: slideUpMenu 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
 }
 
-/* --- 動畫定義 --- */
-@keyframes slideUp {
-    0% { transform: translateY(100%); opacity: 0; }
+/* --- 動畫定義 (重新命名避免與外部衝突) --- */
+@keyframes slideUpMenu {
+    0% { transform: translateY(100px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
 }
 
-@keyframes float {
+@keyframes float-menu {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-15px); }
 }
 
-/* --- 列表內容樣式 --- */
-#app-list-container {
-    padding: 60px 15px 40px 15px; /* 頂部留白給瀏海 */
-    display: flex;
-    flex-direction: column;
-    gap: 15px; 
-    min-height: 100%; 
-}
+/* --- 列表與卡片內容樣式 --- */
+#app-list-container { padding: 60px 15px 40px 15px; display: flex; flex-direction: column; gap: 15px; min-height: 100%; }
+.phone-screen-container::-webkit-scrollbar { width: 6px; }
+.phone-screen-container::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.2); border-radius: 10px; }
 
-/* 自訂滾動條 */
-.phone-screen-container::-webkit-scrollbar {
-    width: 6px;
+.app-card { 
+    background: white; border: 1px solid #eee; border-radius: 12px; padding: 10px 12px; gap: 12px; 
+    display: flex; align-items: center; text-decoration: none; color: #333; transition: all 0.2s ease; 
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05); width: 100%; box-sizing: border-box; 
+    margin-bottom: 0 !important; /* 避免外部 P 標籤 margin 干擾 */
 }
-.phone-screen-container::-webkit-scrollbar-track {
-    background: transparent;
-}
-.phone-screen-container::-webkit-scrollbar-thumb {
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 10px;
-}
-
-/* 作品卡片 */
-.app-card {
-    background: white;
-    border: 1px solid #eee;
-    border-radius: 12px; /* 圓角稍微縮小 */
-    
-    /* ▼▼▼ [關鍵] 縮小內距，騰出空間給文字 ▼▼▼ */
-    padding: 10px 12px;       
-    gap: 12px;
-    
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    transition: all 0.2s ease;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    width: 100%; 
-    box-sizing: border-box; 
-}
-
-.app-card:hover {
-    transform: translateY(-3px);
-    border-color: #1cbab4;
-    box-shadow: 0 5px 12px rgba(28, 186, 180, 0.2);
-}
-
-.app-icon {
-    /* ▼▼▼ [關鍵] 縮小圖片，原本 60px/70px 太佔空間 ▼▼▼ */
-    width: 50px; 
-    height: 50px;
-    border-radius: 10px;
-    object-fit: cover;
-    flex-shrink: 0;
-    background: #f0f0f0;
-}
-
-.app-info {
-    flex: 1;
-    overflow: hidden; /* 確保文字過長會被截斷 */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.app-name {
-    /* ▼▼▼ [關鍵] 字體縮小 ▼▼▼ */
-    font-size: 1rem; 
-    font-weight: bold;
-    margin-bottom: 4px;
-    color: #034854;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.app-desc {
-    /* ▼▼▼ [關鍵] 字體縮小，行高縮小 ▼▼▼ */
-    font-size: 0.8rem;
-    color: #666;
-    line-height: 1.3;
-    
-    /* 確保兩行顯示 */
-    display: -webkit-box;
-    line-clamp: 2;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    
-    /* 移除多餘 margin */
-    margin: 0;
-}
-
-/* 播放按鈕微調 */
-.play-btn {
-    width: 32px; 
-    height: 32px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 1.5px solid #1cbab4; /* 線條細一點 */
-    color: #1cbab4;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s;
-}
-
-.play-btn svg {
-    width: 14px;
-    height: 14px;
-}
-.app-card:hover .play-btn {
-    background: #1cbab4;
-    color: white;
-}
+.app-card:hover { transform: translateY(-3px); border-color: #1cbab4; box-shadow: 0 5px 12px rgba(28, 186, 180, 0.2); }
+.app-icon { width: 50px; height: 50px; border-radius: 10px; object-fit: cover; flex-shrink: 0; background: #f0f0f0; }
+.app-info { flex: 1; overflow: hidden; display: flex; flex-direction: column; justify-content: center; }
+.app-name { font-size: 1rem; font-weight: bold; margin-bottom: 4px; color: #034854; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.app-desc { font-size: 0.8rem; color: #666; line-height: 1.3; display: -webkit-box; line-clamp: 2; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin: 0; }
+.play-btn { width: 32px; height: 32px; flex-shrink: 0; border-radius: 50%; border: 1.5px solid #1cbab4; color: #1cbab4; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.app-card:hover .play-btn { background: #1cbab4; color: white; }
+.play-btn svg { width: 14px; height: 14px; }
 
 
 /* ================================================== */
 /* 響應式設計 (RWD) */
 /* ================================================== */
 
-/* 1. 平板 / 窄螢幕 (寬度 769px ~ 1200px) */
 /* ================================================== */
-/*   平板樣式 (寬度 769px ~ 1200px) - 緊湊上移修正版   */
+/* 響應式設計 (RWD) - 嚴格鎖定比例防溢出版 */
 /* ================================================== */
+
+/* 1. 平板 (769px ~ 1200px) */
 @media (max-width: 1200px) and (min-width: 769px) {
+    .modal-close-button { top: 20px; right: 20px; width: 50px; height: 50px; position: fixed; z-index: 100005; }
     
-    /* 1. 關閉按鈕 */
-    .modal-close-button {
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        position: fixed;
-        z-index: 2000;
-    }
-
-    /* 2. [關鍵] 主佈局：大幅減少頂部空間 */
-    .menu-layout {
-        display: flex;
-    flex-direction: row; 
-    width: 100% !important; /* 強制寬度 */
-    height: 100vh !important; /* 強制高度佔滿 */
-    align-items: center;
-    justify-content: center; 
-    margin: 0 auto;
-    gap: 40px; 
-    
-    padding: 40px; 
-    box-sizing: border-box;
-    
-    /* 🚀 關鍵：整體縮小，解決裁切感 */
-    transform: scale(0.85); 
-    transform-origin: center center;
-    
-    position: relative;
-    z-index: 1001;
-    }
-
-    /* 3. 上方選單區 */
-    .menu-sidebar {
-        display: block !important; 
-        flex: 0 0 auto;
-        width: 100%;
-        text-align: center;
-        padding: 0 20px;
-        z-index: 30;
-        margin-bottom: 0; /* 確保沒有額外邊距 */
-    }
-
-    /* Logo */
-    .menu-logo {
-        display: block;
-        margin: 0 auto 10px auto; /* [修改] 減少 Logo 下方留白 */
-        width: 260px; 
-        max-width: 55%;
-        height: auto;
-        object-fit: contain;
-    }
-
-    /* 按鈕 */
-    .category-btn {
-        display: inline-block !important;
-        font-size: 1.3rem;
-        padding: 8px 20px;
-        margin: 5px;
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 30px;
-        color: #fff;
-        text-align: center;
-        white-space: nowrap;
-        width: auto;
-        
-    }
-     .category-btn:focus {
-        transform: none !important; /* 強制不准動 */
-        background-color: rgba(255, 255, 255, 0.2); /* 保持背景色 */
+    .menu-layout { 
+        flex-direction: column !important; justify-content: flex-start !important; align-items: center !important; 
+        width: 100%; height: 100vh; padding-top: 80px; padding-bottom: 20px; 
+        overflow-y: auto; overflow-x: hidden; gap: 20px; 
     }
     
-    .category-btn.active {
-        font-size: 1.4rem;
-        transform: none !important;
-        background-color: #fff;
-        color: #034854;
+    .menu-sidebar { 
+        flex: 0 0 auto !important; width: 100%; padding: 0 20px; 
+        display: flex; flex-direction: column; align-items: center; z-index: 30; 
     }
-    .category-btn.active::before,
-    .category-btn.active::after { display: none; }
-
-
-    /* 4. [關鍵] 下方手機區：上移 + 高度微調 */
-    .phone-wrapper {
-        width: 100%;
-        flex: 1;            
-        min-height: 700px;  /* [修改] 稍微縮小最小高度，避免撐太長 */
-        
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start; /* 靠上對齊 */
-        
-        padding-bottom: 30px;
-        
-        margin-top: -900px; /* [關鍵] 負邊距！強行把手機往上拉 20px */
-        aspect-ratio: auto;
+    .menu-logo { width: 260px; max-width: 60%; height: auto; margin-bottom: 15px; display: block; object-fit: contain; }
+    .menu-sidebar div:not(.menu-logo) { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 15px; width: 100%; }
+    
+    .category-btn { 
+        display: inline-flex !important; width: auto; font-size: 1.3rem; padding: 8px 25px; margin: 5px 10px; 
+        background-color: rgba(255, 255, 255, 0.2); border-radius: 30px; color: #fff; text-align: center; white-space: nowrap; 
     }
+    .category-btn.active { font-size: 1.4rem; background-color: #fff; color: #034854; }
+    .category-btn.active::before, .category-btn.active::after { display: none; }
+    .category-btn:hover, .category-btn:focus { transform: none !important; }
 
-    /* 5. 手機框 */
-    .phone-frame {
-        position: relative;
-        height: 100%;       
-        max-height: 100%;
-        width: auto;
-        max-width: 90%;
-        object-fit: contain;
+    /* 🚀 關鍵修復：嚴格鎖定手機容器比例 */
+    .phone-wrapper { 
+        width: 100%; 
+        flex: 1; /* 吃掉剩餘高度 */
+        min-height: 0; /* 允許縮小不溢出螢幕 */
         
-        z-index: 10;
-        opacity: 1 !important;
-        animation: none !important;
-        transform: translateY(0) !important;
-        top: auto; left: auto;
+        position: relative; 
+        display: flex; justify-content: center; align-items: center; 
+        padding: 0; 
+        margin: 0 auto 30px auto; 
+        
+        /* [核心] 鎖死比例，確保外框不變形 */
+        aspect-ratio: 9 / 18.5 !important; 
+        /* 雙重限制，確保不管螢幕多奇葩都不會破版 */
+        max-height: 90%; 
+        max-width: 80%; 
     }
     
-    /* 6. 手機內容 */
-    .phone-screen-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) !important;
-        
-        height: 80%; 
-        width: auto;
-        aspect-ratio: 9 / 18.5; 
-        max-width: 78%;
-        
-        border-radius: 35px;
-        z-index: 20;
-        background-color: #fff;
-        overflow-y: auto;
-        
-        opacity: 1 !important;
-        animation: none !important;
+    #fullscreen-menu-modal.active .phone-wrapper { animation: none; }
+    
+    .phone-frame { 
+        position: absolute; top: 0; left: 0; 
+        width: 100% !important; height: 100% !important; 
+        /* [核心] 填滿鎖定好比例的容器 */
+        object-fit: fill !important; 
+        z-index: 10; opacity: 1 !important; transform: translateY(0) !important; 
     }
     
-    .app-card { padding: 12px; gap: 12px; }
-    .app-icon { width: 50px; height: 50px; }
-    .app-name { font-size: 1.1rem; }
-    .play-btn { width: 32px; height: 32px; }
+    .phone-screen-container { 
+        position: absolute; 
+        /* [核心] 統一使用內縮百分比，絕對不超出外框 */
+        top: 11% !important; bottom: 11% !important; left: 7% !important; right: 7% !important; 
+        width: auto !important; height: auto !important; 
+        border-radius: 30px; z-index: 20; background-color: #fff; overflow-y: auto; 
+        opacity: 1 !important; transform: translateY(0) !important; animation: none !important; 
+    }
 }
-/* 2. 手機 (寬度小於 768px) */
+
+/* 2. 手機 (小於 768px) */
 @media (max-width: 768px) {
+    .modal-close-button { position: fixed !important; top: 15px; right: 15px; width: 35px; height: 35px; z-index: 100005 !important; }
     
-    /* 1. 關閉按鈕 */
-    .modal-close-button {
-        position: fixed !important; /* 改成 fixed 並加強力膠 */
-    top: 30px;
-    right: 30px;
-    width: 50px; /* 稍微縮小一點點比較精緻 */
-    height: 50px;
-    background: transparent;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    z-index: 2000000 !important; /* 數字給最高，確保不被蓋住 */
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    }
-
-    /* 2. 主佈局：垂直排列，禁止滾動 */
-    .menu-layout {
-        display: flex;
-        flex-direction: column !important; /* 強制垂直 */
-        justify-content: flex-start !important;
-        align-items: center;
-        width: 100%;
-        height: 100vh;
-        padding-top: 60px; /* 避開關閉按鈕 */
-        padding-bottom: 0;
-        overflow: hidden;
-        gap: 10px;
-    }
-
-    /* 3. 上方選單區：改用 Block 佈局，最穩定 */
-    .menu-sidebar {
-        flex: 0 0 auto !important; /* 高度由內容決定，不伸縮 */
-        height: auto !important;   /* 取消桌面版的 100% 高度 */
-        width: 100%;
-        padding: 0 10px;
-        text-align: center; /* 讓內部圖片和按鈕置中 */
-        
-        /* 移除 Flex 相關設定，避免亂跑 */
-        display: block !important; 
-        z-index: 30;
-    }
-
-    /* Logo：圖片置中 */
-    .menu-logo {
-        display: block;
-        margin: 0 auto 10px auto; /* 上下置中，底部留白 */
-        width: 160px;
-        max-width: 50%;
-        height: auto;
-    }
-
-    /* 按鈕：變成行內區塊，自然橫排 */
-    .category-btn {
-        display: inline-block; /* 讓按鈕並排 */
-        font-size: 1rem;
-        padding: 6px 12px;
-        margin: 5px; /* 按鈕之間的間距 */
-        
-        background-color: rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        color: #fff;
-        text-align: center;
-    }
-    .category-btn:focus {
-        transform: none !important; /* 強制不准動 */
-        background-color: rgba(255, 255, 255, 0.2);
+    .menu-layout { 
+        display: flex; flex-direction: column !important; justify-content: flex-start !important; align-items: center !important; 
+        width: 100%; height: 100vh; padding-top: 60px; padding-bottom: 0; overflow: hidden; gap: 10px; 
     }
     
-    .category-btn.active {
-        transform: none !important;
-        font-size: 1rem;
-        background-color: #fff;
-        color: #034854;
+    .menu-sidebar { 
+        flex: 0 0 auto !important; height: auto !important; width: 100%; padding: 0 10px; 
+        text-align: center; display: block !important; z-index: 30; 
     }
-    /* 移除桌面版的箭頭與其他裝飾 */
-    .category-btn.active::before,
-    .category-btn.active::after { 
-        display: none !important; 
+    .menu-logo { display: block; margin: 0 auto 10px auto; width: 160px; max-width: 50%; height: auto; object-fit: contain; }
+    
+    .category-btn { 
+        display: inline-flex !important; justify-content: center; align-items: center; 
+        font-size: 0.95rem; padding: 6px 12px; margin: 5px; 
+        background-color: rgba(255, 255, 255, 0.2); border-radius: 20px; color: #fff; white-space: nowrap; width: auto; 
     }
+    .category-btn.active { background-color: #fff; color: #034854; }
+    .category-btn.active::before, .category-btn.active::after { display: none !important; }
+    .category-btn:hover, .category-btn:active, .category-btn:focus { transform: none !important; }
 
-    /* 4. 下方手機區：佔滿剩餘空間 */
-    .phone-wrapper {
-        flex: 1; /* 吃掉剩下所有高度 */
-        width: 100%;
-        min-height: 0; /* 允許縮小 */
+    /* 🚀 關鍵修復：嚴格鎖定手機容器比例 */
+    .phone-wrapper { 
+        width: 100%; 
+        flex: 1; 
+        min-height: 0; 
         
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center; /* 垂直置中 */
+        position: relative; display: flex; justify-content: center; align-items: center; 
+        padding: 0; 
+        margin: 0 auto 20px auto; 
         
-        padding: 0 0 20px 0; /* 底部留白 */
-        margin: 0;
-        aspect-ratio: auto; /* 移除比例鎖定 */
-    }
-
-    /* 5. 手機框：限制高度與寬度 */
-    .phone-frame {
-        position: relative;
-        /* 讓手機盡量大，但保留上下邊距 */
-        height: 95%; 
-        width: auto;
-        max-width: 90%; 
-        object-fit: contain;
-        
-        z-index: 10;
-        transform: translateY(0) !important;
-        top: auto; left: auto;
-        animation: none !important; /* 手機版不漂浮 */
+        /* [核心] 鎖死比例 */
+        aspect-ratio: 9 / 18.5 !important; 
+        max-height: 95%; 
+        max-width: 85%; /* 確保手機左右不會頂到螢幕邊緣 */
     }
     
-    /* 6. 手機內容：鎖定在手機框中心 */
-    .phone-screen-container {
-        position: absolute;
-        top: 49%;
-        left: 50%;
-        transform: translate(-50%, -50%) !important;
-        
-        /* 縮小高度與寬度 */
-        height: 81%;  
-        width: auto;
-        aspect-ratio: 9 / 20; 
-        max-width: 78%; 
-        
-        border-radius: 20px; /* 圓角 */
-        z-index: 20;
-        background-color: #fff;
-        overflow-y: auto;
-        animation: none !important;
-    }
-
-    /* 卡片內容微調 */
-    .app-card {
-        padding: 8px;
-        gap: 8px;
-    }
-    .app-icon {
-        width: 40px; height: 40px;
-    }
-    .app-name { font-size: 0.9rem; }
-    .play-btn { width: 28px; height: 28px; }
+    #fullscreen-menu-modal.active .phone-wrapper { animation: none; }
     
-    #app-list-container {
-        padding: 40px 10px 20px 10px;
+    .phone-frame { 
+        position: absolute; top: 0; left: 0; 
+        width: 100% !important; height: 100% !important; 
+        object-fit: fill !important; 
+        z-index: 10; transform: translateY(0) !important; animation: none !important; 
     }
-}
-/* ================================================== */
-/*        iPad Pro 專屬修正 (寬度 1024px ~ 1200px)      */
-/* ================================================== */
-@media (min-width: 1024px) and (max-width: 1200px) {
     
-    /* 針對較大的平板，給予更強的向上拉力 */
-    .phone-wrapper {
-        margin-top: -1100px !important; 
-        
-        /* 也可以稍微放大手機，填補大螢幕的空虛感 */
-        transform: scale(1.1); 
-        transform-origin: top center;
+    .phone-screen-container { 
+        position: absolute; 
+        /* [核心] 如果覺得手機版邊框有點厚，可以微調 top/bottom/left/right 數值，例如改成 10% 和 6% */
+        top: 11% !important; bottom: 11% !important; left: 7% !important; right: 7% !important; 
+        width: auto !important; height: auto !important; 
+        border-radius: 15px; z-index: 20; background-color: #fff; 
+        transform: translateY(0) !important; opacity: 1 !important; animation: none !important; 
     }
-
-    /* 微調一下間距，讓整體更緊湊 */
-    .menu-layout {
-        gap: 10px !important;
-        padding-top: 50px !important;
-    }
-
     
+    .app-card { padding: 8px; gap: 8px; border-radius: 10px; margin-bottom: 12px !important; }
+    .app-icon { width: 35px; height: 35px; }
+    .app-name { font-size: 0.9rem; margin-bottom: 2px; }
+    .play-btn { width: 24px; height: 24px; }
+    #app-list-container { padding: 30px 10px 20px 10px; }
 }
