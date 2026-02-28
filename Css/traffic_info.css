@@ -104,6 +104,21 @@
     }
 }
 
+@media (max-width: 768px) {
+
+  .p3-left-card {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .p3-text-box {
+    position: absolute;
+    font-size: 14px;
+  }
+
+}
+
 /* ===== 第三區塊：比例調整穩定版 ===== */
 /* ===== 十字裝飾（不動比例，只微調） ===== */
 
