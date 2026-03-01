@@ -226,6 +226,8 @@
 
     .introAudio {
         width: 100%; 
+        aspect-ratio: 16 / 9;
+    
     }
     .audioText {
         width: 100%;
