@@ -104,20 +104,6 @@
     }
 }
 
-@media (max-width: 768px) {
-
-  .p3-left-card {
-    position: relative;
-    width: 90%;
-    margin: 20px auto;
-  }
-
-  .p3-text-box {
-    position: absolute;
-    font-size: 14px;
-  }
-
-}
 
 /* ===== 第三區塊：比例調整穩定版 ===== */
 /* ===== 十字裝飾（不動比例，只微調） ===== */
@@ -229,6 +215,8 @@
   color: #0b3d3b;
   line-height: 1.4;
 
+  margin-top: 15px;
+
   box-sizing: border-box;
   overflow: hidden;
   word-break: break-word;
@@ -285,7 +273,7 @@
 
 
 /* ===== RWD 微調 ===== */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
 
   .p3-left-card {
     width: 32%;
@@ -301,7 +289,7 @@
   .p3-text-box {
     font-size: 12px;
   }
-}
+} */
 /* ================================================== */
 /* 手機版：恢復「卡片漂浮」設計感 (針對 768px 以下)   */
 /* ================================================== */
@@ -333,37 +321,17 @@
         top: 40% !important; 
         left: 15% !important;
         width: 80% !important;
+        font-size: 10px !important;
+        line-height: 0.3;
+
         
         /* 使用 flex 確保每一行都乖乖排隊，不會重疊 */
         display: flex !important;
         flex-direction: column !important;
-        gap: 0 !important;
+        
     }
 
-    /* 2. 單獨處理「校內展資訊」：移除 transform，改用 margin 推開 */
-    .p3-text-box p:first-child {
-        transform: none !important;   /* ⬅️ 關鍵：把原本會造成重疊的位移刪掉 */
-        
-        /* 增加下方的間距，強制把地址往下推 */
-        /* 如果覺得地址還是太近，就把 15px 改成 20px */
-        margin: 0 0 15px 0 !important; 
-        
-        font-size: 5vw !important;
-        font-weight: 900 !important;
-        line-height: 1.2 !important;
-        color: #0b3d3b;
-        display: block !important;
-    }
 
-    /* 3. 確保地址與後續文字恢復正常排列 */
-    .p3-text-box p:not(:first-child) {
-        transform: none !important;    /* 移除位移 */
-        margin: 0 0 5px 0 !important;  /* 設定每一行地址之間的微小間距 */
-        font-size: 3vw !important;
-        line-height: 1.4 !important;
-        display: block !important;
-    }
-    
 
     /* 3. 右側「照片卡片」：維持漂浮，但移動到右下角，避免擋住左側資訊 */
     .p3-right-card {
