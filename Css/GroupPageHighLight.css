@@ -814,9 +814,12 @@ p{
         /* width: 100%;              */
 
         text-align: left;
-        font-size: 20px;        
+        font-size: 20px;    
+ 
         margin: 0;              
         line-height: 1.4;        
+        white-space: normal;
+   
     }
 
     .titleArea a {

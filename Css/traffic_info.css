@@ -322,7 +322,8 @@
         left: 15% !important;
         width: 80% !important;
         font-size: 10px !important;
-        line-height: 0.3;
+        line-height: 0.2;
+        margin-top: 0px;
 
         
         /* 使用 flex 確保每一行都乖乖排隊，不會重疊 */
