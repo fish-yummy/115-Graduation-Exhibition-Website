@@ -373,6 +373,7 @@ const works = [
             Menber_image: [
                   "Image/GroupImage/11/member/柯宇珊.webp",
                   "Image/GroupImage/11/member/詹柏崇.webp",
+                  "Image/GroupImage/11/member/羅韋均.webp"
                  
                 ],  
             highlight_Desc: [
